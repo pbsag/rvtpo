@@ -1,0 +1,29 @@
+arterialPBFFS           Arterial Percent of Base Free-flow Speed
+arterial_speedConstant
+                        Arterial - Speed Constant Lookup
+bptsfCoeffTbl           Two-Lane Highway - Base Percent Time Spent
+                        Following
+freewayLC               Freeway - Lateral Clearance Adjustment
+freewayMSF              Freeway - Maximum Service Flow Rate
+hcm_arterial            HCM Arterial Function
+hcm_calculate           Highway Capacity Calculation Function
+hcm_collector           Collector Function (not HCM based)
+hcm_freeway             HCM Freeway Function
+hcm_ftCheck             HCM Facility Type Check
+hcm_local               Local Function (not HCM based)
+hcm_mlHighway           HCM Multi-Lane Highway Function
+hcm_tlHighway           HCM Two-Lane Highway Function
+hcmr                    hcmr: A package to compute link capacities and
+                        freeflow speeds
+hwylinks                Sample Table of Highway Links
+mlHighwayAPD            Multi-Lane Highway - Access Point Density
+                        Adjustment
+mlHighwayMSF            Multi-Lane Highway - Maximum Service Flow Rate
+tlHighwayATS            HCM Two-Lane ATS Capacity
+tlHighwayEtPTSF         Two-Lane Highway - Truck PCEs (PTSF)
+tlHighwayFgPTSF         Two-Lane Highway - Grade adjustment (PTSF)
+tlHighwayFnpATS         Two-Lane Highway - Percent no passing
+                        adjustment (ATS)
+tlHighwayFnpPTSF        Two-Lane Highway - Percent no passing
+                        adjustment (PTSF)
+tlHighwayPTSF           HCM Two-Lane PTSF Capacity
