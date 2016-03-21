@@ -12,6 +12,8 @@
 *.S text eol=crlf
 *.lin text eol=crlf
 *.LIN text eol=crlf
+*.rep text eol=crlf
+*.REP text eol=crlf
 
 # Denote all files that are truly binary and should not be modified.
 *.cat binary
