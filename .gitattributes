@@ -7,6 +7,8 @@
 
 # Declare files that will always have CRLF (Windows-style) line endings on checkout.
 *.bat text eol=crlf
+*.BAT text eol=crlf
+*.app text eol=crlf
 *.APP text eol=crlf
 *.s text eol=crlf
 *.S text eol=crlf
