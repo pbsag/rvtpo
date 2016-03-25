@@ -46,13 +46,6 @@ C:\projects\ROANOKE\CUBE\COMMER00.APP
 CHECKING EXECUTION ORDER
 CHECKING FILE EXISTENCE
 -------------------------
-APPLICATION GROUP: 'Commercial Vehicle' (C:\projects\ROANOKE\CUBE\COMMER00.APP)
-PROGRAM: MATRIX
-EXEC ORDER: 4
-THE 'Highway Skims' DOES NOT EXIST
-{SCENARIO_DIR}\OUTPUT\Hwyskim.MAT
-(='C:\projects\Roanoke\Base\OUTPUT\Hwyskim.MAT' for Scenario 'Base')
-
 -------------------------
 CHECKING APPLICATION GROUP 'MC Logsums'
 C:\projects\ROANOKE\CUBE\MCLOGSUM.APP
@@ -65,13 +58,6 @@ C:\projects\roanoke\Cube\TRIPDI00.APP
 CHECKING EXECUTION ORDER
 CHECKING FILE EXISTENCE
 -------------------------
-APPLICATION GROUP: 'Trip Distribution' (C:\projects\roanoke\Cube\TRIPDI00.APP)
-PROGRAM: DISTRIBUTION
-EXEC ORDER: 2
-THE 'Matrix File 1' DOES NOT EXIST
-{SCENARIO_DIR}\Output\OP_Hwyskim.mat
-(='C:\projects\Roanoke\Base\Output\OP_Hwyskim.mat' for Scenario 'Base')
-
 APPLICATION GROUP: 'Trip Distribution' (C:\projects\roanoke\Cube\TRIPDI00.APP)
 PROGRAM: DISTRIBUTION
 EXEC ORDER: 2
@@ -99,48 +85,6 @@ C:\projects\ROANOKE\CUBE\TRIPDIST00.APP
 CHECKING EXECUTION ORDER
 CHECKING FILE EXISTENCE
 -------------------------
-APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
-PROGRAM: MATRIX
-EXEC ORDER: 8
-THE 'Highway Skims' DOES NOT EXIST
-{SCENARIO_DIR}\OUTPUT\op_Hwyskim.MAT
-(='C:\projects\Roanoke\Base\OUTPUT\op_Hwyskim.MAT' for Scenario 'Base')
-
-APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
-PROGRAM: MATRIX
-EXEC ORDER: 8
-THE 'Zonal Data 3' DOES NOT EXIST
-{SCENARIO_DIR}\Output\NHBNR_PA_{year}.DBF
-(='C:\projects\Roanoke\Base\Output\NHBNR_PA_2012.DBF' for Scenario 'Base')
-
-APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
-PROGRAM: MATRIX
-EXEC ORDER: 9
-THE 'Highway Skims' DOES NOT EXIST
-{SCENARIO_DIR}\OUTPUT\OP_Hwyskim.MAT
-(='C:\projects\Roanoke\Base\OUTPUT\OP_Hwyskim.MAT' for Scenario 'Base')
-
-APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
-PROGRAM: MATRIX
-EXEC ORDER: 10
-THE 'Highway Skims' DOES NOT EXIST
-{SCENARIO_DIR}\OUTPUT\OP_Hwyskim.MAT
-(='C:\projects\Roanoke\Base\OUTPUT\OP_Hwyskim.MAT' for Scenario 'Base')
-
-APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
-PROGRAM: MATRIX
-EXEC ORDER: 3
-THE 'MC Logsums' DOES NOT EXIST
-{SCENARIO_DIR}\OUTPUT\HBW_MCLS.MAT
-(='C:\projects\Roanoke\Base\OUTPUT\HBW_MCLS.MAT' for Scenario 'Base')
-
-APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
-PROGRAM: MATRIX
-EXEC ORDER: 3
-THE 'Highway Skims' DOES NOT EXIST
-{SCENARIO_DIR}\OUTPUT\PK_Hwyskim.MAT
-(='C:\projects\Roanoke\Base\OUTPUT\PK_Hwyskim.MAT' for Scenario 'Base')
-
 APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
 PROGRAM: MATRIX
 EXEC ORDER: 3
@@ -171,24 +115,10 @@ THE 'MC Logsums' DOES NOT EXIST
 
 APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
 PROGRAM: MATRIX
-EXEC ORDER: 12
-THE 'Highway Skims' DOES NOT EXIST
-{SCENARIO_DIR}\OUTPUT\pk_Hwyskim.MAT
-(='C:\projects\Roanoke\Base\OUTPUT\pk_Hwyskim.MAT' for Scenario 'Base')
-
-APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
-PROGRAM: MATRIX
 EXEC ORDER: 13
 THE 'MC Logsums' DOES NOT EXIST
 {SCENARIO_DIR}\OUTPUT\Dest_HBW.MAT
 (='C:\projects\Roanoke\Base\OUTPUT\Dest_HBW.MAT' for Scenario 'Base')
-
-APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
-PROGRAM: MATRIX
-EXEC ORDER: 13
-THE 'Highway Skims' DOES NOT EXIST
-{SCENARIO_DIR}\OUTPUT\pk_Hwyskim.MAT
-(='C:\projects\Roanoke\Base\OUTPUT\pk_Hwyskim.MAT' for Scenario 'Base')
 
 APPLICATION GROUP: 'Destination Choice' (C:\projects\ROANOKE\CUBE\TRIPDIST00.APP)
 PROGRAM: MATRIX

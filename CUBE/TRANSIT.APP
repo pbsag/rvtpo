@@ -1,7 +1,7 @@
 &PROJFIL
 EXP0 1 1Link/Net. 1    {SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET      
 EXP0 311Lookup File 1  {CATALOG_DIR}\Params\transit\TRANSPD.dbf                    
-EXP3 2 1Line File 1    {SCENARIO_DIR}\Input\TROUTE_{Year}.LIN                      
+EXP3 2 1Line File 1    {SCENARIO_DIR}\Input\TROUTE.LIN                             
 EXP3 171System File 1  {CATALOG_DIR}\Params\transit\TSYSD.PTS                      
 EXP3 231Fares File     {CATALOG_DIR}\Params\transit\TFARES.FAR                     
 EXP3 341Factor File 1  {CATALOG_DIR}\Params\transit\WalkBus.FAC                    
@@ -22,7 +22,7 @@ TN
 00
 Transit Networks and Skims
 
-Fri Mar 18 15:09:21 2016
+Fri Mar 25 13:51:14 2016
 
 C:\projects\roanoke\Cube\RVARC_TDM.app
 C:\projects\ROANOKE\CUBE\TRANSIT.APP
@@ -1757,7 +1757,7 @@ Line File 1
 0
 0
 LIN
-{SCENARIO_DIR}\Input\TROUTE_{Year}.LIN
+{SCENARIO_DIR}\Input\TROUTE.LIN
 0
 LIN
 LINEI1
@@ -6115,7 +6115,7 @@ Line File 1
 0
 0
 LIN
-{SCENARIO_DIR}\Input\TROUTE_{Year}.LIN
+{SCENARIO_DIR}\Input\TROUTE.LIN
 0
 LIN
 LINEI1
@@ -8600,7 +8600,7 @@ Line File 1
 0
 0
 LIN
-{SCENARIO_DIR}\Input\TROUTE_{year}.LIN
+{SCENARIO_DIR}\Input\TROUTE.LIN
 0
 LIN
 LINEI1

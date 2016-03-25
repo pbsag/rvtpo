@@ -1,5 +1,6 @@
 &PROJFIL
 EXP0 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\@hwySkim@                             
+EXP0 221Zonal Data 1   {SCENARIO_DIR}\Input\TrnWalkPercent.dbf                     
 EXP0 421Lookup File 1  {CATALOG_DIR}\Params\mc\MC_Constants.csv                    
 EXP0 431Lookup File 2  {CATALOG_DIR}\Params\mc\MC_Coefficients.csv                 
 11
@@ -10,7 +11,7 @@ LG
 00
 
 
-Fri Mar 18 14:54:23 2016
+Fri Mar 25 15:08:06 2016
 
 C:\projects\roanoke\Cube\RVARC_TDM.app
 C:\projects\ROANOKE\CUBE\MCLOGSUM.APP
@@ -442,7 +443,7 @@ Zonal Data 1
 0
 0
 *
-{SCENARIO_DIR}\Input\TrnWalkPercent_{Year}.dbf
+{SCENARIO_DIR}\Input\TrnWalkPercent.dbf
 0
 ZON
 ZDATI1
@@ -452,8 +453,8 @@ ZDATI1
 916
 -1959
 -1
--1
-0
+-9
+1
 #INFIL23
 Zonal Data 2
 

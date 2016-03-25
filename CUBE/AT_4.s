@@ -1,6 +1,6 @@
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_4.PRN" MSG='ADD LAND USE DATA TO ZONES'
-FILEI NODEI[2] = "{SCENARIO_DIR}\Input\se_{Year}.dbf"
+FILEI NODEI[2] = "{SCENARIO_DIR}\Input\se.dbf"
 FILEO NETO = "{SCENARIO_DIR}\Output\merge zone.NET"
 FILEI LINKI[1] = "{SCENARIO_DIR}\Output\ZONE.NET"
 

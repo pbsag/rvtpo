@@ -1,5 +1,5 @@
 &PROJFIL
-EXP0 1 1Zonal Data 1   {SCENARIO_DIR}\Input\se_{year}.dbf                          
+EXP0 1 1Zonal Data 1   {SCENARIO_DIR}\Input\se.dbf                                 
 EXP0 111Lookup File 1  {CATALOG_DIR}\PARAMS\CVRATES.CSV                            
 EXP1 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\Hwyskim.MAT                           
 EXP2 1 0Matrix File 1  {SCENARIO_DIR}\Output\CV_{Year}_AM.MAT                      
@@ -11,7 +11,7 @@ CV
 00
 
 
-Fri Mar 18 13:38:50 2016
+Fri Mar 25 13:54:41 2016
 
 C:\projects\roanoke\Cube\RVARC_TDM.app
 C:\projects\ROANOKE\CUBE\COMMER00.APP
@@ -65,7 +65,7 @@ Zonal Data 1
 0
 0
 *
-{SCENARIO_DIR}\Input\se_{year}.dbf
+{SCENARIO_DIR}\Input\se.dbf
 0
 ZON
 ZDATI1
