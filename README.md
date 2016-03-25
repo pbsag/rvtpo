@@ -1,6 +1,6 @@
 # rvtpo
 
-[[_extra/rvtpo_splash.png]]
+![](_extra/rvtpo_splash.png)
 
 This is the travel demand model for the Roanoke, Virginia region. The model is
 developed largely in Cube 6.1, with some submodules executed in R. The model
