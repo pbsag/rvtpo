@@ -17,7 +17,7 @@ FILEO MATO[1] = "{SCENARIO_DIR}\output\@PURP@_MCLS.MAT",
 
 FILEI LOOKUPI[2] = "{CATALOG_DIR}\Params\mc\MC_Coefficients.csv"
 FILEI LOOKUPI[1] = "{CATALOG_DIR}\Params\mc\MC_Constants.csv"
-FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\TrnWalkPercent_{Year}.dbf"
+FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\TrnWalkPercent.dbf"
 
 ; Progress Bar update for evey 100 zones
 zonemsg=50

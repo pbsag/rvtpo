@@ -7,6 +7,43 @@
 *IF NOT EXIST "{SCENARIO_DIR}\Output" MKDIR "{SCENARIO_DIR}\Output"
 *IF NOT EXIST "{SCENARIO_DIR}\OUTPUT" MKDIR "{SCENARIO_DIR}\OUTPUT"
 *IF NOT EXIST "{SCENARIO_DIR}\OUTPUT\LOGS" MKDIR "{SCENARIO_DIR}\OUTPUT\LOGS"
+
+FILEO PRINTO[1] = "{SCENARIO_DIR}\scenario.properties"
+ ; Write out catalog keys as scenario.properties
+ print list = 'About the scenario'    printo = 1 
+ print list = '-----------------------------------'             printo = 1 
+ print list = 'SCENARIO_FULLNAME  = ', '{SCENARIO_FULLNAME}'    printo = 1
+ print list = 'SCENARIO_SHORTNAME = ', '{SCENARIO_SHORTNAME}'   printo = 1
+ print list = 'SCENARIO_CODE      = ', '{SCENARIO_CODE}'        printo = 1
+ print list = 'SCENARIO_DIR       = ', '{SCENARIO_DIR}'         printo = 1
+ print list = 'CATALOG_DIR        = ', '{CATALOG_DIR}'          printo = 1
+ print list = 'Alternative        = ', '{Alternative}'          printo = 1
+ print list = 'Description        = ', '{Description}'          printo = 1
+ print list = 'Year               = ', '{Year}'                 printo = 1
+
+ print list = '\n \nModel settings'    printo = 1 
+ print list = '-----------------------------------'             printo = 1  
+ print list = 'Total-Zones        = ', '{Total-Zones}'          printo = 1
+ print list = 'ZONESA             = ', '{ZONESA}'               printo = 1 
+ print list = 'Internal-Zones     = ', '{Internal-Zones}'       printo = 1
+ print list = 'MAXWLKACCLNKS      = ', '{MAXWLKACCLNKS}'        printo = 1
+ print list = 'NODEMIN            = ', '{NODEMIN}'              printo = 1
+ print list = 'Radius             = ', '{Radius}'               printo = 1
+ print list = 'AVGWLKSPD          = ', '{AVGWLKSPD}'            printo = 1
+ print list = 'UNIT               = ', '{UNIT}'                 printo = 1
+ print list = 'WALKACC            = ', '{WALKACC}'              printo = 1
+ 
+ print list = '\n \nDebug and select link settings'             printo = 1   
+ print list = '-----------------------------------'             printo = 1 
+ print list = 'DebugDC            = ', '{DebugDC}'              printo = 1 
+ print list = 'FromNode           = ', '{FromNode}'             printo = 1
+ print list = 'ToNode             = ', '{ToNode}'               printo = 1
+ print list = 'SelOrigin          = ', '{SelOrigin}'            printo = 1
+ print list = 'SelDest            = ', '{SelDest}'              printo = 1
+ print list = 'SelectLink         = ', '{SelectLink}'           printo = 1
+
+ 
+ 
 ; End of PILOT Script
 
 ; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_1.S"
@@ -15,7 +52,7 @@ RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_1.PRN" MSG='OUTPUT LINK A
 FILEO PRINTO[1] = "{SCENARIO_DIR}\Output\XY.dat"
 FILEO NODEO = "{SCENARIO_DIR}\Output\NODE.DAT"
 FILEO LINKO = "{SCENARIO_DIR}\Output\LINK.DAT"
-FILEI LINKI[1] = "{SCENARIO_DIR}\Input\highway_{year}.net"
+FILEI LINKI[1] = "{SCENARIO_DIR}\Input\highway.net"
 
 ARRAY _CNT={Total zones},_CENTX={Total zones},_CENTY={Total zones},_CENT={Total zones},
       _NO=99999,_MIDX=99999,_MIDY=99999,_MID_POINT=99999,_NO=99999,XMILES=999999,
@@ -111,7 +148,7 @@ ENDRUN
 ; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_3.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_3.PRN" MSG='INSERT LINK DATA TO NETWORK'
-FILEI LINKI[1] = "{SCENARIO_DIR}\Input\highway_{year}.net"
+FILEI LINKI[1] = "{SCENARIO_DIR}\Input\highway.net"
 FILEI LINKI[2] = "{SCENARIO_DIR}\Output\CLOSEST.DBF"
 FILEO NETO = "{SCENARIO_DIR}\Output\ZONE.NET"
 
@@ -154,7 +191,7 @@ ENDRUN
 ; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_4.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_4.PRN" MSG='ADD LAND USE DATA TO ZONES'
-FILEI NODEI[2] = "{SCENARIO_DIR}\Input\se_{Year}.dbf"
+FILEI NODEI[2] = "{SCENARIO_DIR}\Input\se.dbf"
 FILEO NETO = "{SCENARIO_DIR}\Output\merge zone.NET"
 FILEI LINKI[1] = "{SCENARIO_DIR}\Output\ZONE.NET"
 
@@ -474,9 +511,8 @@ ENDRUN
 ; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HwySkims_FreeFlow.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=HIGHWAY PRNFILE="{SCENARIO_DIR}\Output\Logs\FreeFlowSpeeds.PRN" MSG='Build Initial Skims'
-       
 FILEI ZDATI[1] = "{SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF",
- Z = N
+Z = N
 FILEI NETI = "{SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET"
 FILEI LOOKUPI[1] = "{CATALOG_DIR}\Params\Term_Time.dbf"
 
@@ -547,7 +583,7 @@ Rexe = '{CATALOG_DIR}\R\R-3.2.2\bin\Rscript.exe'
 Rscript = '{CATALOG_DIR}\R\classification.R'
 
 ; Collect script arguments for R script.
-input_se_file = '{SCENARIO_DIR}\Input\se_{year}.dbf'
+input_se_file = '{SCENARIO_DIR}\Input\se.dbf'
 lookup_dir = '{CATALOG_DIR}\Params\classification'
 output_file = '{SCENARIO_DIR}\Output\se_classified_{year}{alternative}.dbf'
 
@@ -838,7 +874,7 @@ FILEO NETO = "{SCENARIO_DIR}\Output\NTLEG.NET"
 FILEI FACTORI[1] = "{CATALOG_DIR}\Params\transit\WalkPrem.FAC"
 FILEI FAREI = "{CATALOG_DIR}\Params\transit\TFARES.FAR"
 FILEI SYSTEMI = "{CATALOG_DIR}\Params\transit\TSYSD.PTS"
-FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE_{Year}.LIN"
+FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE.LIN"
 FILEI NETI = "{SCENARIO_DIR}\Output\HWYTSPD.NET"
 
 ;**************************************************************
@@ -964,7 +1000,7 @@ FILEI FACTORI[2] = "{CATALOG_DIR}\Params\transit\WalkPrem.FAC"
 FILEI FACTORI[1] = "{CATALOG_DIR}\Params\transit\WalkBus.FAC"
 FILEI FAREI = "{CATALOG_DIR}\Params\transit\TFARES.FAR"
 FILEI SYSTEMI = "{CATALOG_DIR}\Params\transit\TSYSD.PTS"
-FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE_{Year}.LIN"
+FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE.LIN"
 FILEI NETI = "{SCENARIO_DIR}\Output\HWYTSPD.NET"
 
 ;**************************************************************
@@ -1043,7 +1079,7 @@ FILEI FACTORI[2] = "{CATALOG_DIR}\Params\transit\WalkPrem.FAC"
 FILEI FACTORI[1] = "{CATALOG_DIR}\Params\transit\WalkBus.FAC"
 FILEI FAREI = "{CATALOG_DIR}\Params\transit\TFARES.FAR"
 FILEI SYSTEMI = "{CATALOG_DIR}\Params\transit\TSYSD.PTS"
-FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE_{year}.LIN"
+FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE.LIN"
 
 ;**************************************************************
 ;BEGIN POTENTIAL SCRIPT ADJUSTMENT
@@ -1106,7 +1142,7 @@ ENDRUN
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=FRATAR MSG='Future year EE Table'
 FILEI MATI[1] = "{SCENARIO_DIR}\INPUT\EE_seed.MAT"
-FILEI LOOKUPI[1] = "{SCENARIO_DIR}\INPUT\EXTERNALTRIPS_{year}.DBF"
+FILEI LOOKUPI[1] = "{SCENARIO_DIR}\INPUT\EXTERNALTRIPS.DBF"
 FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\EE_{Year}.MAT",
  MO=1,NAME = EE_TRIPS, DEC=1*D
 
@@ -1129,7 +1165,7 @@ ENDRUN
 RUN PGM=MATRIX
 FILEO RECO[1] = "{SCENARIO_DIR}\OUTPUT\EXTERNALTRIPS.DBF",
 fields=ZONE,AADT,EE_Total,IEEI
-FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\EXTERNALTRIPS_{Year}.DBF"
+FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\EXTERNALTRIPS.DBF"
 FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\EE_{Year}.MAT"
 
 MW[1]=mi.1.1
@@ -1202,7 +1238,7 @@ RUN PGM=GENERATION MSG='IEEI_TripGen'
 FILEI ZDATI[2] = "{SCENARIO_DIR}\OUTPUT\EXTERNALTRIPS.DBF"
 FILEO PAO[1] = "{SCENARIO_DIR}\Output\IEEI_PA_{year}.DBF",
 FORM=10.3, DBF=T, LIST=Z, P[1], A[1]
-FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\se_{year}.dbf"
+FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\se.dbf"
 
 ZONES={Total Zones}
 
@@ -1396,7 +1432,7 @@ RUN PGM=GENERATION MSG='CV_TripGen'
 FILEI LOOKUPI[1] = "{CATALOG_DIR}\PARAMS\CVRATES.CSV"
 FILEO PAO[1] = "{SCENARIO_DIR}\Output\CV_PA_{year}.DBF",
 FORM=10.3, DBF=T, LIST=Z, P[1], P[2], P[3], A[1], A[2], A[3]
-FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\se_{year}.dbf"
+FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\se.dbf"
 
 ZONES={Internal Zones}
 
@@ -1789,7 +1825,7 @@ FILEO MATO[1] = "{SCENARIO_DIR}\output\@PURP@_MCLS.MAT",
 
 FILEI LOOKUPI[2] = "{CATALOG_DIR}\Params\mc\MC_Coefficients.csv"
 FILEI LOOKUPI[1] = "{CATALOG_DIR}\Params\mc\MC_Constants.csv"
-FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\TrnWalkPercent_{Year}.dbf"
+FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\TrnWalkPercent.dbf"
 
 ; Progress Bar update for evey 100 zones
 zonemsg=50
@@ -2726,7 +2762,7 @@ ENDIF
 RUN PGM=MATRIX
 FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\@PURP@_MCTRIPS.MAT",
  MO = 21-25, NAME = DA, SR, WLB, PMB, NOM
-FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\TrnWalkPercent_{year}.dbf"
+FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\TrnWalkPercent.dbf"
 FILEI MATI[2] = "{SCENARIO_DIR}\OUTPUT\Dest_@PURPNAME@.MAT"
 FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\@PURP@_MCPROB.MAT"
 

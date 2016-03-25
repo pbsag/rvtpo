@@ -1,6 +1,4 @@
 &PROJFIL
-EXP0 0 1Link/Net. 1    {SCENARIO_DIR}\Input\highway_{year}.net                     
-EXP0 1 1Node File 2    {SCENARIO_DIR}\Input\se_{Year}.dbf                          
 EXP0 2 1Lookup File 1  {CATALOG_DIR}\Params\AT.dbf                                 
 EXP0 2 0Record File 1  {SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF       
 EXP2 1 0Network File   {SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET      
@@ -12,7 +10,7 @@ NB
 00
 Build Network from Minutp to Cube.  Add/Manipulate Link Variables.
 
-Fri Mar 18 14:54:52 2016
+Fri Mar 25 13:40:25 2016
 
 C:\projects\roanoke\Cube\RVARC_TDM.app
 C:\projects\roanoke\Cube\NETBUILD.APP
@@ -51,7 +49,7 @@ Starting Network
 0
 0
 *
-{SCENARIO_DIR}\Input\highway_{year}.net
+{SCENARIO_DIR}\Input\highway.net
 1
 0001
       
@@ -61,15 +59,15 @@ Starting Network
 945
 -619
 -1
--9
-1
+-1
+0
 #INFIL1
 Node File 2
 Land Use Data
 0
 0
 *
-{SCENARIO_DIR}\Input\se_{Year}.dbf
+{SCENARIO_DIR}\Input\se.dbf
 1
 0112
       
@@ -79,8 +77,8 @@ Land Use Data
 945
 -696
 -1
--9
-1
+-1
+0
 #INFIL2
 Lookup File 1
 Area Type Crossclassification
@@ -111,9 +109,9 @@ Network with Area type
       
 999999
 1259
--586
+-547
 1648
--658
+-619
 0
 #OUTFIL1
 Link File
@@ -127,9 +125,9 @@ Link File
       
 999999
 1259
--663
+-624
 1648
--735
+-696
 0
 #OUTFIL2
 Record File 1
@@ -143,9 +141,9 @@ Zones with Area type
       
 999999
 1259
--740
+-701
 1648
--812
+-773
 1
 #PROGRAM1
 2

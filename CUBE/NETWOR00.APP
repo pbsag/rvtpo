@@ -1,8 +1,7 @@
 &PROJFIL
-EXP0 1 1Link/Net. 1    {SCENARIO_DIR}\Input\highway_{year}.net                     
-EXP1 121Node File 2    {SCENARIO_DIR}\Input\se_{Year}.dbf                          
+EXP0 1 1Link/Net. 1    {SCENARIO_DIR}\Input\highway.net                            
+EXP1 121Node File 2    {SCENARIO_DIR}\Input\se.dbf                                 
 EXP2 211Lookup File 1  {CATALOG_DIR}\Params\AT.dbf                                 
-EXP4 1 1Link/Net. 1    {SCENARIO_DIR}\Input\highway_{year}.net                     
 EXP5 1 0Network File   {SCENARIO_DIR}\Output\ATYPE NETWORK{Year}{Alternative}.NET  
 EXP5 2 0Link File      {SCENARIO_DIR}\Output\link_atype{Year}{Alternative}.DBF     
 EXP6 210Record File 1  {SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF       
@@ -14,7 +13,7 @@ Area Type
 00
 
 
-Fri Mar 18 14:54:52 2016
+Fri Mar 25 13:40:24 2016
 
 C:\projects\roanoke\Cube\NETBUILD.APP
 C:\projects\roanoke\Cube\NETWOR00.APP
@@ -74,7 +73,7 @@ Starting Network
 0
 0
 *
-{SCENARIO_DIR}\Input\highway_{year}.net
+{SCENARIO_DIR}\Input\highway.net
 0
 LNK
 LINKI1
@@ -1755,7 +1754,7 @@ Land Use Data
 0
 0
 DAT
-{SCENARIO_DIR}\Input\se_{Year}.dbf
+{SCENARIO_DIR}\Input\se.dbf
 0
 NOD
 NODEI2
@@ -6396,7 +6395,7 @@ Starting Network
 0
 0
 *
-{SCENARIO_DIR}\Input\highway_{year}.net
+{SCENARIO_DIR}\Input\highway.net
 0
 LNK
 LINKI1
@@ -6406,8 +6405,8 @@ LINKI1
 804
 -2559
 -1
--9
-1
+-1
+0
 #INFIL2
 Link/Net. 2
 Closest Zone record

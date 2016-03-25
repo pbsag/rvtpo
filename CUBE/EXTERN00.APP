@@ -1,12 +1,12 @@
 &PROJFIL
-EXP0 1 1Zonal Data 1   {SCENARIO_DIR}\Input\se_{year}.dbf                          
+EXP0 1 1Zonal Data 1   {SCENARIO_DIR}\Input\se.dbf                                 
 EXP1 210Record File 1  {SCENARIO_DIR}\Output\NHBNR_PA_{year}.DBF                   
 EXP3 1 0Matrix File 1  {SCENARIO_DIR}\Output\IEEI_{year}_AM.MAT                    
 EXP4 1 0Matrix File 1  {SCENARIO_DIR}\Output\EE_{year}_AM.MAT                      
 EXP5 1 1Matrix File 1  {SCENARIO_DIR}\Output\IMPED11.MAT                           
 EXP5 1 0Matrix File 1  {SCENARIO_DIR}\OUTPUT\Hwyskim.MAT                           
 EXP6 1 1Matrix File 1  {SCENARIO_DIR}\INPUT\EE_seed.MAT                            
-EXP6 321Lookup File 1  {SCENARIO_DIR}\INPUT\EXTERNALTRIPS_{year}.DBF               
+EXP6 321Lookup File 1  {SCENARIO_DIR}\INPUT\EXTERNALTRIPS.DBF                      
 11
 0
 0
@@ -15,7 +15,7 @@ EE
 00
 
 
-Fri Mar 18 15:14:16 2016
+Fri Mar 25 15:04:57 2016
 
 C:\projects\roanoke\Cube\RVARC_TDM.app
 C:\projects\ROANOKE\CUBE\EXTERN00.APP
@@ -69,7 +69,7 @@ Zonal Data 1
 0
 0
 *
-{SCENARIO_DIR}\Input\se_{year}.dbf
+{SCENARIO_DIR}\Input\se.dbf
 0
 ZON
 ZDATI1
@@ -11227,7 +11227,7 @@ Lookup File 1
 0
 0
 *
-{SCENARIO_DIR}\INPUT\EXTERNALTRIPS_{year}.DBF
+{SCENARIO_DIR}\INPUT\EXTERNALTRIPS.DBF
 0
 LOK
 LOOKUPI1
@@ -12740,7 +12740,7 @@ External Volumes
 0
 0
 *
-{SCENARIO_DIR}\Input\EXTERNALTRIPS_{Year}.DBF
+{SCENARIO_DIR}\Input\EXTERNALTRIPS.DBF
 0
 ZON
 ZDATI1

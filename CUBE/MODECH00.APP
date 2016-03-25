@@ -1,6 +1,7 @@
 &PROJFIL
 EXP3 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\@PURP@_MCPROB.MAT                     
 EXP3 2 1Matrix File 2  {SCENARIO_DIR}\OUTPUT\Dest_@PURPNAME@.MAT                   
+EXP3 221Zonal Data 1   {SCENARIO_DIR}\Input\TrnWalkPercent.dbf                     
 EXP3 1 0Matrix File 1  {SCENARIO_DIR}\OUTPUT\@PURP@_MCTRIPS.MAT                    
 11
 0
@@ -10,7 +11,7 @@ MC
 00
 
 
-Fri Mar 18 14:54:39 2016
+Fri Mar 25 13:57:12 2016
 
 C:\projects\roanoke\Cube\RVARC_TDM.app
 C:\projects\ROANOKE\CUBE\MODECH00.APP
@@ -917,7 +918,7 @@ Zonal Data 1
 0
 0
 *
-{SCENARIO_DIR}\Input\TrnWalkPercent_{year}.dbf
+{SCENARIO_DIR}\Input\TrnWalkPercent.dbf
 0
 ZON
 ZDATI1
@@ -927,8 +928,8 @@ ZDATI1
 1650
 -1149
 -1
--1
-0
+-9
+1
 #INFIL23
 Zonal Data 2
 
