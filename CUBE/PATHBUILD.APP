@@ -1,7 +1,6 @@
 &PROJFIL
 EXP0 211Network File   {SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET      
 EXP0 251Zonal Data 1   {SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF       
-EXP0 351Lookup File 1  {CATALOG_DIR}\Params\Term_Time.dbf                          
 EXP0 1 0Matrix File 1  {SCENARIO_DIR}\Output\IMPED11.MAT                           
 11
 0
@@ -11,7 +10,7 @@ PB
 00
 Build Initial Impedance Table
 
-Fri Mar 25 14:49:52 2016
+Sat Mar 26 16:54:12 2016
 
 C:\projects\roanoke\Cube\RVARC_TDM.app
 C:\projects\roanoke\Cube\PATHBUILD.APP
@@ -39,8 +38,8 @@ Build Initial Skims
 999999
 1185
 -958
-1457
--1039
+1395
+-1028
 0
 0
 0
@@ -55,10 +54,10 @@ C:\projects\roanoke\Cube\HwySkims_FreeFlow.S
 HWY
 ISCR1 
 999999
-774
--846
-1170
--918
+868
+-861
+1174
+-923
 -1
 -1
 0
@@ -433,10 +432,10 @@ NET
 HWY
 NETI  
 999999
-774
--923
-1170
--995
+868
+-928
+1174
+-990
 -1
 -19
 1
@@ -505,10 +504,10 @@ SE Data
 ZON
 ZDATI1
 999999
-774
--1000
-1170
--1072
+868
+-995
+1174
+-1057
 -1
 -19
 1
@@ -685,13 +684,13 @@ Lookup File 1
 LOK
 LOOKUPI1
 999999
-774
--1077
-1170
--1149
+868
+-1062
+1174
+-1124
 -1
--9
-1
+-1
+0
 #INFIL36
 Lookup File 2
 
@@ -1225,10 +1224,10 @@ PRN
 HWY
 OPRN  
 999999
-1479
--922
-1868
--994
+1411
+-927
+1712
+-989
 0
 #OUTFIL1
 Matrix File 1
@@ -1241,10 +1240,10 @@ MAT
 HWY
 MATO1 
 999999
-1479
--999
-1868
--1071
+1411
+-994
+1712
+-1056
 1
 #OUTFIL2
 Matrix File 2
@@ -2030,8 +2029,8 @@ Save as FreeFlow Skim
 999999
 1185
 -1354
-1430
--1435
+1374
+-1424
 0
 0
 0
@@ -2046,10 +2045,10 @@ C:\projects\roanoke\Cube\HwySkims_FreeFlow_PK_OP.S
 PIL
 ISCR1 
 999999
-774
+868
 -1356
-1170
--1428
+1174
+-1418
 -1
 -1
 0
