@@ -28,16 +28,16 @@ NHB_AP  = TOD_FACS(1,8)
 ;  CONVERT P/A MATRIX TO O/D
 
 ; Drive Alone trips
-MW[1]= MI.1.1 * NHB_PA +  MI.1.1.T * NHB_AP +
-       MI.2.1 * HBW_PA +  MI.2.1.T * HBW_AP +
-       MI.3.1 * HBO_PA +  MI.3.1.T * HBO_AP +
-       MI.4.1 * HBSC_PA +  MI.4.1.T * HBSC_AP
+MW[1]= MI.1.1 * NHB_PA +  MI.1.1.T * NHB_PA +
+       MI.2.1 * HBW_PA +  MI.2.1.T * HBW_PA +
+       MI.3.1 * HBO_PA +  MI.3.1.T * HBO_PA +
+       MI.4.1 * HBSC_PA +  MI.4.1.T * HBSC_PA
 
 ; Share ride trips
-MW[2]= MI.1.2 * NHB_PA +  MI.1.2.T * NHB_AP +
-       MI.2.2 * HBW_PA +  MI.2.2.T * HBW_AP +
-       MI.3.2 * HBO_PA +  MI.3.2.T * HBO_AP +
-       MI.4.2 * HBSC_PA +  MI.4.2.T * HBSC_AP
+MW[2]= MI.1.2 * NHB_PA +  MI.1.2.T * NHB_PA +
+       MI.2.2 * HBW_PA +  MI.2.2.T * HBW_PA +
+       MI.3.2 * HBO_PA +  MI.3.2.T * HBO_PA +
+       MI.4.2 * HBSC_PA +  MI.4.2.T * HBSC_PA
        
 MW[3] = MW[2]/2 ; shareride vehicle trips
 
