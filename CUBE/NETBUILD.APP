@@ -1,5 +1,6 @@
 &PROJFIL
-EXP0 2 1Lookup File 1  {CATALOG_DIR}\Params\AT.dbf                                 
+EXP0 0 1Link/Net. 1    {SCENARIO_DIR}\Input\highway.net                            
+EXP0 1 1Node File 2    {SCENARIO_DIR}\Input\se.dbf                                 
 EXP0 2 0Record File 1  {SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF       
 EXP2 1 0Network File   {SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET      
 11
@@ -10,7 +11,7 @@ NB
 00
 Build Network from Minutp to Cube.  Add/Manipulate Link Variables.
 
-Fri Mar 25 13:40:25 2016
+Sat Mar 26 16:53:43 2016
 
 C:\projects\roanoke\Cube\RVARC_TDM.app
 C:\projects\roanoke\Cube\NETBUILD.APP
@@ -38,8 +39,8 @@ Area Type
 999999
 960
 -592
-1237
--731
+1174
+-712
 0
 0
 0
@@ -54,13 +55,13 @@ Starting Network
 0001
       
 999999
-549
--547
-945
--619
+643
+-553
+949
+-615
 -1
--1
-0
+-9
+1
 #INFIL1
 Node File 2
 Land Use Data
@@ -72,28 +73,10 @@ Land Use Data
 0112
       
 999999
-549
--624
-945
--696
--1
--1
-0
-#INFIL2
-Lookup File 1
-Area Type Crossclassification
-0
-0
-*
-{CATALOG_DIR}\Params\AT.dbf
-1
-0221
-      
-999999
-549
--701
-945
--773
+643
+-620
+949
+-682
 -1
 -9
 1
@@ -108,10 +91,10 @@ Network with Area type
 0501
       
 999999
-1259
--547
-1648
--619
+1190
+-553
+1491
+-615
 0
 #OUTFIL1
 Link File
@@ -124,10 +107,10 @@ Link File
 0502
       
 999999
-1259
--624
-1648
--696
+1190
+-620
+1491
+-682
 0
 #OUTFIL2
 Record File 1
@@ -140,10 +123,10 @@ Zones with Area type
 0621
       
 999999
-1259
--701
-1648
--773
+1190
+-687
+1491
+-749
 1
 #PROGRAM1
 2
@@ -161,8 +144,8 @@ Calculate link capacities and freeflow speeds (in R).
 999999
 988
 -1128
-1233
--1209
+1177
+-1198
 0
 0
 0
@@ -177,10 +160,10 @@ C:\projects\roanoke\Cube\HCMR_Capacities.s
 PIL
 ISCR1 
 999999
-577
+671
 -1130
-973
--1202
+977
+-1192
 -1
 -1
 0
@@ -378,8 +361,8 @@ Attach capacity and FFS to network
 999999
 2512
 -648
-2784
--729
+2722
+-718
 0
 0
 0
@@ -394,9 +377,9 @@ C:\projects\roanoke\Cube\FreeFlowSpeeds.s
 NET
 ISCR1 
 999999
-2101
--574
-2497
+2195
+-584
+2501
 -646
 -1
 -1
@@ -412,10 +395,10 @@ Link/Net. 1
 LNK
 LINKI1
 999999
-2101
+2195
 -651
-2497
--723
+2501
+-713
 0
 0
 0
@@ -430,10 +413,10 @@ Link/Net. 2
 LNK
 LINKI2
 999999
-2101
--728
-2497
--800
+2195
+-718
+2501
+-780
 -1
 -1
 0
@@ -1508,10 +1491,10 @@ NET
 NET
 NETO  
 999999
-2806
+2738
 -650
-3195
--722
+3039
+-712
 1
 #OUTFIL2
 Link File
