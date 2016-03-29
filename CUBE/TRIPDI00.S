@@ -1,17 +1,36 @@
-; Script for program DISTRIBUTION in file "C:\Models\roanoke\Cube\TripDistribution_GravityModel_HBSC.s"
+; Script for program MATRIX in file "C:\projects\ROANOKE\CUBE\TDMAT00C.S"
+; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
+RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\TDMAT00C.PRN" MSG='HBSC FF'
+    zones = 1
+    alpha = 1000000
+    Beta = 0.36
+    gamma = -0.65
+
+FILEO PRINTO[1] = "{SCENARIO_DIR}\Output\HBSC_FFFile.CSV",
+ APPEND=F
+    PRINT CSV=T, LIST=';Friction Factors', PRINTO=1, rewind=T
+    
+    LOOP CT= 1,100,1     ; Creating FFs for use in distribution
+      FF=alpha*(CT^Beta)*exp(gamma*CT)
+      PRINT CSV=T, FORM=10.5, LIST=CT,FF, PRINTO=1
+    ENDLOOP
+ENDRUN
+
+
+; Script for program DISTRIBUTION in file "C:\projects\roanoke\Cube\TripDistribution_GravityModel_HBSC.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=DISTRIBUTION PRNFILE="{SCENARIO_DIR}\Output\Logs\HBSC_distribution.PRN" MSG='Gravity Model - HBSC'
 FILEI MATI[1] = "{SCENARIO_DIR}\Output\OP_Hwyskim.mat"
 FILEI ZDATI[2] = "{SCENARIO_DIR}\OUTPUT\se_classified_{year}{Alternative}.dbf"
 FILEI ZDATI[1] = "{SCENARIO_DIR}\OUTPUT\HH_PROD.DBF"
-FILEI LOOKUPI[1] = "{CATALOG_DIR}\Params\FF.DBF"
+FILEI LOOKUPI[1] = "{SCENARIO_DIR}\Output\HBSC_FFFile.CSV"
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\Person_HBSC.MAT",
  MO=1,NAME=HBSC
 
   LOOKUP,
    LOOKUPI=1,
    INTERPOLATE=Y, NAME=FF,
-    LOOKUP[1]=TI,RESULT=HBSC
+    LOOKUP[1]=1,RESULT=2
 
   ;   output distributed trips by purpose
   PARAMETERS
@@ -36,9 +55,9 @@ FILEO MATO[1] = "{SCENARIO_DIR}\Output\Person_HBSC.MAT",
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\TripDistribution_D2DFlowsl_HBSC.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\TripDistribution_D2DFlowsl_HBSC.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=MATRIX PRNFILE="C:\Models\ROANOKE\CUBE\TDMAT00A.PRN" MSG='District - to - District Flows'
+RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\HBSC_D2D_Flwos.PRN" MSG='HBSC District - to - District Flows'
 FILEI MATI[1] = "{SCENARIO_DIR}\Output\Person_HBSC.MAT"
 FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\DEST_D2D_HBSC.MAT",
  MO = 1, NAME = HBSC
@@ -49,9 +68,9 @@ zones = 12, MISSINGZI=M, MISSINGZO=M
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\TripDistribution_remove_SchoolBus.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\TripDistribution_remove_SchoolBus.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=MATRIX PRNFILE="C:\Models\ROANOKE\CUBE\TDMAT00B.PRN" MSG='HBSC - no sch bus trips'
+RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\HBSC_noSchoolTrips.PRN" MSG='HBSC - no sch bus trips'
 FILEI MATI[1] = "{SCENARIO_DIR}\Output\Person_HBSC.MAT"
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\Dest_HBSC.MAT",
  MO = 1, NAME = HBSC
@@ -62,12 +81,12 @@ ENDRUN
 
 
 ; PILOT Script
-*COPY {SCENARIO_DIR}\INPUT\HBW_shadowPrice.dbf {SCENARIO_DIR}\OUTPUT\HBW_shadowPrice.dbf
+*COPY {CATALOG_DIR}\PARAMS\HBW_shadowPrice.dbf {SCENARIO_DIR}\OUTPUT\HBW_shadowPrice.dbf
 ; End of PILOT Script
 
 LOOP Iteration = 1, 10, 1
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\DC_HBW.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_HBW.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS0\DC_HBW.PRN" MSG='HBW Apply Destination Choice Model'
 FILEI ZDATI[3] = "{SCENARIO_DIR}\OUTPUT\HBW_ShadowPrice.DBF"
@@ -212,7 +231,7 @@ FILEO PRINTO[3] = "{SCENARIO_DIR}\OUTPUT\HBW_Zonal_Trips.csv"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\DC_HBW_ShadowPrice.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_HBW_ShadowPrice.s"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX MSG='Shadow Price'
@@ -305,7 +324,7 @@ PRINT LIST="Trip Distribution Loop Number = 4 of 4 NHB ", printo=0
 ENDIF
 ; End of PILOT Script
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\DC_nonWork.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_nonWork.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\tripDist_@PURP@.PRN" MSG='Apply Destination Choice Model'
 FILEI ZDATI[3] = "{SCENARIO_DIR}\Output\NHBNR_PA_{year}.DBF"
@@ -446,7 +465,7 @@ FILEO PRINTO[3] = "{SCENARIO_DIR}\OUTPUT\@PURP@@PERIOD@_Zonal_Trips.csv"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\DC_nonWork_TLFD.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_nonWork_TLFD.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\non-work_tlfd.PRN" MSG='Non-Work Trip Length Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\@PURP@_TDLF.dbf",
@@ -483,7 +502,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\@PURP@_TDLF.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\DC_nonWork_TLFD_Time.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_nonWork_TLFD_Time.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\non-work_ttfd.PRN" MSG='Non-Work Trip Time Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\@PURP@_time_TDLF.dbf",
@@ -519,7 +538,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\@PURP@_time_TDLF.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\DC_nonWork_D2DFlow.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_nonWork_D2DFlow.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\non-work.d2d_flowsPRN" MSG='District - to - District Flows'
 FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\Dest_@PURP@.MAT"
@@ -534,14 +553,14 @@ ENDRUN
 
 ENDLOOP
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\DC_work_TLFD.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_work_TLFD.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd.PRN" MSG='Work Trip Length Frequency'
+RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd_msg.PRN" MSG='Work Trip Length Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\HBW_TDLF.dbf",
 FIELDS= HIGH,MID,LOW,TRIPS(16.8)
 FILEI MATI[2] = "{SCENARIO_DIR}\OUTPUT\pk_Hwyskim.MAT"
 FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\Dest_HBW.MAT"
-FILEO PRINTO[1] = "C:\Models\ROANOKE\CUBE\DCMODEL\TDMAT00P.PRN"
+FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd.PRN"
 
              MW[1]=MI.1.HBW
              MW[2]=MI.2.Distance
@@ -571,14 +590,14 @@ FILEO PRINTO[1] = "C:\Models\ROANOKE\CUBE\DCMODEL\TDMAT00P.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\DC_work_TLFD_Time.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_work_TLFD_Time.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd.PRN" MSG='Work Trip Time Frequency'
+RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd_msg.PRN" MSG='Work Trip Time Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\HBW_TravelTime_TDLF.dbf",
 FIELDS= HIGH,MID,LOW,TRIPS(16.8)
 FILEI MATI[2] = "{SCENARIO_DIR}\OUTPUT\pk_Hwyskim.MAT"
 FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\Dest_HBW.MAT"
-FILEO PRINTO[1] = "C:\Models\ROANOKE\CUBE\DCMODEL\TDMAT00R.PRN"
+FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd.PRN"
 
              MW[1]=MI.1.HBW
              MW[2]=MI.2.Time
@@ -606,7 +625,7 @@ FILEO PRINTO[1] = "C:\Models\ROANOKE\CUBE\DCMODEL\TDMAT00R.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\Models\roanoke\Cube\DC_work_D2DFlow.s"
+; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_work_D2DFlow.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_d2d_flows.PRN" MSG='HBW District - to - District Flows'
 FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\Dest_HBW.MAT"

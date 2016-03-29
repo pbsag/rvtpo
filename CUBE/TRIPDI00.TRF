@@ -1,39 +1,51 @@
 #TripsRun File
 10
 3
-C:\MODELS\ROANOKE\CUBE\TRIPDI00.S
+C:\PROJECTS\ROANOKE\CUBE\TRIPDI00.S
 58,80,
 Trip Distribution,00
-C:\Models\Roanoke\Cube\Roanoke Area MPO Model.PRN
+C:\projects\Roanoke\Cube\Roanoke Area MPO Model.PRN
 2
 #PROJECTSTRUCT
-1:Roanoke Area MPO Model,00,C:\Models\Roanoke\Cube\RVARC_TDM.app
-2:Network,00,C:\Models\roanoke\Cube\NETBUILD.APP
-3:Area Type,00,C:\Models\roanoke\Cube\NETWOR00.APP
-2:Highway Paths,00,C:\Models\roanoke\Cube\PATHBUILD.APP
-2:Trip Generation,00,C:\Models\roanoke\Cube\DEMAND.APP
-2:Transit Network,00,C:\Models\ROANOKE\CUBE\TRANSIT.APP
-2:External Model,00,C:\Models\ROANOKE\CUBE\EXTERN00.APP
-2:Commercial Vehicle,00,C:\Models\ROANOKE\CUBE\COMMER00.APP
-2:MC Logsums,00,C:\Models\ROANOKE\CUBE\MCLOGSUM.APP
-2:Trip Distribution,00,C:\Models\roanoke\Cube\TRIPDI00.APP
-3:Destination Choice,00,C:\Models\ROANOKE\CUBE\TRIPDIST00.APP
-2:modechoice,00,C:\Models\ROANOKE\CUBE\MODECH00.APP
-2:PA to OD,00,C:\Models\roanoke\Cube\TRIPS.APP
-2:Highway Assignment,00,C:\Models\roanoke\Cube\ASSIGNMENT.APP
-2:Congested Skims,00,C:\Models\roanoke\Cube\HIGHWA_Congested.app
-2:TrnAssignment,00,C:\Models\ROANOKE\CUBE\TRNASS00.APP
+1:Roanoke Area MPO Model,00,C:\projects\Roanoke\Cube\RVARC_TDM.app
+2:Network,00,C:\projects\roanoke\Cube\NETBUILD.APP
+3:Area Type,00,C:\projects\roanoke\Cube\NETWOR00.APP
+2:Highway Paths,00,C:\projects\roanoke\Cube\PATHBUILD.APP
+2:Trip Generation,00,C:\projects\roanoke\Cube\DEMAND.APP
+2:Transit Network,00,C:\projects\ROANOKE\CUBE\TRANSIT.APP
+2:External Model,00,C:\projects\ROANOKE\CUBE\EXTERN00.APP
+2:Commercial Vehicle,00,C:\projects\ROANOKE\CUBE\COMMER00.APP
+2:MC Logsums,00,C:\projects\ROANOKE\CUBE\MCLOGSUM.APP
+2:Trip Distribution,00,C:\projects\roanoke\Cube\TRIPDI00.APP
+3:Destination Choice,00,C:\projects\ROANOKE\CUBE\TRIPDIST00.APP
+2:modechoice,00,C:\projects\ROANOKE\CUBE\MODECH00.APP
+2:PA to OD,00,C:\projects\roanoke\Cube\TRIPS.APP
+2:Highway Assignment,00,C:\projects\roanoke\Cube\ASSIGNMENT.APP
+2:Congested Skims,00,C:\projects\roanoke\Cube\HIGHWA_Congested.app
+2:TrnAssignment,00,C:\projects\ROANOKE\CUBE\TRNASS00.APP
 #END
 1
-C:\Users\SARVEP~1\AppData\Local\Temp\Cit4A84.tmp
+C:\Users\SARVEP~1\AppData\Local\Temp\Cit92BE.tmp
 1
 Base
-#GROUP=Trip Distribution, 00:5:C:\Models\roanoke\Cube\TRIPDI00.APP
+#GROUP=Trip Distribution, 00:5:C:\projects\roanoke\Cube\TRIPDI00.APP
+#PROGRAM
+#PROGNAME=MATRIX<0:13;2
+#EXEC=1
+#INCLUSTER=0
+#PROGARGS=C:\projects\ROANOKE\CUBE\TDMAT00C.S
+
+1
+#END
+#OUTPUT
+{SCENARIO_DIR}\OUTPUT\LOGS\TDMAT00C.PRN
+{SCENARIO_DIR}\Output\HBSC_FFFile.CSV
+#END
 #PROGRAM
 #PROGNAME=DISTRIBUTION<0:13;2
 #EXEC=2
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\TripDistribution_GravityModel_HBSC.s
+#PROGARGS=C:\projects\roanoke\Cube\TripDistribution_GravityModel_HBSC.s
 
 1
 #END
@@ -45,32 +57,32 @@ Base
 #PROGNAME=MATRIX<0:13;2
 #EXEC=3
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\TripDistribution_D2DFlowsl_HBSC.s
+#PROGARGS=C:\projects\roanoke\Cube\TripDistribution_D2DFlowsl_HBSC.s
 
 1
 #END
 #OUTPUT
-C:\Models\ROANOKE\CUBE\TDMAT00A.PRN
+{SCENARIO_DIR}\OUTPUT\LOGS\HBSC_D2D_Flwos.PRN
 {SCENARIO_DIR}\OUTPUT\DEST_D2D_HBSC.MAT
 #END
 #PROGRAM
 #PROGNAME=MATRIX<0:13;2
 #EXEC=4
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\TripDistribution_remove_SchoolBus.s
+#PROGARGS=C:\projects\roanoke\Cube\TripDistribution_remove_SchoolBus.s
 
 1
 #END
 #OUTPUT
-C:\Models\ROANOKE\CUBE\TDMAT00B.PRN
+{SCENARIO_DIR}\OUTPUT\LOGS\HBSC_noSchoolTrips.PRN
 {SCENARIO_DIR}\Output\Dest_HBSC.MAT
 #END
-#GROUP=Trip Distribution, 00:5:C:\Models\roanoke\Cube\TRIPDI00.APP
+#GROUP=Trip Distribution, 00:5:C:\projects\roanoke\Cube\TRIPDI00.APP
 #PROGRAM
 #PROGNAME=StartOfGroup<0:7;0
 #EXEC=5
 #INCLUSTER=0
-#GROUP=Destination Choice, 00:14:C:\Models\ROANOKE\CUBE\TRIPDIST00.APP
+#GROUP=Destination Choice, 00:14:C:\projects\ROANOKE\CUBE\TRIPDIST00.APP
 #PROGRAM
 #PROGNAME=Loop<0:5;0
 #EXEC=2
@@ -83,7 +95,7 @@ ShadowPrice
 #PROGNAME=MATRIX<0:13;5
 #EXEC=3
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\DC_HBW.s
+#PROGARGS=C:\projects\roanoke\Cube\DC_HBW.s
 
 1
 #END
@@ -98,7 +110,7 @@ ShadowPrice
 #PROGNAME=MATRIX<0:13;1
 #EXEC=4
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\DC_HBW_ShadowPrice.s
+#PROGARGS=C:\projects\roanoke\Cube\DC_HBW_ShadowPrice.s
 
 0
 #END
@@ -117,7 +129,7 @@ Trip Purpose Loop
 #PROGNAME=MATRIX<0:13;2
 #EXEC=8
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\DC_nonWork.s
+#PROGARGS=C:\projects\roanoke\Cube\DC_nonWork.s
 
 1
 #END
@@ -129,7 +141,7 @@ Trip Purpose Loop
 #PROGNAME=MATRIX<0:13;1
 #EXEC=9
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\DC_nonWork_TLFD.s
+#PROGARGS=C:\projects\roanoke\Cube\DC_nonWork_TLFD.s
 
 1
 #END
@@ -140,7 +152,7 @@ Trip Purpose Loop
 #PROGNAME=MATRIX<0:13;1
 #EXEC=10
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\DC_nonWork_TLFD_Time.s
+#PROGARGS=C:\projects\roanoke\Cube\DC_nonWork_TLFD_Time.s
 
 1
 #END
@@ -151,7 +163,7 @@ Trip Purpose Loop
 #PROGNAME=MATRIX<0:13;1
 #EXEC=11
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\DC_nonWork_D2DFlow.s
+#PROGARGS=C:\projects\roanoke\Cube\DC_nonWork_D2DFlow.s
 
 1
 #END
@@ -162,33 +174,33 @@ Trip Purpose Loop
 #PROGNAME=MATRIX<0:13;3
 #EXEC=12
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\DC_work_TLFD.s
+#PROGARGS=C:\projects\roanoke\Cube\DC_work_TLFD.s
 
 1
 #END
 #OUTPUT
-{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd.PRN
+{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd_msg.PRN
 {SCENARIO_DIR}\Output\HBW_TDLF.dbf
-C:\Models\ROANOKE\CUBE\DCMODEL\TDMAT00P.PRN
+{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd.PRN
 #END
 #PROGRAM
 #PROGNAME=MATRIX<0:13;3
 #EXEC=13
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\DC_work_TLFD_Time.s
+#PROGARGS=C:\projects\roanoke\Cube\DC_work_TLFD_Time.s
 
 1
 #END
 #OUTPUT
-{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd.PRN
+{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd_msg.PRN
 {SCENARIO_DIR}\Output\HBW_TravelTime_TDLF.dbf
-C:\Models\ROANOKE\CUBE\DCMODEL\TDMAT00R.PRN
+{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd.PRN
 #END
 #PROGRAM
 #PROGNAME=MATRIX<0:13;2
 #EXEC=14
 #INCLUSTER=0
-#PROGARGS=C:\Models\roanoke\Cube\DC_work_D2DFlow.s
+#PROGARGS=C:\projects\roanoke\Cube\DC_work_D2DFlow.s
 
 1
 #END
@@ -196,7 +208,7 @@ C:\Models\ROANOKE\CUBE\DCMODEL\TDMAT00R.PRN
 {SCENARIO_DIR}\OUTPUT\LOGS\work_d2d_flows.PRN
 {SCENARIO_DIR}\OUTPUT\DEST_D2D_HBW.MAT
 #END
-#GROUP=Trip Distribution, 00:5:C:\Models\roanoke\Cube\TRIPDI00.APP
+#GROUP=Trip Distribution, 00:5:C:\projects\roanoke\Cube\TRIPDI00.APP
 #PROGRAM
 #PROGNAME=EndOfGroup<0:8;0
 #EXEC=5

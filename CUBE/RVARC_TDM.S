@@ -338,7 +338,7 @@ ENDRUN
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_6.PRN" MSG='INSERT LINK AREA TYPE ON THE NETWORK'
 FILEO LINKO = "{SCENARIO_DIR}\Output\link_atype{Year}{Alternative}.DBF",
  FORMAT = DBF, 
-  INCLUDE = A, B, DISTANCE, FACTYPE, LANES, MEDIAN, TERRAIN, POST_SPD, ATYPE
+  INCLUDE = A, B, DISTANCE, FACTYPE, LANES, POST_SPD, ATYPE
 FILEO NETO = "{SCENARIO_DIR}\Output\ATYPE NETWORK{Year}{Alternative}.NET"
 FILEI LOOKUPI[1] = "{SCENARIO_DIR}\Output\AREA TYPE.PRN"
 FILEI LINKI[1] = "{SCENARIO_DIR}\Output\PROCESSED.NET"
@@ -2876,18 +2876,18 @@ NHB_AP  = TOD_FACS(1,8)
 ;  CONVERT P/A MATRIX TO O/D
 
 ; Drive Alone trips
-MW[1]= MI.1.1 * NHB_PA +  MI.1.1.T * NHB_PA +
-       MI.2.1 * HBW_PA +  MI.2.1.T * HBW_PA +
-       MI.3.1 * HBO_PA +  MI.3.1.T * HBO_PA +
-       MI.4.1 * HBSC_PA +  MI.4.1.T * HBSC_PA
+MW[1]= MI.1.1 * NHB_PA +  MI.1.1.T * NHB_AP +
+       MI.2.1 * HBW_PA +  MI.2.1.T * HBW_AP +
+       MI.3.1 * HBO_PA +  MI.3.1.T * HBO_AP +
+       MI.4.1 * HBSC_PA +  MI.4.1.T * HBSC_AP
 
 ; Share ride trips
-MW[2]= MI.1.2 * NHB_PA +  MI.1.2.T * NHB_PA +
-       MI.2.2 * HBW_PA +  MI.2.2.T * HBW_PA +
-       MI.3.2 * HBO_PA +  MI.3.2.T * HBO_PA +
-       MI.4.2 * HBSC_PA +  MI.4.2.T * HBSC_PA
+MW[2]= MI.1.2 * NHB_PA +  MI.1.2.T * NHB_AP +
+       MI.2.2 * HBW_PA +  MI.2.2.T * HBW_AP +
+       MI.3.2 * HBO_PA +  MI.3.2.T * HBO_AP +
+       MI.4.2 * HBSC_PA +  MI.4.2.T * HBSC_AP
        
-MW[3] = MW[2]/2 ; shareride vehicle trips
+MW[3] = MW[2]/2.19 ; shareride vehicle trips
 
 MW[4] = MI.5.1 ; IEEI trips
 

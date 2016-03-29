@@ -39,7 +39,7 @@ MW[2]= MI.1.2 * NHB_PA +  MI.1.2.T * NHB_AP +
        MI.3.2 * HBO_PA +  MI.3.2.T * HBO_AP +
        MI.4.2 * HBSC_PA +  MI.4.2.T * HBSC_AP
        
-MW[3] = MW[2]/2 ; shareride vehicle trips
+MW[3] = MW[2]/2.19 ; shareride vehicle trips
 
 MW[4] = MI.5.1 ; IEEI trips
 
