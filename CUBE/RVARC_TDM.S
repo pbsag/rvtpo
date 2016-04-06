@@ -1539,11 +1539,11 @@ ENDRUN
 ; Script for program MATRIX in file "C:\projects\roanoke\Cube\CV_TimeOfDay.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX
-FILEO MATO[4] = "{SCENARIO_DIR}\Output\CV_2012_NT.MAT",
+FILEO MATO[4] = "{SCENARIO_DIR}\Output\CV_{year}_NT.MAT",
  MO=41-43, NAME=CV_NT, SUT_NT, MUT_NT, DEC=D
-FILEO MATO[3] = "{SCENARIO_DIR}\Output\CV_2012_PM.MAT",
+FILEO MATO[3] = "{SCENARIO_DIR}\Output\CV_{year}_PM.MAT",
  MO=31-33, NAME=CV_PM, SUT_PM, MUT_PM, DEC=D
-FILEO MATO[2] = "{SCENARIO_DIR}\Output\CV_2012_MD.MAT",
+FILEO MATO[2] = "{SCENARIO_DIR}\Output\CV_{year}_MD.MAT",
  MO=21-23, NAME=CV_MD, SUT_MD, MUT_MD, DEC=D
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\CV_{Year}_AM.MAT",
  MO=11-13, NAME=CV_AM, SUT_AM, MUT_AM, DEC=D

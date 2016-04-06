@@ -1,13 +1,13 @@
 #TripsRun File
 10
 3
-C:\PROJECTS\ROANOKE\CUBE\RVARC_TDM.S
+C:\projects\roanoke\Cube\RVARC_TDM.S
 58,80,
 Roanoke Area MPO Model,00
-C:\projects\Roanoke\Cube\Roanoke Area MPO Model.PRN
+C:\projects\roanoke\Cube\Roanoke Area MPO Model.PRN
 2
 #PROJECTSTRUCT
-1:Roanoke Area MPO Model,00,C:\projects\Roanoke\Cube\RVARC_TDM.app
+1:Roanoke Area MPO Model,00,C:\projects\roanoke\Cube\RVARC_TDM.app
 2:Network,00,C:\projects\roanoke\Cube\NETBUILD.APP
 3:Area Type,00,C:\projects\roanoke\Cube\NETWOR00.APP
 2:Highway Paths,00,C:\projects\roanoke\Cube\PATHBUILD.APP
@@ -25,9 +25,9 @@ C:\projects\Roanoke\Cube\Roanoke Area MPO Model.PRN
 2:TrnAssignment,00,C:\projects\ROANOKE\CUBE\TRNASS00.APP
 #END
 1
-C:\Users\SARVEP~1\AppData\Local\Temp\Cit18D5.tmp
+C:\Users\Greg\AppData\Local\Temp\Cit7654.tmp
 1
-Base
+Base.EC_2040
 #GROUP=Roanoke Area MPO Model, 00:18:C:\projects\roanoke\Cube\RVARC_TDM.app
 #GROUP=Roanoke Area MPO Model, 00:18:C:\projects\roanoke\Cube\RVARC_TDM.app
 #PROGRAM
@@ -424,9 +424,9 @@ Base
 #END
 #OUTPUT
 {SCENARIO_DIR}\Output\CV_{Year}_AM.MAT
-{SCENARIO_DIR}\Output\CV_2012_MD.MAT
-{SCENARIO_DIR}\Output\CV_2012_PM.MAT
-{SCENARIO_DIR}\Output\CV_2012_NT.MAT
+{SCENARIO_DIR}\Output\CV_{year}_MD.MAT
+{SCENARIO_DIR}\Output\CV_{year}_PM.MAT
+{SCENARIO_DIR}\Output\CV_{year}_NT.MAT
 #END
 #PROGRAM
 #PROGNAME=MATRIX<0:13;5
