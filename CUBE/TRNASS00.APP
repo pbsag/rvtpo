@@ -3,11 +3,13 @@ EXP0 1 1Network File   {SCENARIO_DIR}\Output\PK_TransitWalk.NET
 EXP0 441Route File 1   {SCENARIO_DIR}\Output\PK_TPATHBus.RTE                       
 EXP0 451Route File 2   {SCENARIO_DIR}\Output\PK_TPATHPrem.RTE                      
 EXP0 541Matrix File 1  {SCENARIO_DIR}\Output\PK_Transit.mat                        
+EXP0 1 0Network File   {SCENARIO_DIR}\Output\Trn_PK.net                            
 EXP0 2 0Links File 1   {SCENARIO_DIR}\Output\Trn_PK.dbf                            
 EXP1 1 1Network File   {SCENARIO_DIR}\Output\OP_TransitWalk.NET                    
 EXP1 441Route File 1   {SCENARIO_DIR}\Output\OP_TPATHBus.RTE                       
 EXP1 451Route File 2   {SCENARIO_DIR}\Output\OP_TPATHPrem.RTE                      
 EXP1 541Matrix File 1  {SCENARIO_DIR}\Output\OP_Transit.mat                        
+EXP1 1 0Network File   {SCENARIO_DIR}\Output\Trn_OP.net                            
 EXP1 2 0Links File 1   {SCENARIO_DIR}\Output\Trn_OP.dbf                            
 11
 0
@@ -17,7 +19,7 @@ TA
 00
 
 
-Fri Mar 18 13:38:51 2016
+Wed Apr 06 07:48:14 2016
 
 C:\projects\roanoke\Cube\RVARC_TDM.app
 C:\projects\ROANOKE\CUBE\TRNASS00.APP
@@ -42,8 +44,8 @@ Transit Assignment
 999999
 960
 -733
-1286
--874
+1212
+-855
 0
 0
 0
@@ -58,10 +60,10 @@ C:\projects\roanoke\Cube\Transit_Assignment_PK.S
 PTR
 ISCR1 
 999999
-549
--613
-945
--685
+643
+-629
+949
+-691
 -1
 -1
 0
@@ -76,10 +78,10 @@ NET
 NET
 NETI  
 999999
-549
--690
-945
--762
+643
+-696
+949
+-758
 -1
 -9
 1
@@ -850,10 +852,10 @@ RTE
 RTE
 ROUTEI1
 999999
-549
--767
-945
--839
+643
+-763
+949
+-825
 -1
 -9
 1
@@ -868,10 +870,10 @@ RTE
 RTE
 ROUTEI2
 999999
-549
--844
-945
--916
+643
+-830
+949
+-892
 -1
 -9
 1
@@ -1030,10 +1032,10 @@ MAT
 MAT
 MATI1 
 999999
-549
--921
-945
--993
+643
+-897
+949
+-959
 -1
 -9
 1
@@ -1354,10 +1356,10 @@ PRN
 PTR
 OPRN  
 999999
-1308
--651
-1697
--723
+1228
+-662
+1529
+-724
 0
 #OUTFIL1
 Network File
@@ -1370,11 +1372,11 @@ NET
 PTR
 NETO  
 999999
-1308
--728
-1697
--800
-0
+1228
+-729
+1529
+-791
+1
 #OUTFIL2
 Links File 1
 
@@ -1386,10 +1388,10 @@ DBF
 PTR
 LINKO1
 999999
-1308
--805
-1697
--877
+1228
+-796
+1529
+-858
 1
 #OUTFIL3
 Links File 2
@@ -1546,10 +1548,10 @@ PRN
 PTR
 REPORTO
 999999
-1308
--882
-1697
--954
+1228
+-863
+1529
+-925
 0
 #OUTFIL13
 Route File 1
@@ -2527,8 +2529,8 @@ Transit Assignment
 999999
 2540
 -733
-2866
--874
+2792
+-855
 0
 0
 0
@@ -2543,10 +2545,10 @@ C:\projects\roanoke\Cube\Transit_Assignment_OP.S
 PTR
 ISCR1 
 999999
-2129
--613
-2525
--685
+2223
+-629
+2529
+-691
 -1
 -1
 0
@@ -2561,10 +2563,10 @@ NET
 NET
 NETI  
 999999
-2129
--690
-2525
--762
+2223
+-696
+2529
+-758
 -1
 -9
 1
@@ -3335,10 +3337,10 @@ RTE
 RTE
 ROUTEI1
 999999
-2129
--767
-2525
--839
+2223
+-763
+2529
+-825
 -1
 -9
 1
@@ -3353,10 +3355,10 @@ RTE
 RTE
 ROUTEI2
 999999
-2129
--844
-2525
--916
+2223
+-830
+2529
+-892
 -1
 -9
 1
@@ -3515,10 +3517,10 @@ MAT
 MAT
 MATI1 
 999999
-2129
--921
-2525
--993
+2223
+-897
+2529
+-959
 -1
 -9
 1
@@ -3839,10 +3841,10 @@ PRN
 PTR
 OPRN  
 999999
-2888
--651
-3277
--723
+2808
+-662
+3109
+-724
 0
 #OUTFIL1
 Network File
@@ -3855,11 +3857,11 @@ NET
 PTR
 NETO  
 999999
-2888
--728
-3277
--800
-0
+2808
+-729
+3109
+-791
+1
 #OUTFIL2
 Links File 1
 
@@ -3871,10 +3873,10 @@ DBF
 PTR
 LINKO1
 999999
-2888
--805
-3277
--877
+2808
+-796
+3109
+-858
 1
 #OUTFIL3
 Links File 2
@@ -4031,10 +4033,10 @@ PRN
 PTR
 REPORTO
 999999
-2888
--882
-3277
--954
+2808
+-863
+3109
+-925
 0
 #OUTFIL13
 Route File 1
