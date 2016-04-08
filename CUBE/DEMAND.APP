@@ -9,10 +9,10 @@ DM
 00
 Run Trip Generation
 
-Sat Mar 26 16:57:12 2016
+Fri Apr 08 15:11:44 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
-C:\projects\roanoke\Cube\DEMAND.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DEMAND.APP
 VOYAGER
 
 
@@ -48,7 +48,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HH_ClassificationModel.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HH_ClassificationModel.S
 1
 PIL
 ISCR1 
@@ -265,7 +265,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\TripProduction.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TripProduction.S
 1
 GEN
 ISCR1 

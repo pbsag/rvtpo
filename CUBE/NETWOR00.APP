@@ -12,10 +12,10 @@ Area Type
 00
 
 
-Sat Mar 26 16:53:43 2016
+Fri Apr 08 15:11:44 2016
 
-C:\projects\roanoke\Cube\NETBUILD.APP
-C:\projects\roanoke\Cube\NETWOR00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\NETBUILD.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\NETWOR00.APP
 VOYAGER
 
 
@@ -54,7 +54,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_1.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_1.S
 1
 NET
 ISCR1 
@@ -1537,7 +1537,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_4.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_4.s
 1
 NET
 ISCR1 
@@ -3020,7 +3020,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_5.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_5.s
 1
 NET
 ISCR1 
@@ -4503,7 +4503,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_2.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_2.s
 1
 MAT
 ISCR1 
@@ -6376,7 +6376,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_3.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_3.s
 1
 NET
 ISCR1 
@@ -7859,7 +7859,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_6.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_6.s
 1
 NET
 ISCR1 
@@ -9342,7 +9342,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_7.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_7.s
 1
 MAT
 ISCR1 

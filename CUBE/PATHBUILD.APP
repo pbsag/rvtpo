@@ -10,10 +10,10 @@ PB
 00
 Build Initial Impedance Table
 
-Sat Mar 26 16:54:12 2016
+Fri Apr 08 15:11:44 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
-C:\projects\roanoke\Cube\PATHBUILD.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\PATHBUILD.APP
 VOYAGER
 
 
@@ -49,7 +49,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HwySkims_FreeFlow.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HwySkims_FreeFlow.S
 1
 HWY
 ISCR1 
@@ -2040,7 +2040,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HwySkims_FreeFlow_PK_OP.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HwySkims_FreeFlow_PK_OP.S
 1
 PIL
 ISCR1 

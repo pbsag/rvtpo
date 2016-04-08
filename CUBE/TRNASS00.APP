@@ -19,10 +19,10 @@ TA
 00
 
 
-Wed Apr 06 07:48:14 2016
+Fri Apr 08 15:11:48 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
-C:\projects\ROANOKE\CUBE\TRNASS00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\TRNASS00.APP
 VOYAGER
 
 
@@ -55,7 +55,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\Transit_Assignment_PK.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Transit_Assignment_PK.S
 1
 PTR
 ISCR1 
@@ -2540,7 +2540,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\Transit_Assignment_OP.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Transit_Assignment_OP.S
 1
 PTR
 ISCR1 

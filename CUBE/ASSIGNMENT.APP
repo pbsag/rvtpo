@@ -14,10 +14,10 @@ AS
 00
 Assign trips to Network
 
-Wed Apr 06 07:59:34 2016
+Fri Apr 08 15:11:45 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
-C:\projects\roanoke\Cube\ASSIGNMENT.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\ASSIGNMENT.APP
 VOYAGER
 
 
@@ -59,7 +59,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HighwayAssign.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign.s
 1
 HWY
 ISCR1 
@@ -2050,7 +2050,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HighwayAssign_MergeNetworks.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign_MergeNetworks.s
 1
 NET
 ISCR1 
@@ -3713,7 +3713,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HighwayAssign_Pilot.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign_Pilot.s
 1
 PIL
 ISCR1 
@@ -3971,7 +3971,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HighwayAssign_Evaluate.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign_Evaluate.s
 1
 NET
 ISCR1 
@@ -5634,7 +5634,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HighwayAssign_Preload.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign_Preload.s
 1
 HWY
 ISCR1 
@@ -6804,7 +6804,7 @@ Print File
 0
 0
 PRN
-C:\projects\ROANOKE\CUBE\ASHWY00A.PRN
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\ASHWY00A.PRN
 0
 HWY
 OPRN  
