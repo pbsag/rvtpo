@@ -1,8 +1,6 @@
 &PROJFIL
-EXP0 1 1Link/Net. 1    {SCENARIO_DIR}\Input\highway_{year}.net                     
-EXP1 121Node File 2    {SCENARIO_DIR}\Input\se_{Year}.dbf                          
-EXP2 211Lookup File 1  {CATALOG_DIR}\Params\AT.dbf                                 
-EXP4 1 1Link/Net. 1    {SCENARIO_DIR}\Input\highway_{year}.net                     
+EXP0 1 1Link/Net. 1    {SCENARIO_DIR}\Input\highway.net                            
+EXP1 121Node File 2    {SCENARIO_DIR}\Input\se.dbf                                 
 EXP5 1 0Network File   {SCENARIO_DIR}\Output\ATYPE NETWORK{Year}{Alternative}.NET  
 EXP5 2 0Link File      {SCENARIO_DIR}\Output\link_atype{Year}{Alternative}.DBF     
 EXP6 210Record File 1  {SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF       
@@ -14,10 +12,10 @@ Area Type
 00
 
 
-Fri Mar 18 14:54:52 2016
+Fri Apr 08 15:11:44 2016
 
-C:\projects\roanoke\Cube\NETBUILD.APP
-C:\projects\roanoke\Cube\NETWOR00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\NETBUILD.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\NETWOR00.APP
 VOYAGER
 
 
@@ -45,8 +43,8 @@ OUTPUT LINK AND ZONE DATA
 999999
 818
 -1297
-1090
--1378
+1028
+-1367
 0
 0
 0
@@ -56,15 +54,15 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_1.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_1.S
 1
 NET
 ISCR1 
 999999
-407
--1261
-803
--1333
+501
+-1266
+807
+-1328
 -1
 -1
 0
@@ -74,15 +72,15 @@ Starting Network
 0
 0
 *
-{SCENARIO_DIR}\Input\highway_{year}.net
+{SCENARIO_DIR}\Input\highway.net
 0
 LNK
 LINKI1
 999999
-407
--1338
-803
--1410
+501
+-1333
+807
+-1395
 -1
 -9
 1
@@ -979,10 +977,10 @@ PRN
 NET
 OPRN  
 999999
-1112
--1185
-1501
--1257
+1044
+-1200
+1345
+-1262
 0
 #OUTFIL1
 Network File
@@ -1011,10 +1009,10 @@ DAT
 NET
 LINKO 
 999999
-1112
--1262
-1501
--1334
+1044
+-1267
+1345
+-1329
 0
 #OUTFIL3
 Node File
@@ -1027,10 +1025,10 @@ DAT
 NET
 NODEO 
 999999
-1112
--1339
-1501
--1411
+1044
+-1334
+1345
+-1396
 0
 #OUTFIL4
 Print Data 1
@@ -1043,10 +1041,10 @@ PRN
 NET
 PRINTO1
 999999
-1112
--1416
-1501
--1488
+1044
+-1401
+1345
+-1463
 0
 #OUTFIL5
 Print Data 2
@@ -1528,8 +1526,8 @@ ADD LAND USE DATA TO ZONES
 999999
 2230
 -1325
-2502
--1406
+2440
+-1395
 0
 0
 0
@@ -1539,14 +1537,14 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_4.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_4.s
 1
 NET
 ISCR1 
 999999
-1819
--1251
-2215
+1913
+-1261
+2219
 -1323
 -1
 -1
@@ -1562,10 +1560,10 @@ Closest Zone Network
 LNK
 LINKI1
 999999
-1819
+1913
 -1328
-2215
--1400
+2219
+-1390
 4
 1
 0
@@ -1755,15 +1753,15 @@ Land Use Data
 0
 0
 DAT
-{SCENARIO_DIR}\Input\se_{Year}.dbf
+{SCENARIO_DIR}\Input\se.dbf
 0
 NOD
 NODEI2
 999999
-1819
--1405
-2215
--1477
+1913
+-1395
+2219
+-1457
 -1
 -9
 1
@@ -2462,10 +2460,10 @@ PRN
 NET
 OPRN  
 999999
-2524
--1289
-2913
--1361
+2456
+-1294
+2757
+-1356
 0
 #OUTFIL1
 Network File
@@ -2478,10 +2476,10 @@ NET
 NET
 NETO  
 999999
-2524
--1366
-2913
--1438
+2456
+-1361
+2757
+-1423
 0
 #OUTFIL2
 Link File
@@ -3011,8 +3009,8 @@ DETERMINE AREA TYPE FROM LAND USE DENSITY AND PROXIMITY
 999999
 2230
 -1948
-2502
--2029
+2440
+-2018
 0
 0
 0
@@ -3022,14 +3020,14 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_5.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_5.s
 1
 NET
 ISCR1 
 999999
-1819
--1874
-2215
+1913
+-1884
+2219
 -1946
 -1
 -1
@@ -3045,10 +3043,10 @@ Zonal Data Network
 LNK
 LINKI1
 999999
-1819
+1913
 -1951
-2215
--2023
+2219
+-2013
 1
 1
 0
@@ -3405,13 +3403,13 @@ Area Type Crossclassification
 LOK
 LOOKUPI1
 999999
-1819
--2028
-2215
--2100
+1913
+-2018
+2219
+-2080
 -1
--9
-1
+-1
+0
 #INFIL22
 Lookup File 2
 Density Classification
@@ -3945,10 +3943,10 @@ PRN
 NET
 OPRN  
 999999
-2524
--1798
-2913
--1870
+2456
+-1818
+2757
+-1880
 0
 #OUTFIL1
 Network File
@@ -3961,9 +3959,9 @@ NET
 NET
 NETO  
 999999
-2524
--1875
-2913
+2456
+-1885
+2757
 -1947
 0
 #OUTFIL2
@@ -4009,10 +4007,10 @@ PRN
 NET
 PRINTO1
 999999
-2524
+2456
 -1952
-2913
--2024
+2757
+-2014
 0
 #OUTFIL5
 Print Data 2
@@ -4025,10 +4023,10 @@ PRN
 NET
 PRINTO2
 999999
-2524
--2029
-2913
--2101
+2456
+-2019
+2757
+-2081
 0
 #OUTFIL6
 Print Data 3
@@ -4041,10 +4039,10 @@ PRN
 NET
 PRINTO3
 999999
-2524
--2106
-2913
--2178
+2456
+-2086
+2757
+-2148
 0
 #OUTFIL7
 Print Data 4
@@ -4494,8 +4492,8 @@ FIND THE CLOSEST ZONE TO EACH LINK
 999999
 819
 -1948
-1064
--2029
+1008
+-2018
 0
 0
 0
@@ -4505,14 +4503,14 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_2.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_2.s
 1
 MAT
 ISCR1 
 999999
-408
--1874
-804
+502
+-1884
+808
 -1946
 -1
 -1
@@ -4888,10 +4886,10 @@ Link Records
 REC
 RECI  
 999999
-408
+502
 -1951
-804
--2023
+808
+-2013
 0
 2
 0
@@ -4906,10 +4904,10 @@ Link XY Coordinates
 ZON
 ZDATI1
 999999
-408
--2028
-804
--2100
+502
+-2018
+808
+-2080
 0
 4
 0
@@ -5626,10 +5624,10 @@ PRN
 MAT
 OPRN  
 999999
-1086
--1912
-1475
--1984
+1024
+-1917
+1325
+-1979
 0
 #OUTFIL1
 Matrix File 1
@@ -5962,10 +5960,10 @@ DBF
 MAT
 RECO1 
 999999
-1086
--1989
-1475
--2061
+1024
+-1984
+1325
+-2046
 0
 #OUTFIL22
 Record File 2
@@ -6367,8 +6365,8 @@ INSERT LINK DATA TO NETWORK
 999999
 819
 -2484
-1091
--2565
+1029
+-2554
 0
 0
 0
@@ -6378,14 +6376,14 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_3.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_3.s
 1
 NET
 ISCR1 
 999999
-408
--2410
-804
+502
+-2420
+808
 -2482
 -1
 -1
@@ -6396,18 +6394,18 @@ Starting Network
 0
 0
 *
-{SCENARIO_DIR}\Input\highway_{year}.net
+{SCENARIO_DIR}\Input\highway.net
 0
 LNK
 LINKI1
 999999
-408
+502
 -2487
-804
--2559
+808
+-2549
 -1
--9
-1
+-1
+0
 #INFIL2
 Link/Net. 2
 Closest Zone record
@@ -6419,10 +6417,10 @@ Closest Zone record
 LNK
 LINKI2
 999999
-408
--2564
-804
--2636
+502
+-2554
+808
+-2616
 3
 21
 0
@@ -7301,10 +7299,10 @@ PRN
 NET
 OPRN  
 999999
-1113
--2448
-1502
--2520
+1045
+-2453
+1346
+-2515
 0
 #OUTFIL1
 Network File
@@ -7317,10 +7315,10 @@ NET
 NET
 NETO  
 999999
-1113
--2525
-1502
--2597
+1045
+-2520
+1346
+-2582
 0
 #OUTFIL2
 Link File
@@ -7850,8 +7848,8 @@ INSERT LINK AREA TYPE ON THE NETWORK
 999999
 2201
 -2484
-2473
--2565
+2411
+-2554
 0
 0
 0
@@ -7861,14 +7859,14 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_6.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_6.s
 1
 NET
 ISCR1 
 999999
-1790
--2410
-2186
+1884
+-2420
+2190
 -2482
 -1
 -1
@@ -7884,10 +7882,10 @@ Processed Network
 LNK
 LINKI1
 999999
-1790
+1884
 -2487
-2186
--2559
+2190
+-2549
 2
 1
 0
@@ -8244,10 +8242,10 @@ Zone Area type
 LOK
 LOOKUPI1
 999999
-1790
--2564
-2186
--2636
+1884
+-2554
+2190
+-2616
 2
 4
 0
@@ -8784,9 +8782,9 @@ PRN
 NET
 OPRN  
 999999
-2495
--2410
-2884
+2427
+-2420
+2728
 -2482
 0
 #OUTFIL1
@@ -8800,10 +8798,10 @@ NET
 NET
 NETO  
 999999
-2495
+2427
 -2487
-2884
--2559
+2728
+-2549
 1
 #OUTFIL2
 Link File
@@ -8816,10 +8814,10 @@ DAT
 NET
 LINKO 
 999999
-2495
--2564
-2884
--2636
+2427
+-2554
+2728
+-2616
 1
 #OUTFIL3
 Node File
@@ -9333,8 +9331,8 @@ OUTPUT AREA TYPE AS DBF FOR LATER USE
 999999
 2230
 -2992
-2475
--3073
+2419
+-3062
 0
 0
 0
@@ -9344,15 +9342,15 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\AT_7.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\AT_7.s
 1
 MAT
 ISCR1 
 999999
-1819
--2956
-2215
--3028
+1913
+-2961
+2219
+-3023
 -1
 -1
 0
@@ -9745,10 +9743,10 @@ Zone Area Type
 ZON
 ZDATI1
 999999
-1819
--3033
-2215
--3105
+1913
+-3028
+2219
+-3090
 2
 4
 0
@@ -10465,10 +10463,10 @@ PRN
 MAT
 OPRN  
 999999
-2497
--2956
-2886
--3028
+2435
+-2961
+2736
+-3023
 0
 #OUTFIL1
 Matrix File 1
@@ -10801,10 +10799,10 @@ DBF
 MAT
 RECO1 
 999999
-2497
--3033
-2886
--3105
+2435
+-3028
+2736
+-3090
 1
 #OUTFIL22
 Record File 2

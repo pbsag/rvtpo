@@ -16,10 +16,10 @@ TD
 00
 
 
-Fri Mar 18 13:38:48 2016
+Fri Apr 08 15:11:45 2016
 
-C:\projects\roanoke\Cube\TRIPDI00.APP
-C:\projects\ROANOKE\CUBE\TRIPDIST00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TRIPDI00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\TRIPDIST00.APP
 VOYAGER
 
 
@@ -96,7 +96,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_nonWork_Pilot.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_nonWork_Pilot.s
 1
 PIL
 ISCR1 
@@ -313,7 +313,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_nonWork.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_nonWork.s
 1
 MAT
 ISCR1 
@@ -2186,7 +2186,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_nonWork_TLFD.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_nonWork_TLFD.s
 1
 MAT
 ISCR1 
@@ -4059,7 +4059,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_nonWork_D2DFlow.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_nonWork_D2DFlow.s
 1
 MAT
 ISCR1 
@@ -5932,7 +5932,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_nonWork_TLFD_Time.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_nonWork_TLFD_Time.s
 1
 MAT
 ISCR1 
@@ -7805,7 +7805,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_HBW.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_HBW.s
 1
 MAT
 ISCR1 
@@ -9678,7 +9678,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_HBW_ShadowPrice.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_HBW_ShadowPrice.s
 1
 MAT
 ISCR1 
@@ -11592,7 +11592,7 @@ cmd Copy
 0
 0
 S
-C:\projects\roanoke\Cube\DC_HBW_Pilot.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_HBW_Pilot.s
 1
 PIL
 ISCR1 
@@ -11809,7 +11809,7 @@ cmd Copy
 0
 0
 S
-C:\projects\roanoke\Cube\DC_HBW_Pilot_end.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_HBW_Pilot_end.s
 1
 PIL
 ISCR1 
@@ -12026,7 +12026,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_work_TLFD.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_work_TLFD.s
 1
 MAT
 ISCR1 
@@ -13899,7 +13899,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_work_TLFD_Time.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_work_TLFD_Time.s
 1
 MAT
 ISCR1 
@@ -15772,7 +15772,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\DC_work_D2DFlow.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DC_work_D2DFlow.s
 1
 MAT
 ISCR1 

@@ -24,9 +24,9 @@ ENDIF
 
 ; End of PILOT Script
 
-; Script for program HIGHWAY in file "C:\roanoke\Cube\HighwayAssign_Preload.s"
+; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HighwayAssign_Preload.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=HIGHWAY PRNFILE="{scenario_dir}\Output\LOGS\ASHWY00A.PRN" MSG='Preload External Trips'
+RUN PGM=HIGHWAY PRNFILE="C:\projects\ROANOKE\CUBE\ASHWY00A.PRN" MSG='Preload External Trips'
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\SL_Preloaded_@PERIOD_NAME@.MAT",
 MO=2, NAME=SL_EE
 FILEI NETI = "{SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET"
@@ -98,7 +98,7 @@ ENDPHASE
 ENDRUN
 
 
-; Script for program HIGHWAY in file "C:\roanoke\Cube\HighwayAssign.s"
+; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HighwayAssign.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=HIGHWAY PRNFILE="{SCENARIO_DIR}\Output\Logs\@PERIOD_NAME@.PRN" MSG='Load Final Trips onto Network'
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\SL_Loaded_@PERIOD_NAME@.MAT",
@@ -194,10 +194,10 @@ ENDRUN
 
 ENDLOOP
 
-; Script for program NETWORK in file "C:\roanoke\Cube\HighwayAssign_MergeNetworks.s"
+; Script for program NETWORK in file "C:\projects\roanoke\Cube\HighwayAssign_MergeNetworks.s"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\Hwy_eval.PRN"
+RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\Merge_Hwy_Assignments.PRN"
 FILEO NETO = "{SCENARIO_DIR}\Output\LOADED_{Year}{Alternative}.NET",
  EXCLUDE = V_1, VC_1, V1_1, V2_1, V3_1, V4_1, VT_1, V1T_1, V2T_1, V3T_1, V4T_1
 FILEI LINKI[4] = "{SCENARIO_DIR}\Output\LOADED_NT.NET"
@@ -313,7 +313,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\roanoke\Cube\HighwayAssign_Evaluate.s"
+; Script for program NETWORK in file "C:\projects\roanoke\Cube\HighwayAssign_Evaluate.s"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\Hwy_eval.PRN"

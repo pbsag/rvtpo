@@ -17,7 +17,7 @@ FILEI FACTORI[2] = "{CATALOG_DIR}\Params\transit\WalkPrem.FAC"
 FILEI FACTORI[1] = "{CATALOG_DIR}\Params\transit\WalkBus.FAC"
 FILEI FAREI = "{CATALOG_DIR}\Params\transit\TFARES.FAR"
 FILEI SYSTEMI = "{CATALOG_DIR}\Params\transit\TSYSD.PTS"
-FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE_{year}.LIN"
+FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE.LIN"
 
 ;**************************************************************
 ;BEGIN POTENTIAL SCRIPT ADJUSTMENT

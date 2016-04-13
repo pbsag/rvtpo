@@ -18,10 +18,10 @@ TR
 00
 Add/Manipulate Various Trip tables
 
-Fri Mar 18 13:38:48 2016
+Fri Apr 08 15:11:44 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
-C:\projects\roanoke\Cube\TRIPS.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TRIPS.APP
 VOYAGER
 
 
@@ -57,7 +57,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\TOD_Model.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TOD_Model.s
 1
 MAT
 ISCR1 
@@ -1791,7 +1791,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\TOD_Pilot.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TOD_Pilot.s
 1
 PIL
 ISCR1 
@@ -2008,7 +2008,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\TOD_Pilot_end.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TOD_Pilot_end.s
 1
 PIL
 ISCR1 
@@ -2225,7 +2225,7 @@ Script File
 0
 0
 S
-C:\projects\ROANOKE\CUBE\TRMAT00G.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\TRMAT00G.S
 1
 MAT
 ISCR1 

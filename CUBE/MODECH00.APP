@@ -1,6 +1,7 @@
 &PROJFIL
 EXP3 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\@PURP@_MCPROB.MAT                     
 EXP3 2 1Matrix File 2  {SCENARIO_DIR}\OUTPUT\Dest_@PURPNAME@.MAT                   
+EXP3 221Zonal Data 1   {SCENARIO_DIR}\Input\TrnWalkPercent.dbf                     
 EXP3 1 0Matrix File 1  {SCENARIO_DIR}\OUTPUT\@PURP@_MCTRIPS.MAT                    
 11
 0
@@ -10,10 +11,10 @@ MC
 00
 
 
-Fri Mar 18 14:54:39 2016
+Fri Apr 08 15:11:48 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
-C:\projects\ROANOKE\CUBE\MODECH00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\MODECH00.APP
 VOYAGER
 
 
@@ -87,7 +88,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\MC_Pilot.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Pilot.s
 1
 PIL
 ISCR1 
@@ -304,7 +305,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\MC_Pilot_end.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Pilot_end.s
 1
 PIL
 ISCR1 
@@ -521,7 +522,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\ModeChoiceModel.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\ModeChoiceModel.s
 1
 MAT
 ISCR1 
@@ -917,7 +918,7 @@ Zonal Data 1
 0
 0
 *
-{SCENARIO_DIR}\Input\TrnWalkPercent_{year}.dbf
+{SCENARIO_DIR}\Input\TrnWalkPercent.dbf
 0
 ZON
 ZDATI1
@@ -927,8 +928,8 @@ ZDATI1
 1650
 -1149
 -1
--1
-0
+-9
+1
 #INFIL23
 Zonal Data 2
 
@@ -2394,7 +2395,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\MC_Merge_HBO_HBSH.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Merge_HBO_HBSH.s
 1
 MAT
 ISCR1 

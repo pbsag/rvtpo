@@ -9,7 +9,7 @@ Rexe = '{CATALOG_DIR}\R\R-3.2.2\bin\Rscript.exe'
 Rscript = '{CATALOG_DIR}\R\classification.R'
 
 ; Collect script arguments for R script.
-input_se_file = '{SCENARIO_DIR}\Input\se_{year}.dbf'
+input_se_file = '{SCENARIO_DIR}\Input\se.dbf'
 lookup_dir = '{CATALOG_DIR}\Params\classification'
 output_file = '{SCENARIO_DIR}\Output\se_classified_{year}{alternative}.dbf'
 

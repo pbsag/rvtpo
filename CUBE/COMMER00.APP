@@ -1,5 +1,5 @@
 &PROJFIL
-EXP0 1 1Zonal Data 1   {SCENARIO_DIR}\Input\se_{year}.dbf                          
+EXP0 1 1Zonal Data 1   {SCENARIO_DIR}\Input\se.dbf                                 
 EXP0 111Lookup File 1  {CATALOG_DIR}\PARAMS\CVRATES.CSV                            
 EXP1 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\Hwyskim.MAT                           
 EXP2 1 0Matrix File 1  {SCENARIO_DIR}\Output\CV_{Year}_AM.MAT                      
@@ -11,10 +11,10 @@ CV
 00
 
 
-Fri Mar 18 13:38:50 2016
+Fri Apr 08 15:11:48 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
-C:\projects\ROANOKE\CUBE\COMMER00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\COMMER00.APP
 VOYAGER
 
 
@@ -36,8 +36,8 @@ CV_TripGen
 999999
 988
 -309
-1341
--390
+1261
+-379
 0
 0
 0
@@ -47,14 +47,14 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\CV_TripGen.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\CV_TripGen.S
 1
 GEN
 ISCR1 
 999999
-577
--235
-973
+671
+-245
+977
 -307
 -1
 -1
@@ -65,15 +65,15 @@ Zonal Data 1
 0
 0
 *
-{SCENARIO_DIR}\Input\se_{year}.dbf
+{SCENARIO_DIR}\Input\se.dbf
 0
 ZON
 ZDATI1
 999999
-577
+671
 -312
-973
--384
+977
+-374
 -1
 -9
 1
@@ -250,10 +250,10 @@ Lookup File 1
 LOK
 LOOKUPI1
 999999
-577
--389
-973
--461
+671
+-379
+977
+-441
 -1
 -9
 1
@@ -806,10 +806,10 @@ DAT
 GEN
 PAO1  
 999999
-1363
+1277
 -311
-1752
--383
+1578
+-373
 0
 #OUTFIL2
 ZonalPAData 2
@@ -1451,8 +1451,8 @@ DISTRIBUTION
 999999
 988
 -704
-1395
--785
+1303
+-774
 0
 0
 0
@@ -1462,14 +1462,14 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\CV_TripDistribution.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\CV_TripDistribution.S
 1
 DST
 ISCR1 
 999999
-577
--630
-973
+671
+-640
+977
 -702
 -1
 -1
@@ -1485,10 +1485,10 @@ MAT
 DST
 MATI1 
 999999
-577
+671
 -707
-973
--779
+977
+-769
 -1
 -19
 1
@@ -1863,10 +1863,10 @@ Zonal Data 1
 ZON
 ZDATI1
 999999
-577
--784
-973
--856
+671
+-774
+977
+-836
 0
 1
 0
@@ -2419,10 +2419,10 @@ MAT
 DST
 MATO1 
 999999
-1417
+1319
 -706
-1806
--778
+1620
+-768
 0
 #OUTFIL2
 Matrix File 2
@@ -3144,8 +3144,8 @@ MATRIX
 999999
 988
 -1156
-1233
--1237
+1177
+-1226
 0
 0
 0
@@ -3155,15 +3155,15 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\CV_TimeOfDay.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\CV_TimeOfDay.S
 1
 MAT
 ISCR1 
 999999
-577
--1120
-973
--1192
+671
+-1125
+977
+-1187
 -1
 -1
 0
@@ -3178,10 +3178,10 @@ MAT
 MAT
 MATI1 
 999999
-577
--1197
-973
--1269
+671
+-1192
+977
+-1254
 1
 1
 0
@@ -4292,10 +4292,10 @@ MAT
 MAT
 MATO1 
 999999
-1255
--1044
-1644
--1116
+1193
+-1059
+1494
+-1121
 1
 #OUTFIL2
 Matrix File 2
@@ -4303,15 +4303,15 @@ Matrix File 2
 0
 0
 MAT
-{SCENARIO_DIR}\Output\CV_2012_MD.MAT
+{SCENARIO_DIR}\Output\CV_{year}_MD.MAT
 0
 MAT
 MATO2 
 999999
-1255
--1121
-1644
--1193
+1193
+-1126
+1494
+-1188
 0
 #OUTFIL3
 Matrix File 3
@@ -4319,15 +4319,15 @@ Matrix File 3
 0
 0
 MAT
-{SCENARIO_DIR}\Output\CV_2012_PM.MAT
+{SCENARIO_DIR}\Output\CV_{year}_PM.MAT
 0
 MAT
 MATO3 
 999999
-1255
--1198
-1644
--1270
+1193
+-1193
+1494
+-1255
 0
 #OUTFIL4
 Matrix File 4
@@ -4335,15 +4335,15 @@ Matrix File 4
 0
 0
 MAT
-{SCENARIO_DIR}\Output\CV_2012_NT.MAT
+{SCENARIO_DIR}\Output\CV_{year}_NT.MAT
 0
 MAT
 MATO4 
 999999
-1255
--1275
-1644
--1347
+1193
+-1260
+1494
+-1322
 0
 #OUTFIL5
 Matrix File 5
@@ -5017,8 +5017,8 @@ Trip Length Frequency
 999999
 988
 -1607
-1233
--1688
+1177
+-1677
 0
 0
 0
@@ -5028,14 +5028,14 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\CV_TLFD.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\CV_TLFD.S
 1
 MAT
 ISCR1 
 999999
-577
--1533
-973
+671
+-1543
+977
 -1605
 -1
 -1
@@ -5051,10 +5051,10 @@ MAT
 MAT
 MATI1 
 999999
-577
+671
 -1610
-973
--1682
+977
+-1672
 1
 1
 0
@@ -5069,10 +5069,10 @@ MAT
 MAT
 MATI2 
 999999
-577
--1687
-973
--1759
+671
+-1677
+977
+-1739
 -1
 -1
 0
@@ -6149,10 +6149,10 @@ PRN
 MAT
 OPRN  
 999999
-1255
--1457
-1644
--1529
+1193
+-1477
+1494
+-1539
 0
 #OUTFIL1
 Matrix File 1
@@ -6485,9 +6485,9 @@ DBF
 MAT
 RECO1 
 999999
-1255
--1534
-1644
+1193
+-1544
+1494
 -1606
 0
 #OUTFIL22
@@ -6501,10 +6501,10 @@ DBF
 MAT
 RECO2 
 999999
-1255
+1193
 -1611
-1644
--1683
+1494
+-1673
 0
 #OUTFIL23
 Record File 3
@@ -6517,10 +6517,10 @@ DBF
 MAT
 RECO3 
 999999
-1255
--1688
-1644
--1760
+1193
+-1678
+1494
+-1740
 0
 #OUTFIL24
 Record File 4
@@ -6720,15 +6720,15 @@ Print Data 1
 0
 0
 PRN
-C:\projects\ROANOKE\CUBE\CVMAT00B.PRN
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\CVMAT00B.PRN
 0
 MAT
 PRINTO1
 999999
-1255
--1765
-1644
--1837
+1193
+-1745
+1494
+-1807
 0
 #OUTFIL37
 Print Data 2

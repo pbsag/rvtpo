@@ -7,16 +7,16 @@ FB
 00
 Roanoke MPO Area Travel Demand Model
 
-Fri Mar 18 15:08:44 2016
-C:\projects\roanoke\Cube\RVARC.BMP
+Fri Apr 08 15:14:35 2016
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC.BMP
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
 VOYAGER
 
 
 1
 Roanoke MPO Model
-681,-229,0,0,Arial,22,400,1,0,8388608
+1792,-356,0,0,Arial,22,400,1,0,8388608
 &End_TextAnnotation
 English
 #PROGRAM0
@@ -33,10 +33,10 @@ PILOT
 -1.0
 Delete Extraneous Files and Create Necessary Output Folders
 999999
-536
--806
-781
--887
+649
+-648
+838
+-718
 0
 0
 0
@@ -46,15 +46,15 @@ System Cmd.
 0
 0
 S
-C:\projects\roanoke\Cube\Initialize.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Initialize.S
 1
 PIL
 ISCR1 
 999999
-125
--808
-521
--880
+332
+-650
+638
+-712
 -1
 -1
 0
@@ -69,10 +69,10 @@ VAR
 VRI
 VARI  
 999999
-200
--839
-524
--896
+238
+-689
+634
+-761
 -1
 -1
 0
@@ -82,15 +82,15 @@ Print Data 1
 0
 0
 PRN
-*.PRN
+{SCENARIO_DIR}\scenario.properties
 0
 PIL
 PRINTO1
 999999
-757
--808
-1075
--865
+854
+-650
+1155
+-712
 0
 #OUTFIL1
 Print Data 2
@@ -103,10 +103,10 @@ PRN
 PIL
 PRINTO2
 999999
-900
--519
-1250
--595
+916
+-689
+1305
+-761
 0
 #OUTFIL2
 Print Data 3
@@ -119,10 +119,10 @@ PRN
 PIL
 PRINTO3
 999999
-900
--601
-1250
--677
+1013
+-443
+1363
+-519
 0
 #OUTFIL3
 Print Data 4
@@ -135,10 +135,10 @@ PRN
 PIL
 PRINTO4
 999999
-900
--683
-1250
--759
+1013
+-525
+1363
+-601
 0
 #OUTFIL4
 Print Data 5
@@ -151,10 +151,10 @@ PRN
 PIL
 PRINTO5
 999999
-900
--765
-1250
--841
+1013
+-607
+1363
+-683
 0
 #OUTFIL5
 Print Data 6
@@ -167,10 +167,10 @@ PRN
 PIL
 PRINTO6
 999999
-900
--847
-1250
--923
+1013
+-689
+1363
+-765
 0
 #OUTFIL6
 Print Data 7
@@ -183,10 +183,10 @@ PRN
 PIL
 PRINTO7
 999999
-900
--929
-1250
--1005
+1013
+-771
+1363
+-847
 0
 #OUTFIL7
 Print Data 8
@@ -199,10 +199,10 @@ PRN
 PIL
 PRINTO8
 999999
-900
--1011
-1250
--1087
+1013
+-853
+1363
+-929
 0
 #OUTFIL8
 Print Data 9
@@ -215,10 +215,10 @@ PRN
 PIL
 PRINTO9
 999999
-900
--1093
-1250
--1169
+1013
+-935
+1363
+-1011
 0
 #OUTFIL9
 Print Data 10
@@ -231,17 +231,17 @@ PRN
 PIL
 PRINTO10
 999999
-900
--1175
-1250
--1251
+1013
+-1017
+1363
+-1093
 0
 #PROGRAM1
 2
 1
 2
 
-C:\projects\roanoke\Cube\NETBUILD.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\NETBUILD.APP
 Network
 
 0
@@ -250,10 +250,10 @@ Network
 
 
 999999
-536
--1088
-1035
--1227
+649
+-987
+1046
+-1107
 0
 0
 0
@@ -263,15 +263,15 @@ Starting Network
 0
 0
 *
-{SCENARIO_DIR}\Input\highway_{year}.net
+{SCENARIO_DIR}\Input\highway.net
 1
 0000
       
 999999
-125
+332
+-981
+638
 -1043
-521
--1115
 -1
 -1
 0
@@ -281,33 +281,15 @@ Land Use Data
 0
 0
 *
-{SCENARIO_DIR}\Input\se_{Year}.dbf
+{SCENARIO_DIR}\Input\se.dbf
 1
 0001
       
 999999
-125
--1120
-521
--1192
--1
--1
-0
-#INFIL2
-Lookup File 1
-Area Type Crossclassification
-0
-0
-*
-{CATALOG_DIR}\Params\AT.dbf
-1
-0002
-      
-999999
-125
--1197
-521
--1269
+332
+-1048
+638
+-1110
 -1
 -1
 0
@@ -322,10 +304,10 @@ Zones with Area type
 0002
       
 999999
-1057
--1081
-1446
--1153
+1062
+-981
+1363
+-1043
 0
 #OUTFIL1
 Network File
@@ -338,17 +320,17 @@ Network File
 0201
       
 999999
-1057
--1158
-1446
--1230
+1062
+-1048
+1363
+-1110
 0
 #PROGRAM2
 3
 1
 3
 
-C:\projects\roanoke\Cube\PATHBUILD.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\PATHBUILD.APP
 Highway Paths
 
 0
@@ -357,10 +339,10 @@ Highway Paths
 
 
 999999
-536
--1398
-1035
--1537
+677
+-1382
+1074
+-1502
 0
 0
 0
@@ -375,10 +357,10 @@ Network File
 0021
       
 999999
-125
--1353
-521
--1425
+360
+-1376
+666
+-1438
 1
 1
 0
@@ -393,30 +375,12 @@ Zones w AT
 0025
       
 999999
-125
--1430
-521
--1502
+360
+-1443
+666
+-1505
 1
 0
-0
-#INFIL2
-Lookup File 1
-
-0
-0
-*
-{CATALOG_DIR}\Params\Term_Time.dbf
-1
-0035
-      
-999999
-125
--1507
-521
--1579
--1
--1
 0
 #OUTFIL0
 Matrix File 1
@@ -429,17 +393,17 @@ Skim
 0001
       
 999999
-1057
--1429
-1446
--1501
+1090
+-1409
+1391
+-1471
 0
 #PROGRAM3
 4
 1
 4
 
-C:\projects\roanoke\Cube\DEMAND.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DEMAND.APP
 Trip Generation
 
 0
@@ -448,10 +412,10 @@ Trip Generation
 
 
 999999
-536
--1794
-1035
--1933
+734
+-1861
+1131
+-1981
 0
 0
 0
@@ -466,118 +430,10 @@ Zonal Data 1
 0101
       
 999999
-125
--1597
-521
--1669
--1
--1
-0
-#INFIL1
-Lookup File 1
-
-0
-0
-*
-{CATALOG_DIR}\PARAMS\TRIP_PROD\HBW.DBF
-1
-0111
-      
-999999
-125
--1674
-521
--1746
--1
--1
-0
-#INFIL2
-Lookup File 2
-
-0
-0
-*
-{CATALOG_DIR}\PARAMS\TRIP_PROD\NHBW.DBF
-1
-0112
-      
-999999
-125
--1751
-521
--1823
--1
--1
-0
-#INFIL3
-Lookup File 3
-
-0
-0
-*
-{CATALOG_DIR}\PARAMS\TRIP_PROD\HBO.DBF
-1
-0113
-      
-999999
-125
--1828
-521
--1900
--1
--1
-0
-#INFIL4
-Lookup File 4
-
-0
-0
-*
-{CATALOG_DIR}\PARAMS\TRIP_PROD\HBSCHOOL.DBF
-1
-0114
-      
-999999
-125
--1905
-521
--1977
--1
--1
-0
-#INFIL5
-Lookup File 5
-
-0
-0
-*
-{CATALOG_DIR}\PARAMS\TRIP_PROD\HBSHOP.DBF
-1
-0115
-      
-999999
-125
--1982
-521
--2054
--1
--1
-0
-#INFIL6
-Lookup File 6
-
-0
-0
-*
-{CATALOG_DIR}\PARAMS\TRIP_PROD\NHBO.DBF
-1
-0116
-      
-999999
-125
--2059
-521
--2131
+417
+-1888
+723
+-1950
 -1
 -1
 0
@@ -592,17 +448,17 @@ ZonalPAData 1
 0101
       
 999999
-1057
--1825
-1446
--1897
+1147
+-1888
+1448
+-1950
 0
 #PROGRAM4
 5
 1
 13
 
-C:\projects\roanoke\Cube\TRIPS.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TRIPS.APP
 PA to OD
 
 0
@@ -612,9 +468,9 @@ PA to OD
 
 999999
 2286
--2697
-2785
--2836
+-2595
+2683
+-2715
 0
 0
 0
@@ -629,10 +485,10 @@ NHB MC
 0001
       
 999999
-1875
--2462
-2271
--2534
+1969
+-2391
+2275
+-2453
 -1
 -1
 0
@@ -647,10 +503,10 @@ HBW MC
 0002
       
 999999
-1875
--2539
-2271
--2611
+1969
+-2458
+2275
+-2520
 -1
 -1
 0
@@ -665,10 +521,10 @@ HBO MC
 0003
       
 999999
-1875
--2616
-2271
--2688
+1969
+-2525
+2275
+-2587
 -1
 -1
 0
@@ -683,10 +539,10 @@ HBSC MC
 0004
       
 999999
-1875
--2693
-2271
--2765
+1969
+-2592
+2275
+-2654
 -1
 -1
 0
@@ -701,10 +557,10 @@ IEEI <Period>
 0005
       
 999999
-1875
--2770
-2271
--2842
+1969
+-2659
+2275
+-2721
 -1
 -1
 0
@@ -719,10 +575,10 @@ EE <Period>
 0006
       
 999999
-1875
--2847
-2271
--2919
+1969
+-2726
+2275
+-2788
 -1
 -1
 0
@@ -737,10 +593,10 @@ CV <Period>
 0007
       
 999999
-1875
--2924
-2271
--2996
+1969
+-2793
+2275
+-2855
 -1
 -1
 0
@@ -755,10 +611,10 @@ TOD Facs
 0032
       
 999999
-1875
--3001
-2271
--3073
+1969
+-2860
+2275
+-2922
 -1
 -1
 0
@@ -773,10 +629,10 @@ ODAUTO <Period>
 0001
       
 999999
-2807
--2652
-3196
--2724
+2699
+-2556
+3000
+-2618
 0
 #OUTFIL1
 Matrix File 1
@@ -789,10 +645,10 @@ PK Transit
 0401
       
 999999
-2807
--2729
-3196
--2801
+2699
+-2623
+3000
+-2685
 0
 #OUTFIL2
 Matrix File 2
@@ -805,17 +661,17 @@ OP Transit
 0402
       
 999999
-2807
--2806
-3196
--2878
+2699
+-2690
+3000
+-2752
 0
 #PROGRAM5
 6
 1
 14
 
-C:\projects\roanoke\Cube\ASSIGNMENT.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\ASSIGNMENT.APP
 Highway Assignment
 
 0
@@ -824,10 +680,10 @@ Highway Assignment
 
 
 999999
-3584
--1398
-4083
--1537
+3725
+-1184
+4122
+-1304
 0
 0
 0
@@ -842,10 +698,10 @@ OD Auto <Period>
 0001
       
 999999
-3173
--1391
-3569
--1463
+3408
+-1178
+3714
+-1240
 -1
 -1
 0
@@ -860,30 +716,14 @@ Network File
 0521
       
 999999
-3173
--1468
-3569
--1540
+3408
+-1245
+3714
+-1307
 -1
 -1
 0
 #OUTFIL0
-Matrix File 1
-Select Link <Period>
-0
-0
-*
-{SCENARIO_DIR}\Output\SL_Loaded_@PERIOD_NAME@.MAT
-1
-0001
-      
-999999
-4105
--1277
-4494
--1349
-0
-#OUTFIL1
 Network File
 Loaded Network
 0
@@ -894,12 +734,12 @@ Loaded Network
 0101
       
 999999
-4105
--1354
-4494
--1426
+4138
+-1112
+4439
+-1174
 0
-#OUTFIL2
+#OUTFIL1
 Print Data 1
 Hwy Eval Period
 0
@@ -910,12 +750,12 @@ Hwy Eval Period
 0104
       
 999999
-4105
--1431
-4494
--1503
+4138
+-1179
+4439
+-1241
 0
-#OUTFIL3
+#OUTFIL2
 Print Data 1
 Hwy Eval
 0
@@ -926,12 +766,12 @@ Hwy Eval
 0404
       
 999999
-4105
--1508
-4494
--1580
+4138
+-1246
+4439
+-1308
 0
-#OUTFIL4
+#OUTFIL3
 Print Data 2
 Hwy Link Eval
 0
@@ -942,17 +782,17 @@ Hwy Link Eval
 0405
       
 999999
-4105
--1585
-4494
--1657
+4138
+-1313
+4439
+-1375
 0
 #PROGRAM6
 8
 1
 11
 
-C:\projects\roanoke\Cube\TRIPDI00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TRIPDI00.APP
 Trip Distribution
 
 0
@@ -961,10 +801,10 @@ Trip Distribution
 
 
 999999
-2258
--1794
-2757
--1933
+2286
+-1607
+2683
+-1727
 0
 0
 0
@@ -979,10 +819,10 @@ Zonal Data 1
 0022
       
 999999
-1847
--1635
-2243
--1707
+1969
+-1469
+2275
+-1531
 -1
 -1
 0
@@ -997,10 +837,10 @@ Zonal Data 2
 0023
       
 999999
-1847
--1712
-2243
--1784
+1969
+-1536
+2275
+-1598
 -1
 -1
 0
@@ -1015,10 +855,10 @@ MC Logsums
 0100
       
 999999
-1847
--1789
-2243
--1861
+1969
+-1603
+2275
+-1665
 -1
 -1
 0
@@ -1033,10 +873,10 @@ Highway Skims
 0101
       
 999999
-1847
--1866
-2243
--1938
+1969
+-1670
+2275
+-1732
 -1
 -1
 0
@@ -1051,10 +891,10 @@ Highway Skims
 0103
       
 999999
-1847
--1943
-2243
--2015
+1969
+-1737
+2275
+-1799
 -1
 -1
 0
@@ -1069,10 +909,10 @@ DC Parameters
 0106
       
 999999
-1847
--2020
-2243
--2092
+1969
+-1804
+2275
+-1866
 -1
 -1
 0
@@ -1087,10 +927,10 @@ Dest <purpose>
 0100
       
 999999
-2779
--1787
-3168
--1859
+2699
+-1601
+3000
+-1663
 0
 #OUTFIL1
 Matrix File 1
@@ -1103,17 +943,17 @@ HBSC Trip Table
 0301
       
 999999
-2779
--1864
-3168
--1936
+2699
+-1668
+3000
+-1730
 0
 #PROGRAM7
 9
 1
 5
 
-C:\projects\ROANOKE\CUBE\TRANSIT.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\TRANSIT.APP
 Transit Network
 
 0
@@ -1122,10 +962,10 @@ Transit Network
 
 
 999999
-536
--2499
-1035
--2638
+734
+-2426
+1131
+-2546
 0
 0
 0
@@ -1140,10 +980,10 @@ Link/Net. 1
 0001
       
 999999
-125
--2302
-521
--2374
+417
+-2255
+723
+-2317
 1
 1
 0
@@ -1158,10 +998,10 @@ Lookup File 1
 0031
       
 999999
-125
--2379
-521
--2451
+417
+-2322
+723
+-2384
 -1
 -1
 0
@@ -1171,15 +1011,15 @@ Line File 1
 0
 0
 *
-{SCENARIO_DIR}\Input\TROUTE_{Year}.LIN
+{SCENARIO_DIR}\Input\TROUTE.LIN
 1
 0302
       
 999999
-125
--2456
-521
--2528
+417
+-2389
+723
+-2451
 -1
 -1
 0
@@ -1194,10 +1034,10 @@ System File 1
 0317
       
 999999
-125
--2533
-521
--2605
+417
+-2456
+723
+-2518
 -1
 -1
 0
@@ -1212,10 +1052,10 @@ Fares File
 0323
       
 999999
-125
--2610
-521
--2682
+417
+-2523
+723
+-2585
 -1
 -1
 0
@@ -1230,10 +1070,10 @@ Factor File 1
 0334
       
 999999
-125
--2687
-521
--2759
+417
+-2590
+723
+-2652
 -1
 -1
 0
@@ -1248,10 +1088,10 @@ Factor File 2
 0335
       
 999999
-125
--2764
-521
--2836
+417
+-2657
+723
+-2719
 -1
 -1
 0
@@ -1266,10 +1106,10 @@ PK Trn Network
 0301
       
 999999
-1057
--2264
-1446
--2336
+1147
+-2222
+1448
+-2284
 0
 #OUTFIL1
 Report File
@@ -1282,10 +1122,10 @@ Report File
 0312
       
 999999
-1057
--2341
-1446
--2413
+1147
+-2289
+1448
+-2351
 0
 #OUTFIL2
 Matrix File 1
@@ -1298,10 +1138,10 @@ PK Walk Bus
 0323
       
 999999
-1057
+1147
+-2356
+1448
 -2418
-1446
--2490
 0
 #OUTFIL3
 Matrix File 2
@@ -1314,10 +1154,10 @@ PK Walk Prem
 0324
       
 999999
-1057
--2495
-1446
--2567
+1147
+-2423
+1448
+-2485
 0
 #OUTFIL4
 Network File
@@ -1330,10 +1170,10 @@ OP Trn Network
 0401
       
 999999
-1057
--2572
-1446
--2644
+1147
+-2490
+1448
+-2552
 0
 #OUTFIL5
 Report File
@@ -1346,10 +1186,10 @@ Report File
 0412
       
 999999
-1057
--2649
-1446
--2721
+1147
+-2557
+1448
+-2619
 0
 #OUTFIL6
 Matrix File 1
@@ -1362,10 +1202,10 @@ OP Walk Bus
 0423
       
 999999
-1057
--2726
-1446
--2798
+1147
+-2624
+1448
+-2686
 0
 #OUTFIL7
 Matrix File 2
@@ -1378,17 +1218,17 @@ OP Walk Prem
 0424
       
 999999
-1057
--2803
-1446
--2875
+1147
+-2691
+1448
+-2753
 0
 #PROGRAM8
 10
 1
 10
 
-C:\projects\ROANOKE\CUBE\MCLOGSUM.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\MCLOGSUM.APP
 MC Logsums
 
 0
@@ -1397,10 +1237,10 @@ MC Logsums
 
 
 999999
-2230
--1398
-2729
--1537
+2286
+-1100
+2683
+-1220
 0
 0
 0
@@ -1415,14 +1255,32 @@ Highway Skim
 0001
       
 999999
-1819
--1353
-2215
--1425
+1969
+-1028
+2275
+-1090
 -1
 -1
 0
 #INFIL1
+Zonal Data 1
+
+0
+0
+*
+{SCENARIO_DIR}\Input\TrnWalkPercent.dbf
+1
+0022
+      
+999999
+1969
+-1095
+2275
+-1157
+-1
+-1
+0
+#INFIL2
 Lookup File 1
 MC Constants
 0
@@ -1433,14 +1291,14 @@ MC Constants
 0042
       
 999999
-1819
--1430
-2215
--1502
+1969
+-1162
+2275
+-1224
 -1
 -1
 0
-#INFIL2
+#INFIL3
 Lookup File 2
 MC Coefficients
 0
@@ -1451,10 +1309,10 @@ MC Coefficients
 0043
       
 999999
-1819
--1507
-2215
--1579
+1969
+-1229
+2275
+-1291
 -1
 -1
 0
@@ -1463,7 +1321,7 @@ MC Coefficients
 1
 12
 
-C:\projects\ROANOKE\CUBE\MODECH00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\MODECH00.APP
 modechoice
 
 0
@@ -1473,9 +1331,9 @@ modechoice
 
 999999
 2286
--2189
-2785
--2328
+-2087
+2683
+-2207
 0
 0
 0
@@ -1490,10 +1348,10 @@ Logsum <purpose>
 0301
       
 999999
-1875
--2182
-2271
--2254
+1969
+-2048
+2275
+-2110
 -1
 -1
 0
@@ -1508,10 +1366,28 @@ Dest <purpose>
 0302
       
 999999
-1875
--2259
-2271
--2331
+1969
+-2115
+2275
+-2177
+-1
+-1
+0
+#INFIL2
+Zonal Data 1
+
+0
+0
+*
+{SCENARIO_DIR}\Input\TrnWalkPercent.dbf
+1
+0322
+      
+999999
+1969
+-2182
+2275
+-2244
 -1
 -1
 0
@@ -1526,17 +1402,17 @@ MC <purpose>
 0301
       
 999999
-2807
--2220
-3196
--2292
+2699
+-2114
+3000
+-2176
 0
 #PROGRAM10
 12
 1
 6
 
-C:\projects\ROANOKE\CUBE\EXTERN00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\EXTERN00.APP
 External Model
 
 0
@@ -1545,10 +1421,10 @@ External Model
 
 
 999999
-508
--3261
-1007
--3400
+706
+-3160
+1103
+-3280
 0
 0
 0
@@ -1558,15 +1434,15 @@ Zonal Data 1
 0
 0
 *
-{SCENARIO_DIR}\Input\se_{year}.dbf
+{SCENARIO_DIR}\Input\se.dbf
 1
 0001
       
 999999
-97
--3178
-493
--3250
+389
+-3088
+695
+-3150
 -1
 -1
 0
@@ -1581,10 +1457,10 @@ Matrix File 1
 0501
       
 999999
-97
--3255
-493
--3327
+389
+-3155
+695
+-3217
 2
 0
 0
@@ -1599,10 +1475,10 @@ Matrix File 1
 0601
       
 999999
-97
--3332
-493
--3404
+389
+-3222
+695
+-3284
 -1
 -1
 0
@@ -1612,15 +1488,15 @@ Lookup File 1
 0
 0
 *
-{SCENARIO_DIR}\INPUT\EXTERNALTRIPS_{year}.DBF
+{SCENARIO_DIR}\INPUT\EXTERNALTRIPS.DBF
 1
 0632
       
 999999
-97
--3409
-493
--3481
+389
+-3289
+695
+-3351
 -1
 -1
 0
@@ -1635,10 +1511,10 @@ NR-NHB PA
 0121
       
 999999
-1029
--3178
-1418
--3250
+1119
+-3088
+1420
+-3150
 0
 #OUTFIL1
 Matrix File 1
@@ -1651,10 +1527,10 @@ IEEI <Period>
 0301
       
 999999
-1029
--3255
-1418
--3327
+1119
+-3155
+1420
+-3217
 0
 #OUTFIL2
 Matrix File 1
@@ -1667,10 +1543,10 @@ EE <Period>
 0401
       
 999999
-1029
--3332
-1418
--3404
+1119
+-3222
+1420
+-3284
 0
 #OUTFIL3
 Matrix File 1
@@ -1683,17 +1559,17 @@ Hwy Skim
 0501
       
 999999
-1029
--3409
-1418
--3481
+1119
+-3289
+1420
+-3351
 0
 #PROGRAM11
 13
 1
 7
 
-C:\projects\ROANOKE\CUBE\COMMER00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\COMMER00.APP
 Commercial Vehicle
 
 0
@@ -1702,10 +1578,10 @@ Commercial Vehicle
 
 
 999999
-536
--3825
-1035
--3964
+734
+-3724
+1131
+-3844
 0
 0
 0
@@ -1715,15 +1591,15 @@ Zonal Data 1
 0
 0
 *
-{SCENARIO_DIR}\Input\se_{year}.dbf
+{SCENARIO_DIR}\Input\se.dbf
 1
 0001
       
 999999
-125
--3780
-521
--3852
+417
+-3685
+723
+-3747
 -1
 -1
 0
@@ -1738,10 +1614,10 @@ CV Trip Rates
 0011
       
 999999
-125
--3857
-521
--3929
+417
+-3752
+723
+-3814
 -1
 -1
 0
@@ -1756,10 +1632,10 @@ Hwy Skim
 0101
       
 999999
-125
--3934
-521
--4006
+417
+-3819
+723
+-3881
 10
 3
 0
@@ -1774,17 +1650,17 @@ CV<Period>
 0201
       
 999999
-1057
--3856
-1446
--3928
+1147
+-3751
+1448
+-3813
 0
 #PROGRAM12
 14
 1
 17
 
-C:\projects\ROANOKE\CUBE\TRNASS00.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\TRNASS00.APP
 TrnAssignment
 
 0
@@ -1794,9 +1670,9 @@ TrnAssignment
 
 999999
 2314
--3543
-2813
--3682
+-3442
+2711
+-3562
 0
 0
 0
@@ -1811,10 +1687,10 @@ Network File
 0001
       
 999999
-1903
--3308
-2299
--3380
+1997
+-3238
+2303
+-3300
 -1
 -1
 0
@@ -1829,10 +1705,10 @@ Route File 1
 0044
       
 999999
-1903
--3385
-2299
--3457
+1997
+-3305
+2303
+-3367
 -1
 -1
 0
@@ -1847,10 +1723,10 @@ Route File 2
 0045
       
 999999
-1903
--3462
-2299
--3534
+1997
+-3372
+2303
+-3434
 -1
 -1
 0
@@ -1865,10 +1741,10 @@ Matrix File 1
 0054
       
 999999
-1903
--3539
-2299
--3611
+1997
+-3439
+2303
+-3501
 -1
 -1
 0
@@ -1883,10 +1759,10 @@ Network File
 0101
       
 999999
-1903
--3616
-2299
--3688
+1997
+-3506
+2303
+-3568
 -1
 -1
 0
@@ -1901,10 +1777,10 @@ Route File 1
 0144
       
 999999
-1903
--3693
-2299
--3765
+1997
+-3573
+2303
+-3635
 -1
 -1
 0
@@ -1919,10 +1795,10 @@ Route File 2
 0145
       
 999999
-1903
--3770
-2299
--3842
+1997
+-3640
+2303
+-3702
 -1
 -1
 0
@@ -1937,14 +1813,30 @@ Matrix File 1
 0154
       
 999999
-1903
--3847
-2299
--3919
+1997
+-3707
+2303
+-3769
 -1
 -1
 0
 #OUTFIL0
+Network File
+
+0
+0
+*
+{SCENARIO_DIR}\Output\Trn_PK.net
+1
+0001
+      
+999999
+2727
+-3370
+3028
+-3432
+0
+#OUTFIL1
 Links File 1
 PK Trn File
 0
@@ -1955,12 +1847,28 @@ PK Trn File
 0002
       
 999999
-2835
--3536
-3224
--3608
+2727
+-3437
+3028
+-3499
 0
-#OUTFIL1
+#OUTFIL2
+Network File
+
+0
+0
+*
+{SCENARIO_DIR}\Output\Trn_OP.net
+1
+0101
+      
+999999
+2727
+-3504
+3028
+-3566
+0
+#OUTFIL3
 Links File 1
 OP Trn File
 0
@@ -1971,10 +1879,10 @@ OP Trn File
 0102
       
 999999
-2835
--3613
-3224
--3685
+2727
+-3571
+3028
+-3633
 0
 #PROGRAM13
 15
@@ -1990,8 +1898,8 @@ OP Trn File
 -1.0
 
 255
-2145
--1145
+2032
+-789
 122
 0
 1
@@ -2022,7 +1930,7 @@ FeedBack_ITER
 1
 15
 
-C:\projects\roanoke\Cube\HIGHWA_Congested.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HIGHWA_Congested.app
 Congested Skims
 
 0
@@ -2031,10 +1939,10 @@ Congested Skims
 
 
 999999
-3612
--1709
-4111
--1848
+3697
+-1636
+4094
+-1756
 0
 0
 0
@@ -2049,10 +1957,10 @@ Network File
 0021
       
 999999
-3201
--1664
-3597
--1736
+3380
+-1597
+3686
+-1659
 -1
 -1
 0
@@ -2067,10 +1975,10 @@ Terminal Time
 0025
       
 999999
-3201
--1741
-3597
--1813
+3380
+-1664
+3686
+-1726
 -1
 -1
 0
@@ -2085,10 +1993,10 @@ Lookup File 1
 0035
       
 999999
-3201
--1818
-3597
--1890
+3380
+-1731
+3686
+-1793
 -1
 -1
 0
@@ -2103,10 +2011,10 @@ PK Cong Skim
 0001
       
 999999
-4133
--1702
-4522
--1774
+4110
+-1630
+4411
+-1692
 0
 #OUTFIL1
 Matrix File 1
@@ -2119,10 +2027,10 @@ OP Cong Skim
 0101
       
 999999
-4133
--1779
-4522
--1851
+4110
+-1697
+4411
+-1759
 0
 #PROGRAM15
 7
@@ -2138,10 +2046,10 @@ PILOT
 -1.0
 
 999999
-3810
--1201
-4055
--1282
+3782
+-817
+3971
+-887
 0
 0
 0
@@ -2151,15 +2059,15 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\Feedback_Pilot.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Feedback_Pilot.S
 1
 PIL
 ISCR1 
 999999
-3399
--1203
-3795
--1275
+3465
+-819
+3771
+-881
 -1
 -1
 0
@@ -2174,10 +2082,10 @@ VAR
 VRI
 VARI  
 999999
-3474
--1234
-3798
--1291
+3446
+-850
+3770
+-907
 -1
 -1
 0
@@ -2192,10 +2100,10 @@ PRN
 PIL
 PRINTO1
 999999
-4031
--1203
-4349
--1260
+4003
+-819
+4321
+-876
 0
 #OUTFIL1
 Print Data 2
@@ -2208,10 +2116,10 @@ PRN
 PIL
 PRINTO2
 999999
-4070
--936
-4466
--1008
+4042
+-552
+4438
+-624
 0
 #OUTFIL2
 Print Data 3
@@ -2224,10 +2132,10 @@ PRN
 PIL
 PRINTO3
 999999
-4070
--1013
-4466
--1085
+4042
+-629
+4438
+-701
 0
 #OUTFIL3
 Print Data 4
@@ -2240,10 +2148,10 @@ PRN
 PIL
 PRINTO4
 999999
-4070
--1090
-4466
--1162
+4042
+-706
+4438
+-778
 0
 #OUTFIL4
 Print Data 5
@@ -2256,10 +2164,10 @@ PRN
 PIL
 PRINTO5
 999999
-4070
--1167
-4466
--1239
+4042
+-783
+4438
+-855
 0
 #OUTFIL5
 Print Data 6
@@ -2272,10 +2180,10 @@ PRN
 PIL
 PRINTO6
 999999
-4070
--1244
-4466
--1316
+4042
+-860
+4438
+-932
 0
 #OUTFIL6
 Print Data 7
@@ -2288,10 +2196,10 @@ PRN
 PIL
 PRINTO7
 999999
-4070
--1321
-4466
--1393
+4042
+-937
+4438
+-1009
 0
 #OUTFIL7
 Print Data 8
@@ -2304,10 +2212,10 @@ PRN
 PIL
 PRINTO8
 999999
-4070
--1398
-4466
--1470
+4042
+-1014
+4438
+-1086
 0
 #OUTFIL8
 Print Data 9
@@ -2320,10 +2228,10 @@ PRN
 PIL
 PRINTO9
 999999
-4070
--1475
-4466
--1547
+4042
+-1091
+4438
+-1163
 0
 #OUTFIL9
 Print Data 10
@@ -2336,10 +2244,10 @@ PRN
 PIL
 PRINTO10
 999999
-4070
--1552
-4466
--1624
+4042
+-1168
+4438
+-1240
 0
 #PROGRAM16
 17
@@ -2356,9 +2264,9 @@ PILOT
 
 999999
 4120
--2922
-4365
--3003
+-2821
+4309
+-2891
 0
 0
 0
@@ -2368,15 +2276,15 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\Feedback_Pilot_end.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Feedback_Pilot_end.S
 1
 PIL
 ISCR1 
 999999
-3709
--2924
-4105
--2996
+3803
+-2823
+4109
+-2885
 -1
 -1
 0
@@ -2392,9 +2300,9 @@ VRI
 VARI  
 999999
 3784
--2955
+-2854
 4108
--3012
+-2911
 -1
 -1
 0
@@ -2410,9 +2318,9 @@ PIL
 PRINTO1
 999999
 4341
--2924
+-2823
 4659
--2981
+-2880
 0
 #OUTFIL1
 Print Data 2
@@ -2426,9 +2334,9 @@ PIL
 PRINTO2
 999999
 4380
--2657
+-2556
 4776
--2729
+-2628
 0
 #OUTFIL2
 Print Data 3
@@ -2442,9 +2350,9 @@ PIL
 PRINTO3
 999999
 4380
--2734
+-2633
 4776
--2806
+-2705
 0
 #OUTFIL3
 Print Data 4
@@ -2458,9 +2366,9 @@ PIL
 PRINTO4
 999999
 4380
--2811
+-2710
 4776
--2883
+-2782
 0
 #OUTFIL4
 Print Data 5
@@ -2474,9 +2382,9 @@ PIL
 PRINTO5
 999999
 4380
--2888
+-2787
 4776
--2960
+-2859
 0
 #OUTFIL5
 Print Data 6
@@ -2490,9 +2398,9 @@ PIL
 PRINTO6
 999999
 4380
--2965
+-2864
 4776
--3037
+-2936
 0
 #OUTFIL6
 Print Data 7
@@ -2506,9 +2414,9 @@ PIL
 PRINTO7
 999999
 4380
--3042
+-2941
 4776
--3114
+-3013
 0
 #OUTFIL7
 Print Data 8
@@ -2522,9 +2430,9 @@ PIL
 PRINTO8
 999999
 4380
--3119
+-3018
 4776
--3191
+-3090
 0
 #OUTFIL8
 Print Data 9
@@ -2538,9 +2446,9 @@ PIL
 PRINTO9
 999999
 4380
--3196
+-3095
 4776
--3268
+-3167
 0
 #OUTFIL9
 Print Data 10
@@ -2554,9 +2462,9 @@ PIL
 PRINTO10
 999999
 4380
--3273
+-3172
 4776
--3345
+-3244
 0
 #PROGRAM17
 18
@@ -2573,9 +2481,9 @@ PILOT
 
 999999
 4064
--3571
-4309
--3652
+-3470
+4253
+-3540
 0
 0
 0
@@ -2585,15 +2493,15 @@ Script File
 0
 0
 S
-C:\projects\Roanoke\CUBE\move_PRN_Files.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\move_PRN_Files.s
 1
 PIL
 ISCR1 
 999999
-3653
--3573
-4049
--3645
+3747
+-3472
+4053
+-3534
 -1
 -1
 0
@@ -2609,9 +2517,9 @@ VRI
 VARI  
 999999
 3728
--3604
+-3503
 4052
--3661
+-3560
 -1
 -1
 0
@@ -2627,9 +2535,9 @@ PIL
 PRINTO1
 999999
 4285
--3573
+-3472
 4603
--3630
+-3529
 0
 #OUTFIL1
 Print Data 2
@@ -2643,9 +2551,9 @@ PIL
 PRINTO2
 999999
 4300
-156
+257
 4696
-84
+185
 0
 #OUTFIL2
 Print Data 3
@@ -2659,9 +2567,9 @@ PIL
 PRINTO3
 999999
 4300
-79
+180
 4696
-7
+108
 0
 #OUTFIL3
 Print Data 4
@@ -2675,9 +2583,9 @@ PIL
 PRINTO4
 999999
 4300
-2
+103
 4696
--70
+31
 0
 #OUTFIL4
 Print Data 5
@@ -2691,9 +2599,9 @@ PIL
 PRINTO5
 999999
 4300
--75
+26
 4696
--147
+-46
 0
 #OUTFIL5
 Print Data 6
@@ -2707,9 +2615,9 @@ PIL
 PRINTO6
 999999
 4300
--152
+-51
 4696
--224
+-123
 0
 #OUTFIL6
 Print Data 7
@@ -2723,9 +2631,9 @@ PIL
 PRINTO7
 999999
 4300
--229
+-128
 4696
--301
+-200
 0
 #OUTFIL7
 Print Data 8
@@ -2739,9 +2647,9 @@ PIL
 PRINTO8
 999999
 4300
--306
+-205
 4696
--378
+-277
 0
 #OUTFIL8
 Print Data 9
@@ -2755,9 +2663,9 @@ PIL
 PRINTO9
 999999
 4300
--383
+-282
 4696
--455
+-354
 0
 #OUTFIL9
 Print Data 10
@@ -2771,7 +2679,7 @@ PIL
 PRINTO10
 999999
 4300
--460
+-359
 4696
--532
+-431
 0

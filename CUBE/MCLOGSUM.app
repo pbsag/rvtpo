@@ -1,5 +1,6 @@
 &PROJFIL
 EXP0 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\@hwySkim@                             
+EXP0 221Zonal Data 1   {SCENARIO_DIR}\Input\TrnWalkPercent.dbf                     
 EXP0 421Lookup File 1  {CATALOG_DIR}\Params\mc\MC_Constants.csv                    
 EXP0 431Lookup File 2  {CATALOG_DIR}\Params\mc\MC_Coefficients.csv                 
 11
@@ -10,10 +11,10 @@ LG
 00
 
 
-Fri Mar 18 14:54:23 2016
+Fri Apr 08 15:11:45 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
-C:\projects\ROANOKE\CUBE\MCLOGSUM.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\MCLOGSUM.APP
 VOYAGER
 
 
@@ -46,7 +47,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\ModeChoice_Logsum.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\ModeChoice_Logsum.s
 1
 MAT
 ISCR1 
@@ -442,7 +443,7 @@ Zonal Data 1
 0
 0
 *
-{SCENARIO_DIR}\Input\TrnWalkPercent_{Year}.dbf
+{SCENARIO_DIR}\Input\TrnWalkPercent.dbf
 0
 ZON
 ZDATI1
@@ -452,8 +453,8 @@ ZDATI1
 916
 -1959
 -1
--1
-0
+-9
+1
 #INFIL23
 Zonal Data 2
 
@@ -1960,7 +1961,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\MC_Logsum_Pilot.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Logsum_Pilot.s
 1
 PIL
 ISCR1 
@@ -2177,7 +2178,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\MC_Logsum_Pilot_end.s
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Logsum_Pilot_end.s
 1
 PIL
 ISCR1 
@@ -2394,7 +2395,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\Process_HwySkim_PK.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Process_HwySkim_PK.S
 1
 MAT
 ISCR1 
@@ -4267,7 +4268,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\Process_HwySkim_OP.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Process_HwySkim_OP.S
 1
 MAT
 ISCR1 

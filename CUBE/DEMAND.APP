@@ -1,11 +1,5 @@
 &PROJFIL
 EXP1 1 1Zonal Data 1   {SCENARIO_DIR}\Output\se_classified_{year}{Alternative}.dbf 
-EXP1 111Lookup File 1  {CATALOG_DIR}\PARAMS\TRIP_PROD\HBW.DBF                      
-EXP1 121Lookup File 2  {CATALOG_DIR}\PARAMS\TRIP_PROD\NHBW.DBF                     
-EXP1 131Lookup File 3  {CATALOG_DIR}\PARAMS\TRIP_PROD\HBO.DBF                      
-EXP1 141Lookup File 4  {CATALOG_DIR}\PARAMS\TRIP_PROD\HBSCHOOL.DBF                 
-EXP1 151Lookup File 5  {CATALOG_DIR}\PARAMS\TRIP_PROD\HBSHOP.DBF                   
-EXP1 161Lookup File 6  {CATALOG_DIR}\PARAMS\TRIP_PROD\NHBO.DBF                     
 EXP1 1 0ZonalPAData 1  {SCENARIO_DIR}\OUTPUT\HH_PROD.DBF                           
 11
 0
@@ -15,10 +9,10 @@ DM
 00
 Run Trip Generation
 
-Fri Mar 18 13:38:48 2016
+Fri Apr 08 15:11:44 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
-C:\projects\roanoke\Cube\DEMAND.APP
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\DEMAND.APP
 VOYAGER
 
 
@@ -43,8 +37,8 @@ Household Classification Model (in R)
 999999
 706
 -1212
-951
--1293
+895
+-1282
 0
 0
 0
@@ -54,15 +48,15 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HH_ClassificationModel.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HH_ClassificationModel.S
 1
 PIL
 ISCR1 
 999999
-295
+389
 -1214
-691
--1286
+695
+-1276
 -1
 -1
 0
@@ -260,8 +254,8 @@ Household Trip Production
 999999
 1778
 -1354
-2131
--1435
+2051
+-1424
 0
 0
 0
@@ -271,15 +265,15 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\TripProduction.S
+\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TripProduction.S
 1
 GEN
 ISCR1 
 999999
-1367
--1090
-1763
--1162
+1461
+-1125
+1767
+-1187
 -1
 -1
 0
@@ -294,10 +288,10 @@ Zonal Data 1
 ZON
 ZDATI1
 999999
-1367
--1167
-1763
--1239
+1461
+-1192
+1767
+-1254
 -1
 -9
 1
@@ -474,13 +468,13 @@ Lookup File 1
 LOK
 LOOKUPI1
 999999
-1367
--1244
-1763
--1316
+1461
+-1259
+1767
+-1321
 -1
--9
-1
+-1
+0
 #INFIL12
 Lookup File 2
 
@@ -492,13 +486,13 @@ Lookup File 2
 LOK
 LOOKUPI2
 999999
-1367
--1321
-1763
--1393
+1461
+-1326
+1767
+-1388
 -1
--9
-1
+-1
+0
 #INFIL13
 Lookup File 3
 
@@ -510,13 +504,13 @@ Lookup File 3
 LOK
 LOOKUPI3
 999999
-1367
--1398
-1763
--1470
+1461
+-1393
+1767
+-1455
 -1
--9
-1
+-1
+0
 #INFIL14
 Lookup File 4
 
@@ -528,13 +522,13 @@ Lookup File 4
 LOK
 LOOKUPI4
 999999
-1367
--1475
-1763
--1547
+1461
+-1460
+1767
+-1522
 -1
--9
-1
+-1
+0
 #INFIL15
 Lookup File 5
 
@@ -546,13 +540,13 @@ Lookup File 5
 LOK
 LOOKUPI5
 999999
-1367
--1552
-1763
--1624
+1461
+-1527
+1767
+-1589
 -1
--9
-1
+-1
+0
 #INFIL16
 Lookup File 6
 
@@ -564,13 +558,13 @@ Lookup File 6
 LOK
 LOOKUPI6
 999999
-1367
--1629
-1763
--1701
+1461
+-1594
+1767
+-1656
 -1
--9
-1
+-1
+0
 #INFIL17
 Lookup File 7
 
@@ -1030,10 +1024,10 @@ DAT
 GEN
 PAO1  
 999999
-2153
--1318
-2542
--1390
+2067
+-1323
+2368
+-1385
 1
 #OUTFIL2
 ZonalPAData 2
@@ -1430,10 +1424,10 @@ PRN
 GEN
 PRINTO1
 999999
-2153
--1395
-2542
--1467
+2067
+-1390
+2368
+-1452
 0
 #OUTFIL27
 Print Data 2
