@@ -52,20 +52,5 @@ PHASE=ILOOP
                                                                                                                                                                                                         
 ENDPHASE
 
-PHASE=ADJUST
 
-function {
-    ; V=VOL[1]+VOL[2]+VOL[3]+VOL[4]
-    V=VOL[1]
-    TC[1] = Min(T0 * (1 + 0.83*(V/C)^5.5), T0*100)    ; Freeway        
-    TC[2] = Min(T0 * (1 + 0.83*(V/C)^3.7), T0*100)    ; Major Arterial         
-    TC[3] = Min(T0 * (1 + 0.83*(V/C)^2.8), T0*100)    ; Minor Arterial    
-    TC[4] = Min(T0 * (1 + 0.2*(V/C)^4), T0*100)       ; Collector
-    TC[5] = Min(T0 * (1 + 0.6*(V/C)^5.5), T0*100)     ; Local
-    TC[6] = T0                                        ; Connectors                       
-    }
-
-  LW.COSTa=TIME + 0.25*LI.DISTANCE
-  
-ENDPHASE
 ENDRUN
