@@ -15,10 +15,10 @@ TD
 00
 
 Runs Trip Distribution
-Fri Apr 08 15:11:45 2016
+Mon Apr 18 13:37:24 2016
 
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TRIPDI00.APP
+C:\projects\roanoke\Cube\RVARC_TDM.app
+C:\projects\roanoke\Cube\TRIPDI00.APP
 VOYAGER
 
 
@@ -54,7 +54,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TripDistribution_GravityModel_HBSC.s
+C:\projects\roanoke\Cube\TripDistribution_GravityModel_HBSC.s
 1
 DST
 ISCR1 
@@ -1725,7 +1725,7 @@ PRINTO10
 1
 5
 
-\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\TRIPDIST00.APP
+C:\projects\roanoke\CUBE\TRIPDIST00.APP
 Destination Choice
 
 0
@@ -1928,7 +1928,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TripDistribution_D2DFlowsl_HBSC.s
+C:\projects\roanoke\Cube\TripDistribution_D2DFlowsl_HBSC.s
 1
 MAT
 ISCR1 
@@ -3801,7 +3801,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TripDistribution_remove_SchoolBus.s
+C:\projects\roanoke\Cube\TripDistribution_remove_SchoolBus.s
 1
 MAT
 ISCR1 
@@ -5674,7 +5674,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\TDMAT00C.S
+C:\projects\roanoke\CUBE\TDMAT00C.S
 1
 MAT
 ISCR1 

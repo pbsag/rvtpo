@@ -8,7 +8,7 @@ FILEO RECO[1] = "{SCENARIO_DIR}\OUTPUT\TLFD_CV.DBF",
 FIELDS= HIGH,MID,LOW,TRIPS(16.8)
 FILEI MATI[2] = "{SCENARIO_DIR}\OUTPUT\Hwyskim.MAT"
 FILEI MATI[1] = "{SCENARIO_DIR}\Output\CV_{Year}.MAT"
-FILEO PRINTO[1] = "\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\CVMAT00B.PRN"
+FILEO PRINTO[1] = "C:\projects\roanoke\CUBE\CVMAT00B.PRN"
 
              MW[1]=MI.1.1
              MW[2]=MI.1.2

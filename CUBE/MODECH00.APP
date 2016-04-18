@@ -11,10 +11,10 @@ MC
 00
 
 
-Fri Apr 08 15:11:48 2016
+Mon Apr 18 13:37:27 2016
 
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
-\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\MODECH00.APP
+C:\projects\roanoke\Cube\RVARC_TDM.app
+C:\projects\roanoke\CUBE\MODECH00.APP
 VOYAGER
 
 
@@ -88,7 +88,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Pilot.s
+C:\projects\roanoke\Cube\MC_Pilot.s
 1
 PIL
 ISCR1 
@@ -305,7 +305,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Pilot_end.s
+C:\projects\roanoke\Cube\MC_Pilot_end.s
 1
 PIL
 ISCR1 
@@ -522,7 +522,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\ModeChoiceModel.s
+C:\projects\roanoke\Cube\ModeChoiceModel.s
 1
 MAT
 ISCR1 
@@ -2395,7 +2395,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Merge_HBO_HBSH.s
+C:\projects\roanoke\Cube\MC_Merge_HBO_HBSH.s
 1
 MAT
 ISCR1 

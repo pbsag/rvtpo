@@ -2,25 +2,19 @@
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\Merge_Hwy_Assignments.PRN"
 FILEO NETO = "{SCENARIO_DIR}\Output\LOADED_{Year}{Alternative}.NET",
- EXCLUDE = V_1, VC_1, V1_1, V2_1, V3_1, V4_1, VT_1, V1T_1, V2T_1, V3T_1, V4T_1
+ EXCLUDE = V_1, VC_1, V1_1, V2_1, V3_1, V4_1, VT_1, V1T_1, V2T_1, V3T_1, V4T_1, TIME_1 ,CSPD_1 ,VDT_1, VDT_2 ,VHT_1 ,TIME_2 ,VC_2 ,CSPD_2 ,CDT_2 ,VHT_2 ,V_2 ,V1_2 ,V2_2 ,V3_2 ,V4_2 ,V5_2 ,V6_2 ,V7_2 ,V8_2 ,VT_2 ,V1T_2 ,V2T_2 ,V3T_2 ,V4T_2 ,V5T_2 ,V6T_2 ,V7T_2 ,V8T_2
+
 FILEI LINKI[4] = "{SCENARIO_DIR}\Output\LOADED_NT.NET"
 FILEI LINKI[3] = "{SCENARIO_DIR}\Output\LOADED_PM.NET"
 FILEI LINKI[2] = "{SCENARIO_DIR}\Output\LOADED_MD.NET"
 FILEI LINKI[1] = "{SCENARIO_DIR}\Output\LOADED_AM.NET"
 FILEO PRINTO[1] = "{SCENARIO_DIR}\Output\Hwy_eval_period.csv"
  
- 
 ; =========================================================
 ; LINKMERGE PHASE
 ; =========================================================
 PHASE=LINKMERGE  
 ; Total Volume
-/*
-AM_Vol=li.1.V_2 + li.1.V_1
-MD_Vol=li.2.V_2 + li.2.V_1
-PM_Vol=li.3.V_2 + li.3.V_1
-NT_Vol=li.4.V_2 + li.4.V_1
-*/
 AM_Vol=li.1.V_2 
 MD_Vol=li.2.V_2
 PM_Vol=li.3.V_2 
@@ -62,6 +56,44 @@ PM_EX=li.3.V1_1
 NT_EX=li.4.V1_1 
 TOTAL_EX = AM_EX + MD_EX + PM_EX + NT_EX
 
+;Sum period specific loaded attributes to all period (24 hour)...
+; Congested Speed by Time Period
+AM_CongSpeed=li.1.CSPD_2 
+MD_CongSpeed=li.2.CSPD_2 
+PM_CongSpeed=li.3.CSPD_2 
+NT_CongSpeed=li.4.CSPD_2 
+
+; Congested Time by Time Period
+AM_Time=li.1.TIME_2 
+MD_Time=li.2.TIME_2 
+PM_Time=li.3.TIME_2 
+NT_Time=li.4.TIME_2 
+
+; Vehicle Hours of Delay (Minutes)
+AM_VDT=li.1.VDT_2 
+MD_VDT=li.2.VDT_2 
+PM_VDT=li.3.VDT_2 
+NT_VDT=li.4.VDT_2 
+TOTAL_VDT = AM_VDT + MD_VDT + PM_VDT + NT_VDT
+
+; Vehcile Hours of Travel (Miles)
+AM_VHT=li.1.VHT_2                               
+MD_VHT=li.2.VHT_2                               
+PM_VHT=li.3.VHT_2                               
+NT_VHT=li.4.VHT_2                               
+TOTAL_VHT = AM_VHT + MD_VHT + PM_VHT + NT_VHT   
+
+; Volume to Capacity Ratio
+AM_VC=li.1.VC_2 
+MD_VC=li.2.VC_2 
+PM_VC=li.3.VC_2 
+NT_VC=li.4.VC_2
+
+IF (Total_Vol > 0)
+  TOTAL_VC = AM_VC * (AM_Vol/Total_Vol) + MD_VC * (MD_Vol/Total_Vol)+ PM_VC * (PM_Vol/Total_Vol) + NT_VC * (NT_Vol/Total_Vol) 
+ELSE
+  TOTAL_VC = 0
+ENDIF
 
 ; Select Link Volumes
 sl_DA=li.1.V5_2 +li.2.V5_2 +li.3.V5_2 +li.4.V5_2  
@@ -71,27 +103,11 @@ sl_CV=li.1.V8_2 +li.2.V8_2 +li.3.V8_2 +li.4.V8_2
 sl_EE=li.1.V2_1 +li.2.V2_1 +li.3.V2_1 +li.4.V2_1  
 sl_tot=sl_DA+ sl_SR +  sl_IEEI + sl_CV + sl_EE
 
-;Sum period specific loaded attributes to all period (24 hour)...
-VDT_1 = li.1.VDT_2 + li.2.VDT_2 + li.3.VDT_2 + li.4.VDT_2
-VHT_1 = li.1.VHT_2 + li.2.VHT_2 + li.3.VHT_2 + li.4.VHT_2
-
-if(VHT_2>0) 
-  CSPD_2 = VDT_2/VHT_2
-else 
-  CSPD_2 = 0
-endif
-
-if(CSPD_2>0) 
-  TIME_2 = 60*DISTANCE/CSPD_2 
-else 
-  TIME_2 = 60*DISTANCE/FFSPEED 
-endif
-
 ; write out peak and off-peak congested time to use in feedback
-SPEED_PK_CNG =  li.1.CSPD_2
-TIME_PK_CNG = li.1.TIME_2
-SPEED_OP_CNG =  li.2.CSPD_2
-TIME_OP_CNG = li.2.TIME_2
+SPEED_PK_CNG =  li.1.CSPD_2  ; AM Congested Speed
+TIME_PK_CNG = li.1.TIME_2    ; AM Congested Time
+SPEED_OP_CNG =  li.2.CSPD_2  ; MD Congested Speed
+TIME_OP_CNG = li.2.TIME_2    ; MD Congested Time
 
 ; Group facility types
 oft=LI.1.FACTYPE                                 ; Facility Type

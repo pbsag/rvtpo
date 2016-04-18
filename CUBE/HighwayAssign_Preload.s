@@ -1,5 +1,5 @@
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=HIGHWAY PRNFILE="\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\ASHWY00A.PRN" MSG='Preload External Trips'
+RUN PGM=HIGHWAY PRNFILE="C:\projects\roanoke\CUBE\ASHWY00A.PRN" MSG='Preload External Trips'
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\SL_Preloaded_@PERIOD_NAME@.MAT",
 MO=2, NAME=SL_EE
 FILEI NETI = "{SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET"
@@ -14,42 +14,16 @@ PARAMETERS ZONES={Total ZONES}, MAXITERS=1, COMBINE=EQUI, GAP= 0.0, RELATIVEGAP 
 PHASE=LINKREAD
 
    T0 = 60* (LI.DISTANCE/LI.FFSPEED)
- ;  T0 = 60* (LI.DISTANCE/LI.FFS)
-  C  = LI.CAPE_@PERIOD_NAME@
-
-  LW.COSTa = T0 + 0.25*LI.DISTANCE
-  
-/*
-1	Interstate/Principal Freeway
-2	Minor Freeway
-3	Principal Arterial
-4	Major Arterial
-5	Minor Arterial
-6	Major Collector
-7	Minor Collector
-8	Local
-9	High-speed Ramp
-10	Low-speed Ramp
-11	Centroid Connector
-12	External Station Connector
-*/
-
-; Group facility types
-  IF(LI.FACTYPE=1,2,9,10)    LINKCLASS=1 ; Freeway
-  IF(LI.FACTYPE=3,4)    LINKCLASS=2 ; Major Arterial
-  IF(LI.FACTYPE=5)      LINKCLASS=3 ; Minor Arterial
-  IF(LI.FACTYPE=6,7)    LINKCLASS=4 ; Collector
-  IF(LI.FACTYPE=8)      LINKCLASS=5 ; Local
-  IF(LI.FACTYPE>10)     LINKCLASS=6 ; Connectors
-
+   C  = LI.CAPE_@PERIOD_NAME@
+   LW.COSTa = T0 + 0.25*LI.DISTANCE
+ 
 ENDPHASE
 
 PHASE=ILOOP
   ; Assign EE trips 
   PATHLOAD PATH=LW.COSTa,  MW[1] = MI.1.5, VOL[1] = MW[1], 
      MW[2] = MI.1.5, SELECTLINK=({SelectLink}), VOL[2]=MW[2] 
-  
-                                                                                                                                                                                                        
+                                                                         
 ENDPHASE
 
 

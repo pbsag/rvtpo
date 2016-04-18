@@ -14,10 +14,10 @@ AS
 00
 Assign trips to Network
 
-Fri Apr 08 15:11:45 2016
+Mon Apr 18 14:19:39 2016
 
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\ASSIGNMENT.APP
+C:\projects\roanoke\Cube\RVARC_TDM.app
+C:\projects\roanoke\Cube\ASSIGNMENT.APP
 VOYAGER
 
 
@@ -48,8 +48,8 @@ Load Final Trips onto Network
 999999
 1189
 -1574
-1399
--1644
+1461
+-1655
 0
 0
 0
@@ -59,14 +59,14 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign.s
+C:\projects\roanoke\Cube\HighwayAssign.s
 1
 HWY
 ISCR1 
 999999
-872
--1510
-1178
+778
+-1500
+1174
 -1572
 -1
 -1
@@ -82,10 +82,10 @@ MAT
 HWY
 MATI1 
 999999
-872
+778
 -1577
-1178
--1639
+1174
+-1649
 -1
 -9
 1
@@ -442,10 +442,10 @@ NET
 HWY
 NETI  
 999999
-872
--1644
-1178
--1706
+778
+-1654
+1174
+-1726
 -1
 -1
 0
@@ -1234,10 +1234,10 @@ PRN
 HWY
 OPRN  
 999999
-1415
--1477
-1716
--1539
+1483
+-1462
+1872
+-1534
 0
 #OUTFIL1
 Matrix File 1
@@ -1250,10 +1250,10 @@ MAT
 HWY
 MATO1 
 999999
-1415
--1544
-1716
--1606
+1483
+-1539
+1872
+-1611
 0
 #OUTFIL2
 Matrix File 2
@@ -1586,10 +1586,10 @@ NET
 HWY
 NETO  
 999999
-1415
--1611
-1716
--1673
+1483
+-1616
+1872
+-1688
 0
 #OUTFIL23
 Turn Flows
@@ -1746,10 +1746,10 @@ PTH
 HWY
 PATHO1
 999999
-1415
--1678
-1716
--1740
+1483
+-1693
+1872
+-1765
 0
 #OUTFIL33
 Path File 2
@@ -2039,8 +2039,8 @@ NETWORK
 999999
 2653
 -724
-2863
--794
+2925
+-805
 0
 0
 0
@@ -2050,15 +2050,15 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign_MergeNetworks.s
+C:\projects\roanoke\Cube\HighwayAssign_MergeNetworks.s
 1
 NET
 ISCR1 
 999999
-2336
--594
-2642
--656
+2242
+-574
+2638
+-646
 -1
 -1
 0
@@ -2073,9 +2073,9 @@ Link/Net. 1
 LNK
 LINKI1
 999999
-2336
--661
-2642
+2242
+-651
+2638
 -723
 -1
 -1
@@ -2091,10 +2091,10 @@ Link/Net. 2
 LNK
 LINKI2
 999999
-2336
+2242
 -728
-2642
--790
+2638
+-800
 -1
 -1
 0
@@ -2109,10 +2109,10 @@ Link/Net. 3
 LNK
 LINKI3
 999999
-2336
--795
-2642
--857
+2242
+-805
+2638
+-877
 -1
 -1
 0
@@ -2127,10 +2127,10 @@ Link/Net. 4
 LNK
 LINKI4
 999999
-2336
--862
-2642
--924
+2242
+-882
+2638
+-954
 -1
 -1
 0
@@ -3153,9 +3153,9 @@ PRN
 NET
 OPRN  
 999999
-2879
--660
-3180
+2947
+-650
+3336
 -722
 0
 #OUTFIL1
@@ -3169,10 +3169,10 @@ NET
 NET
 NETO  
 999999
-2879
+2947
 -727
-3180
--789
+3336
+-799
 1
 #OUTFIL2
 Link File
@@ -3217,10 +3217,10 @@ PRN
 NET
 PRINTO1
 999999
-2879
--794
-3180
--856
+2947
+-804
+3336
+-876
 1
 #OUTFIL5
 Print Data 2
@@ -3702,8 +3702,8 @@ PILOT
 999999
 1470
 -674
-1659
--744
+1715
+-755
 0
 0
 0
@@ -3713,15 +3713,15 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign_Pilot.s
+C:\projects\roanoke\Cube\HighwayAssign_Pilot.s
 1
 PIL
 ISCR1 
 999999
-1153
+1059
 -676
-1459
--738
+1455
+-748
 -1
 -1
 0
@@ -3960,8 +3960,8 @@ NETWORK
 999999
 2653
 -1099
-2863
--1169
+2925
+-1180
 0
 0
 0
@@ -3971,15 +3971,15 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign_Evaluate.s
+C:\projects\roanoke\Cube\HighwayAssign_Evaluate.s
 1
 NET
 ISCR1 
 999999
-2336
--1068
-2642
--1130
+2242
+-1063
+2638
+-1135
 -1
 -1
 0
@@ -3994,10 +3994,10 @@ Link/Net. 1
 LNK
 LINKI1
 999999
-2336
--1135
-2642
--1197
+2242
+-1140
+2638
+-1212
 -1
 -1
 0
@@ -5074,9 +5074,9 @@ PRN
 NET
 OPRN  
 999999
-2879
--1035
-3180
+2947
+-1025
+3336
 -1097
 0
 #OUTFIL1
@@ -5138,10 +5138,10 @@ PRN
 NET
 PRINTO1
 999999
-2879
+2947
 -1102
-3180
--1164
+3336
+-1174
 1
 #OUTFIL5
 Print Data 2
@@ -5154,10 +5154,10 @@ PRN
 NET
 PRINTO2
 999999
-2879
--1169
-3180
--1231
+2947
+-1179
+3336
+-1251
 1
 #OUTFIL6
 Print Data 3
@@ -5623,8 +5623,8 @@ Preload External Trips
 999999
 1207
 -1099
-1417
--1169
+1479
+-1180
 0
 0
 0
@@ -5634,14 +5634,14 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\HighwayAssign_Preload.s
+C:\projects\roanoke\Cube\HighwayAssign_Preload.s
 1
 HWY
 ISCR1 
 999999
-890
--1035
-1196
+796
+-1025
+1192
 -1097
 -1
 -1
@@ -5657,10 +5657,10 @@ MAT
 HWY
 MATI1 
 999999
-890
+796
 -1102
-1196
--1164
+1192
+-1174
 -1
 -9
 1
@@ -6017,10 +6017,10 @@ NET
 HWY
 NETI  
 999999
-890
--1169
-1196
--1231
+796
+-1179
+1192
+-1251
 -1
 -9
 1
@@ -6804,15 +6804,15 @@ Print File
 0
 0
 PRN
-\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\ASHWY00A.PRN
+C:\projects\roanoke\CUBE\ASHWY00A.PRN
 0
 HWY
 OPRN  
 999999
-1433
--1002
-1734
--1064
+1501
+-987
+1890
+-1059
 0
 #OUTFIL1
 Matrix File 1
@@ -6825,10 +6825,10 @@ MAT
 HWY
 MATO1 
 999999
-1433
--1069
-1734
--1131
+1501
+-1064
+1890
+-1136
 0
 #OUTFIL2
 Matrix File 2
@@ -7161,10 +7161,10 @@ NET
 HWY
 NETO  
 999999
-1433
--1136
-1734
--1198
+1501
+-1141
+1890
+-1213
 0
 #OUTFIL23
 Turn Flows
@@ -7321,10 +7321,10 @@ PTH
 HWY
 PATHO1
 999999
-1433
--1203
-1734
--1265
+1501
+-1218
+1890
+-1290
 0
 #OUTFIL33
 Path File 2

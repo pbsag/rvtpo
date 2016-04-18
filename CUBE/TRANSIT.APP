@@ -22,10 +22,10 @@ TN
 00
 Transit Networks and Skims
 
-Fri Apr 08 15:11:45 2016
+Mon Apr 18 13:37:25 2016
 
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
-\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\TRANSIT.APP
+C:\projects\roanoke\Cube\RVARC_TDM.app
+C:\projects\roanoke\CUBE\TRANSIT.APP
 VOYAGER
 
 
@@ -58,7 +58,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\TransitSpeeds.S
+C:\projects\roanoke\Cube\TransitSpeeds.S
 1
 NET
 ISCR1 
@@ -1721,7 +1721,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Build_WalkAccess_Connectors.S
+C:\projects\roanoke\Cube\Build_WalkAccess_Connectors.S
 1
 PTR
 ISCR1 
@@ -4206,7 +4206,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\WalkAccess_Connectors_by_Mode.S
+C:\projects\roanoke\Cube\WalkAccess_Connectors_by_Mode.S
 1
 MAT
 ISCR1 
@@ -6079,7 +6079,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Trn_Skims_PK.S
+C:\projects\roanoke\Cube\Trn_Skims_PK.S
 1
 PTR
 ISCR1 
@@ -8564,7 +8564,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Trn_Skims_OP.S
+C:\projects\roanoke\Cube\Trn_Skims_OP.S
 1
 PTR
 ISCR1 

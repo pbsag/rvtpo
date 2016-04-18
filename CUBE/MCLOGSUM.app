@@ -11,10 +11,10 @@ LG
 00
 
 
-Fri Apr 08 15:11:45 2016
+Mon Apr 18 13:37:25 2016
 
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\RVARC_TDM.app
-\\Mac\Home\Documents\projects\roanoke\rvtpo\CUBE\MCLOGSUM.APP
+C:\projects\roanoke\Cube\RVARC_TDM.app
+C:\projects\roanoke\CUBE\MCLOGSUM.APP
 VOYAGER
 
 
@@ -47,7 +47,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\ModeChoice_Logsum.s
+C:\projects\roanoke\Cube\ModeChoice_Logsum.s
 1
 MAT
 ISCR1 
@@ -1961,7 +1961,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Logsum_Pilot.s
+C:\projects\roanoke\Cube\MC_Logsum_Pilot.s
 1
 PIL
 ISCR1 
@@ -2178,7 +2178,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\MC_Logsum_Pilot_end.s
+C:\projects\roanoke\Cube\MC_Logsum_Pilot_end.s
 1
 PIL
 ISCR1 
@@ -2395,7 +2395,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Process_HwySkim_PK.S
+C:\projects\roanoke\Cube\Process_HwySkim_PK.S
 1
 MAT
 ISCR1 
@@ -4268,7 +4268,7 @@ Script File
 0
 0
 S
-\\Mac\Home\Documents\projects\roanoke\rvtpo\Cube\Process_HwySkim_OP.S
+C:\projects\roanoke\Cube\Process_HwySkim_OP.S
 1
 MAT
 ISCR1 
