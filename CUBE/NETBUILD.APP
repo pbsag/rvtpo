@@ -11,9 +11,9 @@ NB
 00
 Build Network from Minutp to Cube.  Add/Manipulate Link Variables.
 
-Mon Apr 18 13:37:24 2016
+Mon Apr 25 17:37:46 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
+C:\projects\Roanoke\Cube\RVARC_TDM.app
 C:\projects\roanoke\Cube\NETBUILD.APP
 VOYAGER
 

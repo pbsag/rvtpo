@@ -15,9 +15,9 @@ TD
 00
 
 Runs Trip Distribution
-Mon Apr 18 13:37:24 2016
+Mon Apr 25 17:37:46 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
+C:\projects\Roanoke\Cube\RVARC_TDM.app
 C:\projects\roanoke\Cube\TRIPDI00.APP
 VOYAGER
 

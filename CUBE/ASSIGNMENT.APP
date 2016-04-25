@@ -14,9 +14,9 @@ AS
 00
 Assign trips to Network
 
-Mon Apr 18 14:19:39 2016
+Mon Apr 25 17:37:46 2016
 
-C:\projects\roanoke\Cube\RVARC_TDM.app
+C:\projects\Roanoke\Cube\RVARC_TDM.app
 C:\projects\roanoke\Cube\ASSIGNMENT.APP
 VOYAGER
 
