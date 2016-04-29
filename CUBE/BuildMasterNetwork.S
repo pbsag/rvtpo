@@ -1,4 +1,3 @@
-; PILOT Script
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 PRINT FORM=5.0,
     list =  "function=SHAPE2NETWORK",
@@ -23,5 +22,3 @@ PRINT FORM=5.0,
 *CUBE {CATALOG_DIR}\CUBE\Shape_to_Net.s /Command /CloseWhenDone /Minimize /NoSplash
 
 *DELETE "{CATALOG_DIR}\CUBE\Shape_to_Net.s"
-; End of PILOT Script
-

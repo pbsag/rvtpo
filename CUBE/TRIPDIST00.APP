@@ -16,9 +16,9 @@ TD
 00
 
 
-Mon Apr 25 17:37:44 2016
+Fri Apr 29 13:27:45 2016
 
-
+C:\projects\roanoke\Cube\TRIPDI00.APP
 C:\projects\roanoke\CUBE\TRIPDIST00.APP
 VOYAGER
 

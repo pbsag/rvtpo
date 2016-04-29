@@ -1,0 +1,19 @@
+-------------------------
+CHECKING APPLICATION GROUP 'Network'
+C:\projects\roanoke\Cube\NETBUILD.APP
+CHECKING EXECUTION ORDER
+CHECKING FILE EXISTENCE
+-------------------------
+APPLICATION GROUP: 'Network' (C:\projects\roanoke\Cube\NETBUILD.APP)
+PROGRAM: NETWORK
+EXEC ORDER: 7
+THE 'Link/Net. 2' DOES NOT EXIST
+{SCENARIO_DIR}\Output\link_capacities{Year}{Alternative}.DBF
+(='C:\projects\Roanoke\Base\Output\link_capacities2012A.DBF' for Scenario 'Base')
+
+-------------------------
+CHECKING APPLICATION GROUP 'Area Type'
+C:\projects\roanoke\Cube\NETWOR00.APP
+CHECKING EXECUTION ORDER
+CHECKING FILE EXISTENCE
+-------------------------

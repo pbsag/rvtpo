@@ -46,6 +46,77 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\scenario.properties"
  
 ; End of PILOT Script
 
+; PILOT Script
+; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
+
+IF ({BuildMasterNet} = 1) 
+; End of PILOT Script
+
+; PILOT Script
+; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
+PRINT FORM=5.0,
+    list =  "function=SHAPE2NETWORK",
+    "\n shpi=", '{CATALOG_DIR}', "\MasterNetwork\Master_Node.SHP",      ; point shape
+    "\n shpi=", '{CATALOG_DIR}', "\MasterNetwork\Master_Link.SHP",     ; line shape
+    "\n neto=", '{CATALOG_DIR}', "\MasterNetwork\Master_highway.net",
+    '\n PointNodeNumField="N"',
+    "\n AnodeField=A",
+    "\n BnodeField=B",
+    '\n LevelField=""',
+    "\n ClearABValues=T",
+    "\n DirectionOption=1",
+    '\n DirectionField=""',
+    "\n AddDistanceField=Y",
+    "\n DistanceScale=2.22",
+    "\n NodeGroupingLimit=1",
+    "\n StartingNewNode=1000",
+    "\n HighestZone=270",
+  "\n \n endfunction",
+ FILE = "{CATALOG_DIR}\CUBE\SHAPE_TO_NET.S"
+
+*CUBE {CATALOG_DIR}\CUBE\Shape_to_Net.s /Command /CloseWhenDone /Minimize /NoSplash
+*DELETE "{CATALOG_DIR}\CUBE\Shape_to_Net.s"
+; End of PILOT Script
+
+; PILOT Script
+; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
+
+ENDIF
+; End of PILOT Script
+
+; Script for program NETWORK in file "C:\projects\roanoke\CUBE\Extract_Scenario_Network"
+;;<<Default Template>><<NETWORK>><<Default>>;;
+; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
+RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Extract_Network.PRN" MSG='Extract Scenario Network'
+FILEI LINKI[1] = "{CATALOG_DIR}\MasterNetwork\Master_highway.net"
+FILEO NETO = "{SCENARIO_DIR}\Input\highway.net",
+INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB
+
+PROCESS  PHASE=LINKMERGE  
+; Add common links
+IF(DIST_C > 0)
+  DISTANCE = DIST_C
+  FACTYPE = FT_C
+  LANES = LANES_C
+  POST_SPD = SPD_C
+ENDIF
+
+
+; Add new or year/scenario specific links
+IF(F{year}_EXCL = 1)
+  DISTANCE = DIST_{year}
+  FACTYPE = FT_{year}
+  LANES = LANES_{year}
+  POST_SPD = SPD_{year}
+ENDIF
+
+IF (DISTANCE =0) DELETE
+
+ENDPROCESS
+
+ENDRUN
+
+
 ; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_1.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_1.PRN" MSG='OUTPUT LINK AND ZONE DATA'
@@ -1137,7 +1208,7 @@ FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE.LIN"
 ENDRUN
 
 
-; Script for program FRATAR in file "C:\projects\ROANOKE\CUBE\EEFRA00A.S"
+; Script for program FRATAR in file "C:\projects\roanoke\CUBE\EEFRA00A.S"
 
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=FRATAR MSG='Future year EE Table'
@@ -1159,7 +1230,7 @@ SETPA PGF[1]=GROWTHF(1,I) AGF[1]=GROWTHF(2,I) MW[1]=MI.1.1
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\ROANOKE\CUBE\EEMAT00A.S"
+; Script for program MATRIX in file "C:\projects\roanoke\CUBE\EEMAT00A.S"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX
@@ -1586,7 +1657,7 @@ FILEO RECO[1] = "{SCENARIO_DIR}\OUTPUT\TLFD_CV.DBF",
 FIELDS= HIGH,MID,LOW,TRIPS(16.8)
 FILEI MATI[2] = "{SCENARIO_DIR}\OUTPUT\Hwyskim.MAT"
 FILEI MATI[1] = "{SCENARIO_DIR}\Output\CV_{Year}.MAT"
-FILEO PRINTO[1] = "C:\projects\ROANOKE\CUBE\CVMAT00B.PRN"
+FILEO PRINTO[1] = "C:\projects\roanoke\CUBE\CVMAT00B.PRN"
 
              MW[1]=MI.1.1
              MW[2]=MI.1.2
@@ -2071,7 +2142,7 @@ ENDRUN
 
   ENDLOOP
 
-; Script for program MATRIX in file "C:\projects\ROANOKE\CUBE\TDMAT00C.S"
+; Script for program MATRIX in file "C:\projects\roanoke\CUBE\TDMAT00C.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\TDMAT00C.PRN" MSG='HBSC FF'
     zones = 1
@@ -2906,7 +2977,7 @@ ENDRUN
 
   ENDLOOP
 
-; Script for program MATRIX in file "C:\projects\ROANOKE\CUBE\TRMAT00G.S"
+; Script for program MATRIX in file "C:\projects\roanoke\CUBE\TRMAT00G.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\MC_Transit_Trips.PRN" MSG='Transit Trips'
 FILEO MATO[2] = "{SCENARIO_DIR}\Output\OP_Transit.MAT",
@@ -2958,7 +3029,7 @@ ENDIF
 
 ; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HighwayAssign_Preload.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=HIGHWAY PRNFILE="C:\projects\ROANOKE\CUBE\ASHWY00A.PRN" MSG='Preload External Trips'
+RUN PGM=HIGHWAY PRNFILE="C:\projects\roanoke\CUBE\ASHWY00A.PRN" MSG='Preload External Trips'
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\SL_Preloaded_@PERIOD_NAME@.MAT",
 MO=2, NAME=SL_EE
 FILEI NETI = "{SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET"
@@ -2973,60 +3044,19 @@ PARAMETERS ZONES={Total ZONES}, MAXITERS=1, COMBINE=EQUI, GAP= 0.0, RELATIVEGAP 
 PHASE=LINKREAD
 
    T0 = 60* (LI.DISTANCE/LI.FFSPEED)
- ;  T0 = 60* (LI.DISTANCE/LI.FFS)
-  C  = LI.CAPE_@PERIOD_NAME@
-
-  LW.COSTa = T0 + 0.25*LI.DISTANCE
-  
-/*
-1	Interstate/Principal Freeway
-2	Minor Freeway
-3	Principal Arterial
-4	Major Arterial
-5	Minor Arterial
-6	Major Collector
-7	Minor Collector
-8	Local
-9	High-speed Ramp
-10	Low-speed Ramp
-11	Centroid Connector
-12	External Station Connector
-*/
-
-; Group facility types
-  IF(LI.FACTYPE=1,2,9,10)    LINKCLASS=1 ; Freeway
-  IF(LI.FACTYPE=3,4)    LINKCLASS=2 ; Major Arterial
-  IF(LI.FACTYPE=5)      LINKCLASS=3 ; Minor Arterial
-  IF(LI.FACTYPE=6,7)    LINKCLASS=4 ; Collector
-  IF(LI.FACTYPE=8)      LINKCLASS=5 ; Local
-  IF(LI.FACTYPE>10)     LINKCLASS=6 ; Connectors
-
+   C  = LI.CAPE_@PERIOD_NAME@
+   LW.COSTa = T0 + 0.25*LI.DISTANCE
+ 
 ENDPHASE
 
 PHASE=ILOOP
   ; Assign EE trips 
   PATHLOAD PATH=LW.COSTa,  MW[1] = MI.1.5, VOL[1] = MW[1], 
      MW[2] = MI.1.5, SELECTLINK=({SelectLink}), VOL[2]=MW[2] 
-  
-                                                                                                                                                                                                        
+                                                                         
 ENDPHASE
 
-PHASE=ADJUST
 
-function {
-    ; V=VOL[1]+VOL[2]+VOL[3]+VOL[4]
-    V=VOL[1]
-    TC[1] = Min(T0 * (1 + 0.83*(V/C)^5.5), T0*100)    ; Freeway        
-    TC[2] = Min(T0 * (1 + 0.83*(V/C)^3.7), T0*100)    ; Major Arterial         
-    TC[3] = Min(T0 * (1 + 0.83*(V/C)^2.8), T0*100)    ; Minor Arterial    
-    TC[4] = Min(T0 * (1 + 0.2*(V/C)^4), T0*100)       ; Collector
-    TC[5] = Min(T0 * (1 + 0.6*(V/C)^5.5), T0*100)     ; Local
-    TC[6] = T0                                        ; Connectors                       
-    }
-
-  LW.COSTa=TIME + 0.25*LI.DISTANCE
-  
-ENDPHASE
 ENDRUN
 
 
@@ -3131,25 +3161,19 @@ ENDRUN
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\Merge_Hwy_Assignments.PRN"
 FILEO NETO = "{SCENARIO_DIR}\Output\LOADED_{Year}{Alternative}.NET",
- EXCLUDE = V_1, VC_1, V1_1, V2_1, V3_1, V4_1, VT_1, V1T_1, V2T_1, V3T_1, V4T_1
+ EXCLUDE = V_1, VC_1, V1_1, V2_1, V3_1, V4_1, VT_1, V1T_1, V2T_1, V3T_1, V4T_1, TIME_1 ,CSPD_1 ,VDT_1, VDT_2 ,VHT_1 ,TIME_2 ,VC_2 ,CSPD_2 ,CDT_2 ,VHT_2 ,V_2 ,V1_2 ,V2_2 ,V3_2 ,V4_2 ,V5_2 ,V6_2 ,V7_2 ,V8_2 ,VT_2 ,V1T_2 ,V2T_2 ,V3T_2 ,V4T_2 ,V5T_2 ,V6T_2 ,V7T_2 ,V8T_2
+
 FILEI LINKI[4] = "{SCENARIO_DIR}\Output\LOADED_NT.NET"
 FILEI LINKI[3] = "{SCENARIO_DIR}\Output\LOADED_PM.NET"
 FILEI LINKI[2] = "{SCENARIO_DIR}\Output\LOADED_MD.NET"
 FILEI LINKI[1] = "{SCENARIO_DIR}\Output\LOADED_AM.NET"
 FILEO PRINTO[1] = "{SCENARIO_DIR}\Output\Hwy_eval_period.csv"
  
- 
 ; =========================================================
 ; LINKMERGE PHASE
 ; =========================================================
 PHASE=LINKMERGE  
 ; Total Volume
-/*
-AM_Vol=li.1.V_2 + li.1.V_1
-MD_Vol=li.2.V_2 + li.2.V_1
-PM_Vol=li.3.V_2 + li.3.V_1
-NT_Vol=li.4.V_2 + li.4.V_1
-*/
 AM_Vol=li.1.V_2 
 MD_Vol=li.2.V_2
 PM_Vol=li.3.V_2 
@@ -3191,6 +3215,44 @@ PM_EX=li.3.V1_1
 NT_EX=li.4.V1_1 
 TOTAL_EX = AM_EX + MD_EX + PM_EX + NT_EX
 
+;Sum period specific loaded attributes to all period (24 hour)...
+; Congested Speed by Time Period
+AM_CongSpeed=li.1.CSPD_2 
+MD_CongSpeed=li.2.CSPD_2 
+PM_CongSpeed=li.3.CSPD_2 
+NT_CongSpeed=li.4.CSPD_2 
+
+; Congested Time by Time Period
+AM_Time=li.1.TIME_2 
+MD_Time=li.2.TIME_2 
+PM_Time=li.3.TIME_2 
+NT_Time=li.4.TIME_2 
+
+; Vehicle Hours of Delay (Minutes)
+AM_VDT=li.1.VDT_2 
+MD_VDT=li.2.VDT_2 
+PM_VDT=li.3.VDT_2 
+NT_VDT=li.4.VDT_2 
+TOTAL_VDT = AM_VDT + MD_VDT + PM_VDT + NT_VDT
+
+; Vehcile Hours of Travel (Miles)
+AM_VHT=li.1.VHT_2                               
+MD_VHT=li.2.VHT_2                               
+PM_VHT=li.3.VHT_2                               
+NT_VHT=li.4.VHT_2                               
+TOTAL_VHT = AM_VHT + MD_VHT + PM_VHT + NT_VHT   
+
+; Volume to Capacity Ratio
+AM_VC=li.1.VC_2 
+MD_VC=li.2.VC_2 
+PM_VC=li.3.VC_2 
+NT_VC=li.4.VC_2
+
+IF (Total_Vol > 0)
+  TOTAL_VC = AM_VC * (AM_Vol/Total_Vol) + MD_VC * (MD_Vol/Total_Vol)+ PM_VC * (PM_Vol/Total_Vol) + NT_VC * (NT_Vol/Total_Vol) 
+ELSE
+  TOTAL_VC = 0
+ENDIF
 
 ; Select Link Volumes
 sl_DA=li.1.V5_2 +li.2.V5_2 +li.3.V5_2 +li.4.V5_2  
@@ -3200,27 +3262,11 @@ sl_CV=li.1.V8_2 +li.2.V8_2 +li.3.V8_2 +li.4.V8_2
 sl_EE=li.1.V2_1 +li.2.V2_1 +li.3.V2_1 +li.4.V2_1  
 sl_tot=sl_DA+ sl_SR +  sl_IEEI + sl_CV + sl_EE
 
-;Sum period specific loaded attributes to all period (24 hour)...
-VDT_1 = li.1.VDT_2 + li.2.VDT_2 + li.3.VDT_2 + li.4.VDT_2
-VHT_1 = li.1.VHT_2 + li.2.VHT_2 + li.3.VHT_2 + li.4.VHT_2
-
-if(VHT_2>0) 
-  CSPD_2 = VDT_2/VHT_2
-else 
-  CSPD_2 = 0
-endif
-
-if(CSPD_2>0) 
-  TIME_2 = 60*DISTANCE/CSPD_2 
-else 
-  TIME_2 = 60*DISTANCE/FFSPEED 
-endif
-
 ; write out peak and off-peak congested time to use in feedback
-SPEED_PK_CNG =  li.1.CSPD_2
-TIME_PK_CNG = li.1.TIME_2
-SPEED_OP_CNG =  li.2.CSPD_2
-TIME_OP_CNG = li.2.TIME_2
+SPEED_PK_CNG =  li.1.CSPD_2  ; AM Congested Speed
+TIME_PK_CNG = li.1.TIME_2    ; AM Congested Time
+SPEED_OP_CNG =  li.2.CSPD_2  ; MD Congested Speed
+TIME_OP_CNG = li.2.TIME_2    ; MD Congested Time
 
 ; Group facility types
 oft=LI.1.FACTYPE                                 ; Facility Type
@@ -3272,7 +3318,7 @@ _countsum=_countsum+count      ;
 if ((count>0)&(sl=0)) sl=98    ; Counts with MPO Screenline/Cutline of ZERO are reported as SL/CL of 98
 
 _distmile=DISTANCE                 ; distance in mile   
-_ctimehr=TIME_1/60                 ; Congestime time in hour
+_ctimehr=AM_TIME/60                 ; Congestime time in hour
 VOLVMT=ROUND(TOTAL_VOL*_distmile)  ; VMT-Volume
 VOLVHT=ROUND(TOTAL_VOL*_ctimehr)   ; VHT-Volume
 CNTVMT=ROUND(count*_distmile)      ; VMT-Count
@@ -3852,7 +3898,7 @@ ENDRUN
 
 ; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HwySkims_Congested_OP.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=HIGHWAY PRNFILE="C:\projects\ROANOKE\CUBE\PBHWY00A.PRN" MSG='Build OP congested skims'
+RUN PGM=HIGHWAY PRNFILE="C:\projects\roanoke\CUBE\PBHWY00A.PRN" MSG='Build OP congested skims'
        
 FILEI ZDATI[1] = "{SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF",
  Z = N
@@ -3973,5 +4019,27 @@ ENDRUN
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 *COPY "{CATALOG_DIR}\CUBE\*.PRN" "{SCENARIO_DIR}\OUTPUT\LOGS\*.PRN"
 *DEL "{CATALOG_DIR}\CUBE\*.PRN" 
+; End of PILOT Script
+
+; PILOT Script
+; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
+IF ({exportMDB} = 1)
+
+; End of PILOT Script
+
+; Script for program NETWORK in file "C:\projects\ROANOKE\CUBE\FBNET00A.S"
+;;<<Default Template>><<NETWORK>><<Default>>;;
+; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
+RUN PGM=NETWORK MSG='Export NET to GeoDatabase'
+FILEO NETO = "{SCENARIO_DIR}\Maps\results.mdb\loaded_network"
+FILEI LINKI[2] = "{SCENARIO_DIR}\OUTPUT\LOADED_2012A.NET"
+FILEI LINKI[1] = "{SCENARIO_DIR}\Maps\empty.mdb\HWNetwork"
+ENDRUN
+
+
+; PILOT Script
+; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
+ENDIF
+
 ; End of PILOT Script
 
