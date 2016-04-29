@@ -24,7 +24,7 @@ _countsum=_countsum+count      ;
 if ((count>0)&(sl=0)) sl=98    ; Counts with MPO Screenline/Cutline of ZERO are reported as SL/CL of 98
 
 _distmile=DISTANCE                 ; distance in mile   
-_ctimehr=TIME_1/60                 ; Congestime time in hour
+_ctimehr=AM_TIME/60                 ; Congestime time in hour
 VOLVMT=ROUND(TOTAL_VOL*_distmile)  ; VMT-Volume
 VOLVHT=ROUND(TOTAL_VOL*_ctimehr)   ; VHT-Volume
 CNTVMT=ROUND(count*_distmile)      ; VMT-Count
