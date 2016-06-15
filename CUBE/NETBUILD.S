@@ -1,9 +1,9 @@
-; Script for program NETWORK in file "C:\projects\roanoke\CUBE\Extract_Scenario_Network"
+; Script for program NETWORK in file "C:\projects\roanoke\CUBE\Extract_Scenario_Network.S"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Extract_Network.PRN" MSG='Extract Scenario Network'
 FILEI LINKI[1] = "{CATALOG_DIR}\MasterNetwork\Master_highway.net"
-FILEO NETO = "{SCENARIO_DIR}\Output\highway.net",
+FILEO NETO = "{SCENARIO_DIR}\Input\highway.net",
 INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB
 
 PROCESS  PHASE=LINKMERGE  
@@ -34,10 +34,10 @@ ENDRUN
 ; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_1.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_1.PRN" MSG='OUTPUT LINK AND ZONE DATA'
+FILEI LINKI[1] = "{SCENARIO_DIR}\Output\highway.net"
 FILEO PRINTO[1] = "{SCENARIO_DIR}\Output\XY.dat"
 FILEO NODEO = "{SCENARIO_DIR}\Output\NODE.DAT"
 FILEO LINKO = "{SCENARIO_DIR}\Output\LINK.DAT"
-FILEI LINKI[1] = "{SCENARIO_DIR}\Output\highway.net"
 
 ARRAY _CNT={Total zones},_CENTX={Total zones},_CENTY={Total zones},_CENT={Total zones},
       _NO=99999,_MIDX=99999,_MIDY=99999,_MID_POINT=99999,_NO=99999,XMILES=999999,
@@ -133,7 +133,7 @@ ENDRUN
 ; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_3.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_3.PRN" MSG='INSERT LINK DATA TO NETWORK'
-FILEI LINKI[1] = "{SCENARIO_DIR}\Input\highway.net"
+FILEI LINKI[1] = "{SCENARIO_DIR}\Output\highway.net"
 FILEI LINKI[2] = "{SCENARIO_DIR}\Output\CLOSEST.DBF"
 FILEO NETO = "{SCENARIO_DIR}\Output\ZONE.NET"
 

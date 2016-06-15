@@ -11,7 +11,7 @@ NB
 00
 Build Network from Minutp to Cube.  Add/Manipulate Link Variables.
 
-Wed Jun 15 01:29:45 2016
+Wed Jun 15 02:47:01 2016
 
 C:\projects\Roanoke\Cube\RVARC_TDM.app
 C:\projects\roanoke\Cube\NETBUILD.APP
@@ -2035,7 +2035,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\CUBE\Extract_Scenario_Network
+C:\projects\roanoke\CUBE\Extract_Scenario_Network.S
 1
 NET
 ISCR1 
