@@ -2,7 +2,7 @@
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Extract_Network.PRN" MSG='Extract Scenario Network'
 FILEI LINKI[1] = "{CATALOG_DIR}\MasterNetwork\Master_highway.net"
-FILEO NETO = "{SCENARIO_DIR}\Input\highway.net",
+FILEO NETO = "{SCENARIO_DIR}\Output\highway.net",
 INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB
 
 PROCESS  PHASE=LINKMERGE  

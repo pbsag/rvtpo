@@ -25,13 +25,13 @@ C:\projects\Roanoke\Cube\Roanoke Area MPO Model.PRN
 2:TrnAssignment,00,C:\projects\roanoke\CUBE\TRNASS00.APP
 #END
 1
-C:\Users\SARVEP~1\AppData\Local\Temp\Cit7F54.tmp
+C:\Users\SARVEP~1\AppData\Local\Temp\CitDED1.tmp
 1
 Base
-#GROUP=Network, 00:7:C:\projects\roanoke\Cube\NETBUILD.APP
+#GROUP=Network, 00:4:C:\projects\roanoke\Cube\NETBUILD.APP
 #PROGRAM
 #PROGNAME=NETWORK<0:13;2
-#EXEC=4
+#EXEC=1
 #INCLUSTER=0
 #PROGARGS=C:\projects\roanoke\CUBE\Extract_Scenario_Network
 
@@ -39,12 +39,12 @@ Base
 #END
 #OUTPUT
 {SCENARIO_DIR}\OUTPUT\LOGS\Extract_Network.PRN
-{SCENARIO_DIR}\Input\highway.net
+{SCENARIO_DIR}\Output\highway.net
 #END
-#GROUP=Network, 00:7:C:\projects\roanoke\Cube\NETBUILD.APP
+#GROUP=Network, 00:4:C:\projects\roanoke\Cube\NETBUILD.APP
 #PROGRAM
 #PROGNAME=StartOfGroup<0:7;0
-#EXEC=5
+#EXEC=2
 #INCLUSTER=0
 #GROUP=Area Type, 00:7:C:\projects\roanoke\Cube\NETWOR00.APP
 #PROGRAM
@@ -137,14 +137,14 @@ Base
 {SCENARIO_DIR}\Output\LOGS\AT_7.PRN
 {SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF
 #END
-#GROUP=Network, 00:7:C:\projects\roanoke\Cube\NETBUILD.APP
+#GROUP=Network, 00:4:C:\projects\roanoke\Cube\NETBUILD.APP
 #PROGRAM
 #PROGNAME=EndOfGroup<0:8;0
-#EXEC=5
+#EXEC=2
 #INCLUSTER=0
 #PROGRAM
 #PROGNAME=NETWORK<0:13;1
-#EXEC=7
+#EXEC=4
 #INCLUSTER=0
 #PROGARGS=C:\projects\roanoke\Cube\FreeFlowSpeeds.s
 

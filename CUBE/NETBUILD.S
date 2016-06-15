@@ -1,47 +1,9 @@
-; PILOT Script
-; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-
-IF ({BuildMasterNet} = 1) 
-; End of PILOT Script
-
-; PILOT Script
-; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-PRINT FORM=5.0,
-    list =  "function=SHAPE2NETWORK",
-    "\n shpi=", '{CATALOG_DIR}', "\MasterNetwork\Master_Node.SHP",      ; point shape
-    "\n shpi=", '{CATALOG_DIR}', "\MasterNetwork\Master_Link.SHP",     ; line shape
-    "\n neto=", '{CATALOG_DIR}', "\MasterNetwork\Master_highway.net",
-    '\n PointNodeNumField="N"',
-    "\n AnodeField=A",
-    "\n BnodeField=B",
-    '\n LevelField=""',
-    "\n ClearABValues=T",
-    "\n DirectionOption=1",
-    '\n DirectionField=""',
-    "\n AddDistanceField=N",
-    "\n DistanceScale=2.22",
-    "\n NodeGroupingLimit=1",
-    "\n StartingNewNode=1000",
-    "\n HighestZone=270",
-  "\n \n endfunction",
- FILE = "{CATALOG_DIR}\CUBE\SHAPE_TO_NET.S"
-
-*CUBE {CATALOG_DIR}\CUBE\Shape_to_Net.s /Command /CloseWhenDone /Minimize /NoSplash
-*DELETE "{CATALOG_DIR}\CUBE\Shape_to_Net.s"
-; End of PILOT Script
-
-; PILOT Script
-; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-
-ENDIF
-; End of PILOT Script
-
 ; Script for program NETWORK in file "C:\projects\roanoke\CUBE\Extract_Scenario_Network"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Extract_Network.PRN" MSG='Extract Scenario Network'
 FILEI LINKI[1] = "{CATALOG_DIR}\MasterNetwork\Master_highway.net"
-FILEO NETO = "{SCENARIO_DIR}\Input\highway.net",
+FILEO NETO = "{SCENARIO_DIR}\Output\highway.net",
 INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB
 
 PROCESS  PHASE=LINKMERGE  
@@ -75,7 +37,7 @@ RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_1.PRN" MSG='OUTPUT LINK A
 FILEO PRINTO[1] = "{SCENARIO_DIR}\Output\XY.dat"
 FILEO NODEO = "{SCENARIO_DIR}\Output\NODE.DAT"
 FILEO LINKO = "{SCENARIO_DIR}\Output\LINK.DAT"
-FILEI LINKI[1] = "{SCENARIO_DIR}\Input\highway.net"
+FILEI LINKI[1] = "{SCENARIO_DIR}\Output\highway.net"
 
 ARRAY _CNT={Total zones},_CENTX={Total zones},_CENTY={Total zones},_CENT={Total zones},
       _NO=99999,_MIDX=99999,_MIDY=99999,_MID_POINT=99999,_NO=99999,XMILES=999999,
