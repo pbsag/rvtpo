@@ -1,3 +1,4 @@
+; Script for program NETWORK in file "C:\projects\ROANOKE\CUBE\FBNET00A.S"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK MSG='Export NET to ShapeFile'
@@ -9,3 +10,5 @@ FILEO LINKO = "{SCENARIO_DIR}\Output\loaded_network_Link.shp",
  FORMAT = SHP
  
 ENDRUN
+
+
