@@ -1,5 +1,5 @@
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=HIGHWAY PRNFILE="C:\projects\roanoke\CUBE\ASHWY00A.PRN" MSG='Preload External Trips'
+RUN PGM=HIGHWAY PRNFILE="C:\projects\rvtpo\CUBE\ASHWY00A.PRN" MSG='Preload External Trips'
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\SL_Preloaded_@PERIOD_NAME@.MAT",
 MO=2, NAME=SL_EE
 FILEI NETI = "{SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET"

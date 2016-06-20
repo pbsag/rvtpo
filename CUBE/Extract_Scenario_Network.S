@@ -6,21 +6,27 @@ FILEO NETO = "{SCENARIO_DIR}\Output\highway.net",
 INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB
 
 PROCESS  PHASE=LINKMERGE  
+; Initialize fields to zeros if the current values are zeros
+/*s
+DISTANCE = 0
+FACTYPE = 0
+LANES = 0
+POST_SPD = 0
+*/
 ; Add common links
 IF(DIST_C > 0)
-  DISTANCE = DIST_C
   FACTYPE = FT_C
+  DISTANCE = DIST_C
   LANES = LANES_C
   POST_SPD = SPD_C
 ENDIF
 
-
 ; Add new or year/scenario specific links
-IF(F{year}_EXCL = 1)
-  DISTANCE = DIST_{year}
-  FACTYPE = FT_{year}
-  LANES = LANES_{year}
-  POST_SPD = SPD_{year}
+IF(F{year}_{Project}_Only = 1)
+  DISTANCE = DIST_{year}_{Project}
+  FACTYPE = FT_{year}_{Project}
+  LANES = LANES_{year}_{Project}
+  POST_SPD = SPD_{year}_{Project}
 ENDIF
 
 IF (DISTANCE =0) DELETE

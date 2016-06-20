@@ -46,7 +46,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\scenario.properties"
  
 ; End of PILOT Script
 
-; Script for program NETWORK in file "C:\projects\roanoke\CUBE\Extract_Scenario_Network.S"
+; Script for program NETWORK in file "C:\projects\rvtpo\CUBE\Extract_Scenario_Network.S"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Extract_Network.PRN" MSG='Extract Scenario Network'
@@ -55,21 +55,27 @@ FILEO NETO = "{SCENARIO_DIR}\Output\highway.net",
 INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB
 
 PROCESS  PHASE=LINKMERGE  
+; Initialize fields to zeros if the current values are zeros
+/*s
+DISTANCE = 0
+FACTYPE = 0
+LANES = 0
+POST_SPD = 0
+*/
 ; Add common links
 IF(DIST_C > 0)
-  DISTANCE = DIST_C
   FACTYPE = FT_C
+  DISTANCE = DIST_C
   LANES = LANES_C
   POST_SPD = SPD_C
 ENDIF
 
-
 ; Add new or year/scenario specific links
-IF(F{year}_EXCL = 1)
-  DISTANCE = DIST_{year}
-  FACTYPE = FT_{year}
-  LANES = LANES_{year}
-  POST_SPD = SPD_{year}
+IF(F{year}_{Project}_Only = 1)
+  DISTANCE = DIST_{year}_{Project}
+  FACTYPE = FT_{year}_{Project}
+  LANES = LANES_{year}_{Project}
+  POST_SPD = SPD_{year}_{Project}
 ENDIF
 
 IF (DISTANCE =0) DELETE
@@ -79,7 +85,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_1.S"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_1.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_1.PRN" MSG='OUTPUT LINK AND ZONE DATA'
 FILEI LINKI[1] = "{SCENARIO_DIR}\Output\highway.net"
@@ -130,7 +136,7 @@ ENDPHASE
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\AT_2.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\AT_2.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_2.PRN" MSG='FIND THE CLOSEST ZONE TO EACH LINK'
 FILEI ZDATI[1] = "{SCENARIO_DIR}\Output\XY.dat",
@@ -178,7 +184,7 @@ ZONES={Total ZONES}
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_3.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_3.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_3.PRN" MSG='INSERT LINK DATA TO NETWORK'
 FILEI LINKI[1] = "{SCENARIO_DIR}\Output\highway.net"
@@ -221,7 +227,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_4.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_4.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_4.PRN" MSG='ADD LAND USE DATA TO ZONES'
 FILEI NODEI[2] = "{SCENARIO_DIR}\Input\se.dbf"
@@ -266,7 +272,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_5.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_5.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT-5.PRN" MSG='DETERMINE AREA TYPE FROM LAND USE DENSITY AND PROXIMITY'
 FILEO PRINTO[3] = "{SCENARIO_DIR}\Output\STAT.PRN"
@@ -366,7 +372,7 @@ array _centn={Total Zones},_centx={Total Zones},_centy={Total Zones},
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_6.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_6.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_6.PRN" MSG='INSERT LINK AREA TYPE ON THE NETWORK'
 FILEO LINKO = "{SCENARIO_DIR}\Output\link_atype{Year}{Alternative}.DBF",
@@ -412,7 +418,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\AT_7.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\AT_7.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_7.PRN" MSG='OUTPUT AREA TYPE AS DBF FOR LATER USE'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF",
@@ -464,7 +470,7 @@ PRINT LIST= Rexe ' ' Rscript ' ' link_file ' ' output_file,
 
 ; End of PILOT Script
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\FreeFlowSpeeds.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\FreeFlowSpeeds.s"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK MSG='Attach capacity and FFS to network'
@@ -541,7 +547,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HwySkims_FreeFlow.S"
+; Script for program HIGHWAY in file "C:\projects\rvtpo\Cube\HwySkims_FreeFlow.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=HIGHWAY PRNFILE="{SCENARIO_DIR}\Output\Logs\FreeFlowSpeeds.PRN" MSG='Build Initial Skims'
 FILEI ZDATI[1] = "{SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF",
@@ -635,7 +641,7 @@ PRINT LIST= Rexe ' ' Rscript ' ' input_se_file ' ' lookup_dir ' ' output_file,
 
 ; End of PILOT Script
 
-; Script for program GENERATION in file "C:\projects\roanoke\Cube\TripProduction.S"
+; Script for program GENERATION in file "C:\projects\rvtpo\Cube\TripProduction.S"
 ;;<<Default Template>><<GENERATION>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=GENERATION MSG='Household Trip Production'
@@ -794,7 +800,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\TransitSpeeds.S"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\TransitSpeeds.S"
 
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\TransitSpeeds.PRN" MSG='Transit Speeds'
@@ -898,7 +904,7 @@ endloop
 ENDRUN
 
 
-; Script for program PUBLIC TRANSPORT in file "C:\projects\roanoke\Cube\Build_WalkAccess_Connectors.S"
+; Script for program PUBLIC TRANSPORT in file "C:\projects\rvtpo\Cube\Build_WalkAccess_Connectors.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=PUBLIC TRANSPORT PRNFILE="{SCENARIO_DIR}\Output\LOGS\BuildWalkAccessConenctors.PRN" MSG='Build Walk Access Connectors'
 FILEO REPORTO = "{SCENARIO_DIR}\Output\LOGS\TNPTR00B.PRN"
@@ -951,7 +957,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\WalkAccess_Connectors_by_Mode.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\WalkAccess_Connectors_by_Mode.S"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\Output\LOGS\WalkAccess_ByMode.PRN" MSG='Subdivide Connectors into Separate Files by Mode'
@@ -1014,7 +1020,7 @@ if (mode=4) PRINT LIST="NT LEG=",zonei(5.0),"-",zonej(5.0)," MODE=",mode(2.0)," 
 ENDRUN
 
 
-; Script for program PUBLIC TRANSPORT in file "C:\projects\roanoke\Cube\Trn_Skims_PK.S"
+; Script for program PUBLIC TRANSPORT in file "C:\projects\rvtpo\Cube\Trn_Skims_PK.S"
 ;;<<Default Template>><<PUBLIC TRANSPORT>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=PUBLIC TRANSPORT PRNFILE="{SCENARIO_DIR}\Output\LOGS\Trn_PK_Skims.PRN" MSG='PK-Walk Access Paths / Skims'
@@ -1092,7 +1098,7 @@ FILEI NETI = "{SCENARIO_DIR}\Output\HWYTSPD.NET"
 ENDRUN
 
 
-; Script for program PUBLIC TRANSPORT in file "C:\projects\roanoke\Cube\Trn_Skims_OP.S"
+; Script for program PUBLIC TRANSPORT in file "C:\projects\rvtpo\Cube\Trn_Skims_OP.S"
 ;;<<Default Template>><<PUBLIC TRANSPORT>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=PUBLIC TRANSPORT PRNFILE="{SCENARIO_DIR}\Output\LOGS\Trn_OP_Skims.PRN" MSG='OP-Walk Access Paths / Skims'
@@ -1170,7 +1176,7 @@ FILEI LINEI[1] = "{SCENARIO_DIR}\Input\TROUTE.LIN"
 ENDRUN
 
 
-; Script for program FRATAR in file "C:\projects\roanoke\CUBE\EEFRA00A.S"
+; Script for program FRATAR in file "C:\projects\rvtpo\CUBE\EEFRA00A.S"
 
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=FRATAR MSG='Future year EE Table'
@@ -1192,7 +1198,7 @@ SETPA PGF[1]=GROWTHF(1,I) AGF[1]=GROWTHF(2,I) MW[1]=MI.1.1
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\CUBE\EEMAT00A.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\CUBE\EEMAT00A.S"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX
@@ -1218,7 +1224,7 @@ ENDIF
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\EE_HwySkims.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\EE_HwySkims.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX MSG='Process Highway Skims'
 FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\Hwyskim.MAT",
@@ -1264,7 +1270,7 @@ FILLMW MW[1]=MI.1.1(5)                ; highway skims
 ENDRUN
 
 
-; Script for program GENERATION in file "C:\projects\roanoke\Cube\EE_TripGen.S"
+; Script for program GENERATION in file "C:\projects\rvtpo\Cube\EE_TripGen.S"
 ;;<<Default Template>><<GENERATION>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=GENERATION MSG='IEEI_TripGen'
@@ -1308,7 +1314,7 @@ ENDPHASE
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\EE_nonResident_NHB.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\EE_nonResident_NHB.S"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX MSG='NR-NHB Model'
@@ -1328,7 +1334,7 @@ WRITE RECO=1
 ENDRUN
 
 
-; Script for program DISTRIBUTION in file "C:\projects\roanoke\Cube\EE_TripDistribution.S"
+; Script for program DISTRIBUTION in file "C:\projects\rvtpo\Cube\EE_TripDistribution.S"
 ;;<<Default Template>><<DISTRIBUTION>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=DISTRIBUTION MSG='IEEI_TripDist'
@@ -1372,7 +1378,7 @@ TITLE='** IEEI Travel Time Frequency **'
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\IEEI_TOD.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\IEEI_TOD.S"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX
@@ -1421,7 +1427,7 @@ ENDLOOP
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\EE_TOD.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\EE_TOD.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX MSG='EE TOD'
 FILEO MATO[4] = "{SCENARIO_DIR}\Output\EE_{year}_NT.MAT",
@@ -1458,7 +1464,7 @@ ENDLOOP
 ENDRUN
 
 
-; Script for program GENERATION in file "C:\projects\roanoke\Cube\CV_TripGen.S"
+; Script for program GENERATION in file "C:\projects\rvtpo\Cube\CV_TripGen.S"
 ;;<<Default Template>><<GENERATION>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=GENERATION MSG='CV_TripGen'
@@ -1496,7 +1502,7 @@ ENDPHASE
 ENDRUN
 
 
-; Script for program DISTRIBUTION in file "C:\projects\roanoke\Cube\CV_TripDistribution.S"
+; Script for program DISTRIBUTION in file "C:\projects\rvtpo\Cube\CV_TripDistribution.S"
 ;;<<Default Template>><<DISTRIBUTION>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=DISTRIBUTION
@@ -1569,7 +1575,7 @@ TITLE='** MUT Combo Travel Time Frequency **'
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\CV_TimeOfDay.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\CV_TimeOfDay.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX
 FILEO MATO[4] = "{SCENARIO_DIR}\Output\CV_{year}_NT.MAT",
@@ -1608,7 +1614,7 @@ ENDLOOP
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\CV_TLFD.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\CV_TLFD.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\CV_TLFD.PRN" MSG='Trip Length Frequency'
 FILEO RECO[3] = "{SCENARIO_DIR}\OUTPUT\TLFD_MUT.DBF",
@@ -1619,7 +1625,7 @@ FILEO RECO[1] = "{SCENARIO_DIR}\OUTPUT\TLFD_CV.DBF",
 FIELDS= HIGH,MID,LOW,TRIPS(16.8)
 FILEI MATI[2] = "{SCENARIO_DIR}\OUTPUT\Hwyskim.MAT"
 FILEI MATI[1] = "{SCENARIO_DIR}\Output\CV_{Year}.MAT"
-FILEO PRINTO[1] = "C:\projects\roanoke\CUBE\CVMAT00B.PRN"
+FILEO PRINTO[1] = "C:\projects\rvtpo\CUBE\CVMAT00B.PRN"
 
              MW[1]=MI.1.1
              MW[2]=MI.1.2
@@ -1706,7 +1712,7 @@ ENDIF
 
 ; End of PILOT Script
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\Process_HwySkim_PK.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\Process_HwySkim_PK.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX MSG='Process Highway Skims'
 FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\pk_Hwyskim.MAT",
@@ -1752,7 +1758,7 @@ FILLMW MW[1]=MI.1.1(5)                ; highway skims
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\Process_HwySkim_OP.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\Process_HwySkim_OP.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX MSG='Process Highway Skims'
 FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\OP_Hwyskim.MAT",
@@ -1838,7 +1844,7 @@ ENDIF
 
 ; End of PILOT Script
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\ModeChoice_Logsum.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\ModeChoice_Logsum.s"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\Output\LOGS\@PURP@_logsum.PRN" MSG='Mode Choice Logsums and Probabilities'
@@ -2104,7 +2110,7 @@ ENDRUN
 
   ENDLOOP
 
-; Script for program MATRIX in file "C:\projects\roanoke\CUBE\TDMAT00C.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\CUBE\TDMAT00C.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\TDMAT00C.PRN" MSG='HBSC FF'
     zones = 1
@@ -2123,7 +2129,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\Output\HBSC_FFFile.CSV",
 ENDRUN
 
 
-; Script for program DISTRIBUTION in file "C:\projects\roanoke\Cube\TripDistribution_GravityModel_HBSC.s"
+; Script for program DISTRIBUTION in file "C:\projects\rvtpo\Cube\TripDistribution_GravityModel_HBSC.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=DISTRIBUTION PRNFILE="{SCENARIO_DIR}\Output\Logs\HBSC_distribution.PRN" MSG='Gravity Model - HBSC'
 FILEI MATI[1] = "{SCENARIO_DIR}\Output\OP_Hwyskim.mat"
@@ -2161,7 +2167,7 @@ FILEO MATO[1] = "{SCENARIO_DIR}\Output\Person_HBSC.MAT",
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\TripDistribution_D2DFlowsl_HBSC.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\TripDistribution_D2DFlowsl_HBSC.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\HBSC_D2D_Flwos.PRN" MSG='HBSC District - to - District Flows'
 FILEI MATI[1] = "{SCENARIO_DIR}\Output\Person_HBSC.MAT"
@@ -2174,7 +2180,7 @@ zones = 12, MISSINGZI=M, MISSINGZO=M
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\TripDistribution_remove_SchoolBus.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\TripDistribution_remove_SchoolBus.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\HBSC_noSchoolTrips.PRN" MSG='HBSC - no sch bus trips'
 FILEI MATI[1] = "{SCENARIO_DIR}\Output\Person_HBSC.MAT"
@@ -2192,7 +2198,7 @@ ENDRUN
 
   LOOP Iteration = 1, 10, 1
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_HBW.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\DC_HBW.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS0\DC_HBW.PRN" MSG='HBW Apply Destination Choice Model'
 FILEI ZDATI[3] = "{SCENARIO_DIR}\OUTPUT\HBW_ShadowPrice.DBF"
@@ -2337,7 +2343,7 @@ FILEO PRINTO[3] = "{SCENARIO_DIR}\OUTPUT\HBW_Zonal_Trips.csv"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_HBW_ShadowPrice.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\DC_HBW_ShadowPrice.s"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX MSG='Shadow Price'
@@ -2430,7 +2436,7 @@ PRINT LIST="Trip Distribution Loop Number = 4 of 4 NHB ", printo=0
 ENDIF
 ; End of PILOT Script
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_nonWork.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\DC_nonWork.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\tripDist_@PURP@.PRN" MSG='Apply Destination Choice Model'
 FILEI ZDATI[3] = "{SCENARIO_DIR}\Output\NHBNR_PA_{year}.DBF"
@@ -2571,7 +2577,7 @@ FILEO PRINTO[3] = "{SCENARIO_DIR}\OUTPUT\@PURP@@PERIOD@_Zonal_Trips.csv"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_nonWork_TLFD.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\DC_nonWork_TLFD.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\non-work_tlfd.PRN" MSG='Non-Work Trip Length Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\@PURP@_TDLF.dbf",
@@ -2608,7 +2614,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\@PURP@_TDLF.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_nonWork_TLFD_Time.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\DC_nonWork_TLFD_Time.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\non-work_ttfd.PRN" MSG='Non-Work Trip Time Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\@PURP@_time_TDLF.dbf",
@@ -2644,7 +2650,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\@PURP@_time_TDLF.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_nonWork_D2DFlow.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\DC_nonWork_D2DFlow.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\non-work.d2d_flowsPRN" MSG='District - to - District Flows'
 FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\Dest_@PURP@.MAT"
@@ -2659,7 +2665,7 @@ ENDRUN
 
   ENDLOOP
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_work_TLFD.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\DC_work_TLFD.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd_msg.PRN" MSG='Work Trip Length Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\HBW_TDLF.dbf",
@@ -2696,7 +2702,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_work_TLFD_Time.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\DC_work_TLFD_Time.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd_msg.PRN" MSG='Work Trip Time Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\HBW_TravelTime_TDLF.dbf",
@@ -2731,7 +2737,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\DC_work_D2DFlow.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\DC_work_D2DFlow.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_d2d_flows.PRN" MSG='HBW District - to - District Flows'
 FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\Dest_HBW.MAT"
@@ -2744,7 +2750,7 @@ zones = 12, MISSINGZI=M, MISSINGZO=M
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\MC_Merge_HBO_HBSH.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\MC_Merge_HBO_HBSH.s"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX MSG='HBO + HBSH'
@@ -2789,7 +2795,7 @@ ENDIF
 
 ; End of PILOT Script
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\ModeChoiceModel.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\ModeChoiceModel.s"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX
@@ -2855,6 +2861,30 @@ ENDRUN
 
   ENDLOOP
 
+; Script for program MATRIX in file "C:\projects\rvtpo\CUBE\MCMAT00A.S"
+;;<<Default Template>><<MATRIX>><<Default>>;;
+; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
+RUN PGM=MATRIX MSG='MC Trips by Mode and Purpose'
+FILEI MATI[4] = "{SCENARIO_DIR}\OUTPUT\NHB_MCTRIPS.MAT"
+FILEI MATI[3] = "{SCENARIO_DIR}\OUTPUT\HBSC_MCTRIPS.MAT"
+FILEI MATI[2] = "{SCENARIO_DIR}\OUTPUT\HBO_MCTRIPS.MAT"
+FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\HBW_MCTRIPS.MAT"
+
+
+FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\All_MCTRIPS.MAT",
+MO = 1-20, NAME = HBW_DA, HBW_SR, HBW_WLB, HBW_PMB, HBW_NOM,
+ HBO_DA, HBO_SR, HBO_WLB, HBO_PMB, HBO_NOM,
+ HBSC_DA, HBSC_SR, HBSC_WLB, HBSC_PMB, HBSC_NOM,
+ NHB_DA, NHB_SR, NHB_WLB, NHB_PMB, NHB_NOM
+ 
+FILLMW MW[1] = MI.1.1(5) 
+FILLMW MW[6] = MI.2.1(5) 
+FILLMW MW[11] = MI.3.1(5) 
+FILLMW MW[16] = MI.4.1(5) 
+ 
+ENDRUN
+
+
   LOOP PER = 1, 4, 1
 
 ; PILOT Script
@@ -2878,7 +2908,7 @@ PERIOD_NAME = 'NT'
 ENDIF
 ; End of PILOT Script
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\TOD_Model.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\TOD_Model.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\Output\Logs\TOD_Model_@PERIOD_NAME@.PRN" MSG='Convert PA Trips to OD Trips'
 
@@ -2939,7 +2969,7 @@ ENDRUN
 
   ENDLOOP
 
-; Script for program MATRIX in file "C:\projects\roanoke\CUBE\TRMAT00G.S"
+; Script for program MATRIX in file "C:\projects\rvtpo\CUBE\TRMAT00G.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\MC_Transit_Trips.PRN" MSG='Transit Trips'
 FILEO MATO[2] = "{SCENARIO_DIR}\Output\OP_Transit.MAT",
@@ -2989,9 +3019,9 @@ ENDIF
 
 ; End of PILOT Script
 
-; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HighwayAssign_Preload.s"
+; Script for program HIGHWAY in file "C:\projects\rvtpo\Cube\HighwayAssign_Preload.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=HIGHWAY PRNFILE="C:\projects\roanoke\CUBE\ASHWY00A.PRN" MSG='Preload External Trips'
+RUN PGM=HIGHWAY PRNFILE="C:\projects\rvtpo\CUBE\ASHWY00A.PRN" MSG='Preload External Trips'
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\SL_Preloaded_@PERIOD_NAME@.MAT",
 MO=2, NAME=SL_EE
 FILEI NETI = "{SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET"
@@ -3022,7 +3052,7 @@ ENDPHASE
 ENDRUN
 
 
-; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HighwayAssign.s"
+; Script for program HIGHWAY in file "C:\projects\rvtpo\Cube\HighwayAssign.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=HIGHWAY PRNFILE="{SCENARIO_DIR}\Output\Logs\@PERIOD_NAME@.PRN" MSG='Load Final Trips onto Network'
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\SL_Loaded_@PERIOD_NAME@.MAT",
@@ -3118,7 +3148,7 @@ ENDRUN
 
   ENDLOOP
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\HighwayAssign_MergeNetworks.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\HighwayAssign_MergeNetworks.s"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\Merge_Hwy_Assignments.PRN"
@@ -3253,7 +3283,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\HighwayAssign_Evaluate.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\HighwayAssign_Evaluate.s"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\Hwy_eval.PRN"
@@ -3800,7 +3830,7 @@ ENDPHASE
 ENDRUN
 
 
-; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HwySkims_Congested_PK.S"
+; Script for program HIGHWAY in file "C:\projects\rvtpo\Cube\HwySkims_Congested_PK.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=HIGHWAY PRNFILE="{SCENARIO_DIR}\Output\Logs\PBHWY00B.PRN" MSG='Build PK congested skims'
        
@@ -3858,9 +3888,9 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program HIGHWAY in file "C:\projects\roanoke\Cube\HwySkims_Congested_OP.S"
+; Script for program HIGHWAY in file "C:\projects\rvtpo\Cube\HwySkims_Congested_OP.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=HIGHWAY PRNFILE="C:\projects\roanoke\CUBE\PBHWY00A.PRN" MSG='Build OP congested skims'
+RUN PGM=HIGHWAY PRNFILE="C:\projects\rvtpo\CUBE\PBHWY00A.PRN" MSG='Build OP congested skims'
        
 FILEI ZDATI[1] = "{SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF",
  Z = N
@@ -3931,7 +3961,7 @@ ENDRUN
 
 ENDLOOP
 
-; Script for program PUBLIC TRANSPORT in file "C:\projects\roanoke\Cube\Transit_Assignment_PK.S"
+; Script for program PUBLIC TRANSPORT in file "C:\projects\rvtpo\Cube\Transit_Assignment_PK.S"
 ;;<<Default Template>><<PUBLIC TRANSPORT>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=PUBLIC TRANSPORT PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Trn_Assignment_PK.PRN" MSG='Transit Assignment'
@@ -3954,7 +3984,7 @@ FILEO NETO = "{SCENARIO_DIR}\Output\Trn_PK.net"
 ENDRUN
 
 
-; Script for program PUBLIC TRANSPORT in file "C:\projects\roanoke\Cube\Transit_Assignment_OP.S"
+; Script for program PUBLIC TRANSPORT in file "C:\projects\rvtpo\Cube\Transit_Assignment_OP.S"
 ;;<<Default Template>><<PUBLIC TRANSPORT>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=PUBLIC TRANSPORT PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Trn_Assignment_OP.PRN" MSG='Transit Assignment'
@@ -3982,15 +4012,4 @@ ENDRUN
 *COPY "{CATALOG_DIR}\CUBE\*.PRN" "{SCENARIO_DIR}\OUTPUT\LOGS\*.PRN"
 *DEL "{CATALOG_DIR}\CUBE\*.PRN" 
 ; End of PILOT Script
-
-; Script for program NETWORK in file "C:\projects\ROANOKE\CUBE\FBNET00A.S"
-;;<<Default Template>><<NETWORK>><<Default>>;;
-; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=NETWORK MSG='Export NET to ShapeFile'
-;FILEO NETO = "{SCENARIO_DIR}\Maps\results.mdb\loaded_network"
-FILEO NETO = "{SCENARIO_DIR}\Output\loaded_network.shp"
-FILEI LINKI[2] = "{SCENARIO_DIR}\OUTPUT\LOADED_2012A.NET"
-FILEI LINKI[1] = "{SCENARIO_DIR}\Maps\empty.mdb\HWNetwork_Link"
-ENDRUN
-
 

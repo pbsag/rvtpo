@@ -11,10 +11,10 @@ NB
 00
 Build Network from Minutp to Cube.  Add/Manipulate Link Variables.
 
-Wed Jun 15 02:47:01 2016
+Mon Jun 20 14:45:03 2016
 
-C:\projects\Roanoke\Cube\RVARC_TDM.app
-C:\projects\roanoke\Cube\NETBUILD.APP
+C:\projects\rvtpo\Cube\RVARC_TDM.app
+C:\projects\rvtpo\Cube\NETBUILD.APP
 VOYAGER
 
 
@@ -28,7 +28,7 @@ English
 1
 2
 
-C:\projects\roanoke\Cube\NETWOR00.APP
+C:\projects\rvtpo\Cube\NETWOR00.APP
 Area Type
 
 0
@@ -155,7 +155,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\HCMR_Capacities.s
+C:\projects\rvtpo\Cube\HCMR_Capacities.s
 1
 PIL
 ISCR1 
@@ -372,7 +372,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\FreeFlowSpeeds.s
+C:\projects\rvtpo\Cube\FreeFlowSpeeds.s
 1
 NET
 ISCR1 
@@ -2035,7 +2035,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\CUBE\Extract_Scenario_Network.S
+C:\projects\rvtpo\CUBE\Extract_Scenario_Network.S
 1
 NET
 ISCR1 

@@ -19,10 +19,10 @@ TA
 00
 
 
-Mon Apr 25 17:37:46 2016
+Mon Jun 20 14:45:07 2016
 
-C:\projects\Roanoke\Cube\RVARC_TDM.app
-C:\projects\roanoke\CUBE\TRNASS00.APP
+C:\projects\rvtpo\Cube\RVARC_TDM.app
+C:\projects\rvtpo\CUBE\TRNASS00.APP
 VOYAGER
 
 
@@ -55,7 +55,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\Transit_Assignment_PK.S
+C:\projects\rvtpo\Cube\Transit_Assignment_PK.S
 1
 PTR
 ISCR1 
@@ -2540,7 +2540,7 @@ Script File
 0
 0
 S
-C:\projects\roanoke\Cube\Transit_Assignment_OP.S
+C:\projects\rvtpo\Cube\Transit_Assignment_OP.S
 1
 PTR
 ISCR1 
