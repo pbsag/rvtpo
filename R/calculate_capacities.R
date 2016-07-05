@@ -73,13 +73,18 @@ links <- links %>%
     cape    = hcm_calculate(ft = ft, at = at, sl = sl, terrain = terrain,
                             lanes = lanes, LOS = "E", speed = FALSE)
   ) %>%
-  
+
   transmute(
     A, B,
     # defaults for facility connectors
     ffspeed = ifelse(FACTYPE == 11, 25, ifelse(FACTYPE == 12, 55, ffspeed)),
     capd    = ifelse(FACTYPE == 11, 10000, ifelse(FACTYPE == 12, 100000, capd)),
-    cape    = ifelse(FACTYPE == 11, 10000, ifelse(FACTYPE == 12, 100000, cape))
+    cape    = ifelse(FACTYPE == 11, 10000, ifelse(FACTYPE == 12, 100000, cape)),
+    # VDOT requested hard-coded ramp capacities to replace HCM-methodology
+    # 1500 vphpl reached as compromise between HCM base value of 1800
+    # and other VDOT models where 1000 is used.
+    cape = ifelse(FACTYPE == 9, 1500 * lanes,
+      ifelse(FACTYPE == 10, 1300 * lanes, cape))
   )
 
 write.dbf(links, output_file)
