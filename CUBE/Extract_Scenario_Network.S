@@ -3,11 +3,11 @@
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Extract_Network.PRN" MSG='Extract Scenario Network'
 FILEI LINKI[1] = "{CATALOG_DIR}\MasterNetwork\Master_highway.net"
 FILEO NETO = "{SCENARIO_DIR}\Output\highway.net",
-INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB
+INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB, VDOT_CAP
 
 PROCESS  PHASE=LINKMERGE  
 ; Initialize fields to zeros if the current values are zeros
-/*s
+/*
 DISTANCE = 0
 FACTYPE = 0
 LANES = 0
@@ -28,6 +28,9 @@ IF(F{year}_{Project}_Only = 1)
   LANES = LANES_{year}_{Project}
   POST_SPD = SPD_{year}_{Project}
 ENDIF
+
+; Add VDOT capacity override
+VDOT_CAP = VDOT_CAP_{Project}
 
 IF (DISTANCE =0) DELETE
 
