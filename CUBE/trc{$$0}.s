@@ -1,39 +1,86 @@
-; Script for program NETWORK in file "C:\projects\rvtpo\CUBE\Extract_Scenario_Network.S"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\FreeFlowSpeeds.s"
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Extract_Network.PRN" MSG='Extract Scenario Network'
-FILEI LINKI[1] = "{CATALOG_DIR}\MasterNetwork\Master_highway.net"
-FILEO NETO = "{SCENARIO_DIR}\Output\highway.net",
-INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB, VDOT_CAP
+RUN PGM=NETWORK MSG='Attach capacity and FFS to network'
+FILEO NETO = "{SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET"
+FILEI LINKI[2] = "{SCENARIO_DIR}\Output\link_capacities{Year}{Alternative}.DBF"
+FILEI LINKI[1] = "{SCENARIO_DIR}\Output\ATYPE NETWORK{Year}{Alternative}.NET"
+
+PROCESS  PHASE=INPUT
+;Use this phase to modify data as it is read, such as recoding node numbers.
+
+
+ENDPROCESS
+
+
+PROCESS  PHASE=NODEMERGE  
+; Use this phase to make computations and selections of any data on the NODEI files.
+
+
+ENDPROCESS
+
 
 PROCESS  PHASE=LINKMERGE  
-; Initialize fields to zeros if the current values are zeros
-/*
-DISTANCE = 0
-FACTYPE = 0
-LANES = 0
-POST_SPD = 0
+/* Capacities are computed using HCMR package where highway capacity manual formulas are computed for each link and are appended to the network as CAPE. However VDOT insists to have override capability to use a different capacity for a given link. The VDOT link capacity is coded "VDOT_CAP_{project}" attribute and is extracted by netmanager as "VDOT_CAP" here. Here three capacities are stored:
+HCMR_CAP = original hwy capacity based on HCMR
+VDOT_CAP = VDOT capacity to replace HCMR_CAP
 */
-; Add common links
-IF(DIST_C > 0)
-  FACTYPE = FT_C
-  DISTANCE = DIST_C
-  LANES = LANES_C
-  POST_SPD = SPD_C
+; Save HCMR capacity as HCMR_CAP
+HCMR_CAP = LI.2.CAPE
+
+IF (LI.1.VDOT_CAP > 0)
+    CAPE = LI.1.VDOT_CAP
 ENDIF
 
-; Add new or year/scenario specific links
-IF(F{year}_{Project}_Only = 1)
-  DISTANCE = DIST_{year}_{Project}
-  FACTYPE = FT_{year}_{Project}
-  LANES = LANES_{year}_{Project}
-  POST_SPD = SPD_{year}_{Project}
+
+; Use this phase to make computations and selections of any data on the LINKI files.
+CAPE_AM = LI.2.CAPE * 2.79 ; 2.5  ; AM Capacity
+CAPE_MD = LI.2.CAPE * 4.40 ; 5.5  ; MD Capacity
+CAPE_PM = LI.2.CAPE * 3.18 ; 2.5  ; PM Capacity
+CAPE_NT = LI.2.CAPE * 5.63 ; 4.5  ; NT Capacity
+POST_SPEED = LI.1.POST_SPD  
+
+/*
+Recode FFS based on +/- 5 MPH rule (ignore HCM-R FFS)
+1	Interstate/Principal Freeway
+2	Minor Freeway
+3	Principal Arterial
+4	Major Arterial
+5	Minor Arterial
+6	Major Collector
+7	Minor Collector
+8	Local
+9	High-speed Ramp
+10	Low-speed Ramp
+11	Centroid Connector
+12	External Station Connector
+
+Higher level highways	Where Facility Type = "Freeway" or ((Facility Type = "Multi-lane Highway" or Facility Type = "Two-lane Highway") and Divided = "Divided")	Initial Travel Time = Length/(Posted Speed + 5.0)*60
+
+Lower level highways and arterials	((Where Facility Type = "Multi-lane Highway" or Facility Type = "Two-lane Highway") and Divided = "Undivided" or Divided = “CLTL”) or Facility Type contains "Urban Arterial"	Initial Travel Time = Length/(Posted Speed - 5.0)*60
+
+Local Roads, collectors, ramps and other links	Where Facility Type= "Centroid Connector" or Facility Type=  "Collector" or Facility Type= "Diamond Ramp"  or Facility Type= "Loop Ramp"  or Facility Type= "Local Road"   or Facility Type=  "Freeway to Freeway Ramp"	Initial Travel Time = Length/Posted Speed*60
+
+*/
+
+; Arterials
+IF(LI.1.FACTYPE > 2 & LI.1.FACTYPE < 5 & LI.1.POST_SPD > 25 ) 
+     FFSPEED = LI.1.POST_SPD - 5
 ENDIF
 
-; Add VDOT capacity override
-VDOT_CAP = VDOT_CAP_{Project}
+; Local and collector
+IF(LI.1.FACTYPE > 6 & LI.1.FACTYPE < 9 & LI.1.POST_SPD <> 0) 
+     FFSPEED = LI.1.POST_SPD + 3
+ENDIF
 
-IF (DISTANCE =0) DELETE
+
+
+ENDPROCESS
+
+
+PROCESS  PHASE=SUMMARY   
+; Use this phase for combining and reporting of working variables.
+
 
 ENDPROCESS
 

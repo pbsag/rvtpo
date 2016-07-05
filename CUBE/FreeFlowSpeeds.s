@@ -20,6 +20,25 @@ ENDPROCESS
 
 
 PROCESS  PHASE=LINKMERGE  
+
+/* 
+Capacities are computed using HCMR package where highway capacity manual formulas are computed for each link and are appended to the network as CAPE. However VDOT insists to have override capability to use a different capacity for a given link. The VDOT link capacity is coded "VDOT_CAP_{project}" attribute and is extracted by netmanager as "VDOT_CAP" here. If the attribute “VDOT_CAP” carries a non-zero value then it is used in place of hcmr computed capacity
+
+Here three capacities are stored:
+HCMR_CAP = original hwy capacity based on HCMR
+VDOT_CAP = VDOT capacity to replace HCMR_CAP
+CAPE = capacity per hour (from above two).
+
+*/
+; Save HCMR capacity as HCMR_CAP
+HCMR_CAP = LI.2.CAPE
+
+; Override hcmr capacity with VDOT link specific capacity
+IF (LI.1.VDOT_CAP > 0)
+    CAPE = LI.1.VDOT_CAP
+ENDIF
+
+
 ; Use this phase to make computations and selections of any data on the LINKI files.
 CAPE_AM = LI.2.CAPE * 2.79 ; 2.5  ; AM Capacity
 CAPE_MD = LI.2.CAPE * 4.40 ; 5.5  ; MD Capacity

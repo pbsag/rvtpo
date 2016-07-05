@@ -1,10 +1,10 @@
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_1.S"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_1.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_1.PRN" MSG='OUTPUT LINK AND ZONE DATA'
+FILEI LINKI[1] = "{SCENARIO_DIR}\Output\highway.net"
 FILEO PRINTO[1] = "{SCENARIO_DIR}\Output\XY.dat"
 FILEO NODEO = "{SCENARIO_DIR}\Output\NODE.DAT"
 FILEO LINKO = "{SCENARIO_DIR}\Output\LINK.DAT"
-FILEI LINKI[1] = "{SCENARIO_DIR}\Input\highway.net"
 
 ARRAY _CNT={Total zones},_CENTX={Total zones},_CENTY={Total zones},_CENT={Total zones},
       _NO=99999,_MIDX=99999,_MIDY=99999,_MID_POINT=99999,_NO=99999,XMILES=999999,
@@ -49,7 +49,7 @@ ENDPHASE
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\AT_2.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\AT_2.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_2.PRN" MSG='FIND THE CLOSEST ZONE TO EACH LINK'
 FILEI ZDATI[1] = "{SCENARIO_DIR}\Output\XY.dat",
@@ -97,10 +97,10 @@ ZONES={Total ZONES}
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_3.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_3.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_3.PRN" MSG='INSERT LINK DATA TO NETWORK'
-FILEI LINKI[1] = "{SCENARIO_DIR}\Input\highway.net"
+FILEI LINKI[1] = "{SCENARIO_DIR}\Output\highway.net"
 FILEI LINKI[2] = "{SCENARIO_DIR}\Output\CLOSEST.DBF"
 FILEO NETO = "{SCENARIO_DIR}\Output\ZONE.NET"
 
@@ -140,7 +140,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_4.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_4.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_4.PRN" MSG='ADD LAND USE DATA TO ZONES'
 FILEI NODEI[2] = "{SCENARIO_DIR}\Input\se.dbf"
@@ -185,7 +185,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_5.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_5.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT-5.PRN" MSG='DETERMINE AREA TYPE FROM LAND USE DENSITY AND PROXIMITY'
 FILEO PRINTO[3] = "{SCENARIO_DIR}\Output\STAT.PRN"
@@ -285,12 +285,12 @@ array _centn={Total Zones},_centx={Total Zones},_centy={Total Zones},
 ENDRUN
 
 
-; Script for program NETWORK in file "C:\projects\roanoke\Cube\AT_6.s"
+; Script for program NETWORK in file "C:\projects\rvtpo\Cube\AT_6.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_6.PRN" MSG='INSERT LINK AREA TYPE ON THE NETWORK'
 FILEO LINKO = "{SCENARIO_DIR}\Output\link_atype{Year}{Alternative}.DBF",
  FORMAT = DBF, 
-  INCLUDE = A, B, DISTANCE, FACTYPE, LANES, MEDIAN, TERRAIN, POST_SPD, ATYPE
+  INCLUDE = A, B, DISTANCE, FACTYPE, LANES, POST_SPD, ATYPE
 FILEO NETO = "{SCENARIO_DIR}\Output\ATYPE NETWORK{Year}{Alternative}.NET"
 FILEI LOOKUPI[1] = "{SCENARIO_DIR}\Output\AREA TYPE.PRN"
 FILEI LINKI[1] = "{SCENARIO_DIR}\Output\PROCESSED.NET"
@@ -331,7 +331,7 @@ ENDPROCESS
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\projects\roanoke\Cube\AT_7.s"
+; Script for program MATRIX in file "C:\projects\rvtpo\Cube\AT_7.s"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\Output\LOGS\AT_7.PRN" MSG='OUTPUT AREA TYPE AS DBF FOR LATER USE'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\ZONAL AT{Year}{Alternative}.DBF",
