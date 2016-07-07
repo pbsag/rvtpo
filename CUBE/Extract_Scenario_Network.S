@@ -22,15 +22,15 @@ IF(DIST_C > 0)
 ENDIF
 
 ; Add new or year/scenario specific links
-IF(F{year}_{Project}_Only = 1)
-  DISTANCE = DIST_{year}_{Project}
-  FACTYPE = FT_{year}_{Project}
-  LANES = LANES_{year}_{Project}
-  POST_SPD = SPD_{year}_{Project}
+IF(F_{NETALT}_Only = 1)
+  DISTANCE = DIST_{NETALT}
+  FACTYPE = FT_{NETALT}
+  LANES = LANES_{NETALT}
+  POST_SPD = SPD_{NETALT}
 ENDIF
 
 ; Add VDOT capacity override
-VDOT_CAP = VDOT_CAP_{Project}
+VDOT_CAP = VDOTC_{NETALT}
 
 IF (DISTANCE =0) DELETE
 

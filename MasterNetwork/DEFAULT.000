@@ -153,8 +153,8 @@ ActiveNodeColorGroup=0
 NodeColorGroup1=
 NodeColorPaletteIndex1=0
 LinkOrderListIndex=1
-LinkOrderListName1=by NETALT
-LinkOrderListValue1=DIST_C,FT_C,LANES_C,SPD_C,DIST_2012_PRJ1,SPD_2012_PRJ1,FT_2012_PRJ1,LANES_2012_PRJ1,F2012_PRJ1_ONLY,VDOTC_2012_PRJ1,DIST_2040_PRJ1,FT_2040_PRJ1,LANES_2040_PRJ1,SPD_2040_PRJ1,F2040_PRJ1_ONLY,VDOTC_2040_PRJ1
+LinkOrderListName1=
+LinkOrderListValue1=
 LinkOrderListName2=
 LinkOrderListValue2=
 LinkOrderListName3=
@@ -185,7 +185,7 @@ LinkOrderListName15=
 LinkOrderListValue15=
 LinkOrderListName16=
 LinkOrderListValue16=
-LinkPopUpDisplayOrder=3
+LinkPopUpDisplayOrder=0
 ActiveLinkColorGroup=0
 LinkColorGroup1=
 LinkColorPaletteIndex1=0
@@ -255,7 +255,7 @@ Set1Legend4Item1=0,0,0,0,0,0,
 
 [SAVEVIEWS]
 RestoreLastView=0
-ViewLast=-80.3791446448727,-79.6782983480529,37.0849643871188,37.549380607903
+ViewLast=-80.3090600151907,-79.7483829777348,37.1314060091972,37.5029389858246
 
 [DYNASIM]
 DynaFieldIsSpeed=1
