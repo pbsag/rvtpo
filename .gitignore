@@ -5,6 +5,11 @@ Base/EC_2040/Output/*
 *.properties
 CUBE/CLASSIFICATION.BAT
 CUBE/LINK_CALC.BAT
+*.DBK
+*.log
 *.PRN
 *.BAK
-*.DBK
+*.[0-9][0-9][0-9]
+TPPL.PRJ
+TPPL.VAR
+*{$$0}.s
