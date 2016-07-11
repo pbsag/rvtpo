@@ -32,6 +32,8 @@ ENDIF
 ; Add VDOT capacity override
 VDOT_CAP = VDOTC_{NETALT}
 
+; Delete undesired links
+IF(ONLY_{NETALT} = -1) DELETE
 IF (DISTANCE =0) DELETE
 
 ENDPROCESS
