@@ -52,11 +52,11 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\scenario.properties"
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\Extract_Network.PRN" MSG='Extract Scenario Network'
 FILEI LINKI[1] = "{CATALOG_DIR}\MasterNetwork\Master_highway.net"
 FILEO NETO = "{SCENARIO_DIR}\Output\highway.net",
-INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB
+INCLUDE = A, B, LENGTH, DISTANCE, FACTYPE, LANES, POST_SPD, RTE_NAME, AAWDT, TMS_ID, SCREENLN, TUNNEL, BRIDGE, TRK_PHB, PED_PHB, TRAFF_PHB, VDOT_CAP
 
 PROCESS  PHASE=LINKMERGE  
 ; Initialize fields to zeros if the current values are zeros
-/*s
+/*
 DISTANCE = 0
 FACTYPE = 0
 LANES = 0
@@ -71,12 +71,15 @@ IF(DIST_C > 0)
 ENDIF
 
 ; Add new or year/scenario specific links
-IF(F{year}_{Project}_Only = 1)
-  DISTANCE = DIST_{year}_{Project}
-  FACTYPE = FT_{year}_{Project}
-  LANES = LANES_{year}_{Project}
-  POST_SPD = SPD_{year}_{Project}
+IF(ONLY_{NETALT} = 1)
+  DISTANCE = DIST_{NETALT}
+  FACTYPE = FT_{NETALT}
+  LANES = LANES_{NETALT}
+  POST_SPD = SPD_{NETALT}
 ENDIF
+
+; Add VDOT capacity override
+VDOT_CAP = VDOTC_{NETALT}
 
 IF (DISTANCE =0) DELETE
 
@@ -493,6 +496,25 @@ ENDPROCESS
 
 
 PROCESS  PHASE=LINKMERGE  
+
+/* 
+Capacities are computed using HCMR package where highway capacity manual formulas are computed for each link and are appended to the network as CAPE. However VDOT insists to have override capability to use a different capacity for a given link. The VDOT link capacity is coded "VDOT_CAP_{NETALT}" attribute and is extracted by netmanager as "VDOT_CAP" here. If the attribute “VDOT_CAP” carries a non-zero value then it is used in place of hcmr computed capacity
+
+Here three capacities are stored:
+HCMR_CAP = original hwy capacity based on HCMR
+VDOT_CAP = VDOT capacity to replace HCMR_CAP
+CAPE = capacity per hour (from above two).
+
+*/
+; Save HCMR capacity as HCMR_CAP
+HCMR_CAP = LI.2.CAPE
+
+; Override hcmr capacity with VDOT link specific capacity
+IF (LI.1.VDOT_CAP > 0)
+    CAPE = LI.1.VDOT_CAP
+ENDIF
+
+
 ; Use this phase to make computations and selections of any data on the LINKI files.
 CAPE_AM = LI.2.CAPE * 2.79 ; 2.5  ; AM Capacity
 CAPE_MD = LI.2.CAPE * 4.40 ; 5.5  ; MD Capacity

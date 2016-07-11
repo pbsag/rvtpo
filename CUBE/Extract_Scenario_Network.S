@@ -22,7 +22,7 @@ IF(DIST_C > 0)
 ENDIF
 
 ; Add new or year/scenario specific links
-IF(F_{NETALT}_Only = 1)
+IF(ONLY_{NETALT} = 1)
   DISTANCE = DIST_{NETALT}
   FACTYPE = FT_{NETALT}
   LANES = LANES_{NETALT}
