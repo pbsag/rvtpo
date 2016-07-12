@@ -33,6 +33,7 @@ CAPE = capacity per hour (from above two).
 ; Save HCMR capacity as HCMR_CAP
 HCMR_CAP = LI.2.CAPE
 
+
 ; Override hcmr capacity with VDOT link specific capacity
 IF (LI.1.VDOT_CAP > 0)
     CAPE = LI.1.VDOT_CAP
@@ -40,10 +41,10 @@ ENDIF
 
 
 ; Use this phase to make computations and selections of any data on the LINKI files.
-CAPE_AM = LI.2.CAPE * 2.79 ; 2.5  ; AM Capacity
-CAPE_MD = LI.2.CAPE * 4.40 ; 5.5  ; MD Capacity
-CAPE_PM = LI.2.CAPE * 3.18 ; 2.5  ; PM Capacity
-CAPE_NT = LI.2.CAPE * 5.63 ; 4.5  ; NT Capacity
+CAPE_AM = CAPE * 2.79 ; 2.5  ; AM Capacity
+CAPE_MD = CAPE * 4.40 ; 5.5  ; MD Capacity
+CAPE_PM = CAPE * 3.18 ; 2.5  ; PM Capacity
+CAPE_NT = CAPE * 5.63 ; 4.5  ; NT Capacity
 POST_SPEED = LI.1.POST_SPD  
 
 /*

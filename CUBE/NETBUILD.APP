@@ -11,7 +11,7 @@ NB
 00
 Build Network from Minutp to Cube.  Add/Manipulate Link Variables.
 
-Tue Jul 12 09:47:17 2016
+Tue Jul 12 10:19:14 2016
 
 C:\projects\rvtpo\Cube\RVARC_TDM.app
 C:\projects\rvtpo\Cube\NETBUILD.APP
