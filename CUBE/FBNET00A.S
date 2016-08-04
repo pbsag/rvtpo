@@ -2,7 +2,7 @@
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK PRNFILE="{SCENARIO_DIR}\output\Logs\export_to_geodatabase.prn" MSG='Export NET to Geodatabase'
 FILEO NETO = "{SCENARIO_DIR}\output\output.mdb\loaded_network"
-FILEI LINKI[1] = "{SCENARIO_DIR}\Maps\empty.mdb\empty_net"
+FILEI LINKI[1] = "{CATALOG_DIR}\Maps\empty.mdb\empty_net"
 FILEI LINKI[2] = "{SCENARIO_DIR}\OUTPUT\LOADED_{Year}{Alternative}.NET"
 ;FILEI GEOMI[1] = "{CATALOG_DIR}\MasterNetwork\cubeShapeFile_2012A.shp"
  
