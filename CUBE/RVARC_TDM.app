@@ -7,7 +7,7 @@ FB
 00
 Roanoke MPO Area Travel Demand Model
 
-Thu Aug 04 12:27:26 2016
+Thu Aug 04 15:17:25 2016
 C:\projects\rvtpo\Cube\RVARC.BMP
 
 C:\projects\rvtpo\Cube\RVARC_TDM.app
@@ -2728,7 +2728,7 @@ GeodataTemplate
 0
 0
 *
-{CATALOG_DIR}\Maps\empty.mdb\empty_net
+{CATALOG_DIR}\Maps\empty.gdb\HWNetwork
 0
 LNK
 LINKI1
@@ -3824,7 +3824,7 @@ Geodatabase
 0
 0
 NET
-{SCENARIO_DIR}\output\output.mdb\loaded_network
+{SCENARIO_DIR}\output\output.gdb\loaded_network
 0
 NET
 NETO  
