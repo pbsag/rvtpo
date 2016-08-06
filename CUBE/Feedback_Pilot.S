@@ -8,18 +8,16 @@
 
 IF (FeedBack_ITER=1) 
 FB_ITER = 1
+*IF EXIST DEL {scenario_dir}\output\pk_hwy_skim.MAT
+*IF EXIST DEL {scenario_dir}\output\op_hwy_skim.MAT
 *COPY  {scenario_dir}\output\PK_FreeFlow_Skim.MAT  {scenario_dir}\output\pk_hwy_skim.MAT
 *COPY  {scenario_dir}\output\OP_FreeFlow_Skim.MAT  {scenario_dir}\output\op_hwy_skim.MAT
 
-pk_hwy_skim = 'PK_FreeFlow_Skim.MAT'
-OP_hwy_skim = 'OP_FreeFlow_Skim.MAT'
-
 ELSE
+*IF EXIST DEL {scenario_dir}\output\pk_hwy_skim.MAT
+*IF EXIST DEL {scenario_dir}\output\op_hwy_skim.MAT
 *COPY  {scenario_dir}\output\PK_CNG_HwySkim.MAT  {scenario_dir}\output\pk_hwy_skim.MAT
 *COPY  {scenario_dir}\output\OP_CNG_HwySkim.MAT  {scenario_dir}\output\op_hwy_skim.MAT
-
-pk_hwy_skim = 'PK_CNG_HwySkim.MAT'
-OP_hwy_skim = 'OP_CNG_HwySkim.MAT'
 ENDIF
 
 

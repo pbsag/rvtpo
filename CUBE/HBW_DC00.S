@@ -4,10 +4,10 @@
 
 LOOP Iteration = 1, 10, 1
 
-; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DC_HBW\DCMAT00A.S"
+; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DCMAT00A.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS0\DC_HBW.PRN" MSG='HBW Apply Destination Choice Model'
-FILEI ZDATI[3] = "{SCENARIO_DIR}\OUTPUT\HBW_ShadowPrice.DBF"
+FILEI ZDATI[3] = "{SCENARIO_DIR}\Output\NHBNR_PA_{year}.DBF"
 FILEI ZDATI[2] = "{SCENARIO_DIR}\OUTPUT\HH_PROD.DBF"
 FILEI ZDATI[1] = "{SCENARIO_DIR}\OUTPUT\se_classified_{year}{Alternative}.dbf"
 FILEI LOOKUPI[1] = "{CATALOG_DIR}\PARAMS\DESTCHOICE_PARAMETERS.DBF"
@@ -149,7 +149,7 @@ FILEO PRINTO[3] = "{SCENARIO_DIR}\OUTPUT\HBW_Zonal_Trips.csv"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DC_HBW\DCMAT00B.S"
+; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DCMAT00B.S"
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX MSG='Shadow Price'
@@ -187,7 +187,7 @@ ENDRUN
 
 ENDLOOP
 
-; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DC_HBW\DCMAT00C.S"
+; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DCMAT00C.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd_msg.PRN" MSG='Work Trip Length Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\HBW_TDLF.dbf",
@@ -224,7 +224,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DC_HBW\DCMAT00D.S"
+; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DCMAT00D.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="C:\PROJECTS\RVTPO\CUBE\DC_HBW\DCMAT00G.PRN" MSG='Work Trip Time Frequency'
 FILEO RECO[1] = "{SCENARIO_DIR}\Output\HBW_TTLF.dbf",
@@ -259,7 +259,7 @@ FILEO PRINTO[1] = "{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd.PRN"
 ENDRUN
 
 
-; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DC_HBW\DCMAT00E.S"
+; Script for program MATRIX in file "C:\PROJECTS\RVTPO\CUBE\DCMAT00E.S"
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS\work_d2d_flows.PRN" MSG='HBW District - to - District Flows'
 FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\Dest_HBW.MAT"

@@ -3,6 +3,7 @@ EXP0 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\NHB_MCLS.MAT
 EXP0 2 1Matrix File 2  {SCENARIO_DIR}\OUTPUT\op_Hwyskim.MAT                        
 EXP0 221Zonal Data 1   {SCENARIO_DIR}\OUTPUT\se_classified_{year}{Alternative}.dbf 
 EXP0 231Zonal Data 2   {SCENARIO_DIR}\OUTPUT\HH_PROD.DBF                           
+EXP0 241Zonal Data 3   {SCENARIO_DIR}\Output\NHBNR_PA_{year}.DBF                   
 EXP0 421Lookup File 1  {CATALOG_DIR}\PARAMS\DESTCHOICE_PARAMETERS.DBF              
 EXP0 1 0Matrix File 1  {SCENARIO_DIR}\OUTPUT\Dest_NHB.MAT                          
 EXP1 210Record File 1  {SCENARIO_DIR}\Output\NHB_TTFD.dbf                          
@@ -16,7 +17,7 @@ DC
 00
 
 
-Sat Aug 06 09:22:15 2016
+Sat Aug 06 16:10:10 2016
 C:\projects\rvtpo\Cube\RVARC.BMP
 C:\projects\rvtpo\CUBE\TRIPDIST00.APP
 C:\PROJECTS\RVTPO\CUBE\NHB_DC00.app
@@ -494,8 +495,8 @@ ZDATI3
 808
 -783
 -1
--1
-0
+-9
+1
 #INFIL25
 Zonal Data 4
 

@@ -3,7 +3,7 @@ EXP1 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\HBW_MCLS.MAT
 EXP1 2 1Matrix File 2  {SCENARIO_DIR}\OUTPUT\PK_Hwyskim.MAT                        
 EXP1 221Zonal Data 1   {SCENARIO_DIR}\OUTPUT\se_classified_{year}{Alternative}.dbf 
 EXP1 231Zonal Data 2   {SCENARIO_DIR}\OUTPUT\HH_PROD.DBF                           
-EXP1 241Zonal Data 3   {SCENARIO_DIR}\OUTPUT\HBW_ShadowPrice.DBF                   
+EXP1 241Zonal Data 3   {SCENARIO_DIR}\OUTPUT\HBW_shadowPrice.DBF                   
 EXP1 421Lookup File 1  {CATALOG_DIR}\PARAMS\DESTCHOICE_PARAMETERS.DBF              
 EXP1 1 0Matrix File 1  {SCENARIO_DIR}\OUTPUT\Dest_HBW.MAT                          
 EXP2 210Record File 1  {SCENARIO_DIR}\OUTPUT\HBW_shadowPrice.DBF                   
@@ -18,7 +18,7 @@ DC
 00
 
 
-Sat Aug 06 09:39:59 2016
+Sat Aug 06 16:14:36 2016
 C:\PROJECTS\RVTPO\CUBE\RVARC.BMP
 C:\projects\rvtpo\CUBE\TRIPDIST00.APP
 C:\PROJECTS\RVTPO\CUBE\HBW_DC00.APP
@@ -330,10 +330,10 @@ MAT
 MAT
 MATI3 
 999999
-309
--1176
-705
--1248
+544
+-714
+868
+-771
 -1
 -1
 0
@@ -654,10 +654,10 @@ Record File
 REC
 RECI  
 999999
-309
--1253
-705
--1325
+544
+-775
+868
+-832
 -1
 -1
 0
@@ -699,11 +699,11 @@ ZDATI2
 1
 #INFIL24
 Zonal Data 3
-
+shadow price
 0
 0
 *
-{SCENARIO_DIR}\OUTPUT\HBW_ShadowPrice.DBF
+{SCENARIO_DIR}\OUTPUT\HBW_shadowPrice.DBF
 0
 ZON
 ZDATI3
@@ -726,10 +726,10 @@ Zonal Data 4
 ZON
 ZDATI4
 999999
-309
--1561
-705
--1633
+544
+-1019
+868
+-1076
 -1
 -1
 0
@@ -852,10 +852,10 @@ Database 1
 DBI
 DBI1  
 999999
-309
--1638
-705
--1710
+544
+-1080
+868
+-1137
 -1
 -1
 0
@@ -1050,10 +1050,10 @@ P and A Table
 LOK
 LOOKUPI2
 999999
-309
--1792
-705
--1864
+544
+-1202
+868
+-1259
 -1
 -1
 0
@@ -1424,10 +1424,10 @@ MAT
 MAT
 MATO2 
 999999
-987
--1251
-1376
--1323
+1101
+-773
+1419
+-830
 0
 #OUTFIL3
 Matrix File 3
@@ -1728,10 +1728,10 @@ DBF
 MAT
 RECO1 
 999999
-987
--1328
-1376
--1400
+1101
+-834
+1419
+-891
 0
 #OUTFIL22
 Record File 2
@@ -2016,10 +2016,10 @@ PRN
 MAT
 PRINTO4
 999999
-987
--1636
-1376
--1708
+1101
+-1078
+1419
+-1135
 0
 #OUTFIL40
 Print Data 5

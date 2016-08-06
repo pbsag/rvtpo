@@ -14,7 +14,7 @@ TR
 00
 Add/Manipulate Various Trip tables
 
-Sat Aug 06 10:39:42 2016
+Sat Aug 06 18:48:56 2016
 
 C:\projects\rvtpo\Cube\RVARC_TDM.app
 C:\projects\rvtpo\Cube\TRIPS.APP
@@ -2694,7 +2694,7 @@ OPRN
 0
 #OUTFIL1
 Matrix File 1
-PK Transit 
+PK Transit
 0
 0
 MAT

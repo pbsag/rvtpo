@@ -15,7 +15,7 @@ TD
 00
 
 
-Sat Aug 06 09:49:28 2016
+Sat Aug 06 16:14:36 2016
 
 C:\projects\rvtpo\Cube\TRIPDI00.APP
 C:\projects\rvtpo\CUBE\TRIPDIST00.APP
@@ -122,11 +122,11 @@ Zonal Data 2
 0
 #INFIL4
 Zonal Data 3
-
+shadow price
 0
 0
 *
-{SCENARIO_DIR}\OUTPUT\HBW_ShadowPrice.DBF
+{SCENARIO_DIR}\OUTPUT\HBW_shadowPrice.DBF
 1
 0124
       
@@ -635,9 +635,9 @@ MC Logsums
       
 999999
 144
--1213
+-1183
 468
--1270
+-1240
 -1
 -9
 1
@@ -653,9 +653,9 @@ Highway Skims
       
 999999
 144
--1274
+-1244
 468
--1331
+-1301
 -1
 -1
 0
@@ -671,9 +671,9 @@ Zonal Data 1
       
 999999
 144
--1335
+-1305
 468
--1392
+-1362
 -1
 -1
 0
@@ -689,13 +689,31 @@ Zonal Data 2
       
 999999
 144
--1396
+-1366
 468
--1453
+-1423
 -1
 -1
 0
 #INFIL4
+Zonal Data 3
+
+0
+0
+*
+{SCENARIO_DIR}\Output\NHBNR_PA_{year}.DBF
+1
+0024
+      
+999999
+144
+-1427
+468
+-1484
+-1
+-1
+0
+#INFIL5
 Lookup File 1
 DC Parameters
 0
@@ -707,9 +725,9 @@ DC Parameters
       
 999999
 144
--1457
+-1488
 468
--1514
+-1545
 -1
 -1
 0

@@ -1,3 +1,12 @@
 MODELENGINE=2
 SOFTWAREVERSION=60401
 LASTMULTIDISTRIBID=0
+REXE='C:\projects\rvtpo\R\R-3.2.2\bin\Rscript.exe'
+RSCRIPT='C:\projects\rvtpo\R\classification.R'
+LINK_FILE='C:\projects\rvtpo\Base\Output\link_atype2012A.DBF'
+OUTPUT_FILE='C:\projects\rvtpo\Base\Output\se_classified_2012A.dbf'
+INPUT_SE_FILE='C:\projects\rvtpo\Base\Input\se.dbf'
+LOOKUP_DIR='C:\projects\rvtpo\Params\classification'
+FEEDBACK_ITER=6
+FB_ITER=1
+ITERATION=11

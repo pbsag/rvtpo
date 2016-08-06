@@ -19,7 +19,7 @@ AS
 00
 Assign trips to Network
 
-Sat Aug 06 11:35:14 2016
+Sat Aug 06 17:44:39 2016
 
 C:\projects\rvtpo\Cube\RVARC_TDM.app
 C:\projects\rvtpo\Cube\ASSIGNMENT.APP
@@ -15354,7 +15354,7 @@ OD Auto PM
 0
 0
 MAT
-{SCENARIO_DIR}\Output\ODAUTO_MD.MAT
+{SCENARIO_DIR}\Output\ODAUTO_PM.MAT
 0
 HWY
 MATI1 

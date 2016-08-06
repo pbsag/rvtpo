@@ -1,6 +1,6 @@
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\OUTPUT\LOGS0\DC_HBW.PRN" MSG='HBW Apply Destination Choice Model'
-FILEI ZDATI[3] = "{SCENARIO_DIR}\OUTPUT\HBW_ShadowPrice.DBF"
+FILEI ZDATI[3] = "{SCENARIO_DIR}\OUTPUT\HBW_shadowPrice.DBF"
 FILEI ZDATI[2] = "{SCENARIO_DIR}\OUTPUT\HH_PROD.DBF"
 FILEI ZDATI[1] = "{SCENARIO_DIR}\OUTPUT\se_classified_{year}{Alternative}.dbf"
 FILEI LOOKUPI[1] = "{CATALOG_DIR}\PARAMS\DESTCHOICE_PARAMETERS.DBF"
