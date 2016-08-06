@@ -1,11 +1,11 @@
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=MATRIX
-FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\HBW_MCTRIPS.MAT",
+FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\NHB_MCTRIPS.MAT",
  MO = 21-25, NAME = DA, SR, WLB, PMB, NOM
 FILEI ZDATI[1] = "{SCENARIO_DIR}\Input\TrnWalkPercent.dbf"
-FILEI MATI[2] = "{SCENARIO_DIR}\OUTPUT\Dest_HBW.MAT"
-FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\HBW_MCPROB.MAT"
+FILEI MATI[2] = "{SCENARIO_DIR}\OUTPUT\Dest_NHB.MAT"
+FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\NHB_MCPROB.MAT"
 
         MW[1] = MI.2.1
         FILLMW MW[11] = MI.1.1(10)
