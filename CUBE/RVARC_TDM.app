@@ -7,7 +7,7 @@ FB
 00
 Roanoke MPO Area Travel Demand Model
 
-Sat Aug 06 07:43:18 2016
+Sat Aug 06 09:41:00 2016
 C:\projects\rvtpo\Cube\RVARC.BMP
 
 C:\projects\rvtpo\Cube\RVARC_TDM.app
@@ -820,9 +820,9 @@ Zonal Data 1
       
 999999
 1704
--1594
+-1714
 2028
--1651
+-1771
 -1
 -1
 0
@@ -838,9 +838,9 @@ Zonal Data 2
       
 999999
 1704
--1655
+-1775
 2028
--1712
+-1832
 -1
 -1
 0
@@ -856,9 +856,9 @@ HBSC Trip Table
       
 999999
 2457
--1775
+-1744
 2775
--1832
+-1801
 0
 #PROGRAM7
 9

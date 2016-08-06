@@ -15,7 +15,7 @@ TD
 00
 
 
-Sat Aug 06 09:13:53 2016
+Sat Aug 06 09:40:09 2016
 
 C:\projects\rvtpo\Cube\TRIPDI00.APP
 C:\projects\rvtpo\CUBE\TRIPDIST00.APP
@@ -32,7 +32,7 @@ English
 1
 1
 
-C:\PROJECTS\RVTPO\CUBE\DC_HBW\HBW_DC00.APP
+C:\PROJECTS\RVTPO\CUBE\HBW_DC00.APP
 HBW_DC
 
 0
@@ -60,9 +60,9 @@ MC Logsums
       
 999999
 104
--153
+-123
 428
--210
+-180
 -1
 -9
 1
@@ -78,9 +78,9 @@ Highway Skims
       
 999999
 104
--214
+-184
 428
--271
+-241
 -1
 -1
 0
@@ -96,9 +96,9 @@ Zonal Data 1
       
 999999
 104
--275
+-245
 428
--332
+-302
 -1
 -1
 0
@@ -114,13 +114,31 @@ Zonal Data 2
       
 999999
 104
--336
+-306
 428
--393
+-363
 -1
 -1
 0
 #INFIL4
+Zonal Data 3
+
+0
+0
+*
+{SCENARIO_DIR}\OUTPUT\HBW_ShadowPrice.DBF
+1
+0124
+      
+999999
+104
+-367
+428
+-424
+-1
+-1
+0
+#INFIL5
 Lookup File 1
 DC Parameters
 0
@@ -132,9 +150,9 @@ DC Parameters
       
 999999
 104
--397
+-428
 428
--454
+-485
 -1
 -1
 0
@@ -150,27 +168,11 @@ Matrix File 1
       
 999999
 728
--123
+-153
 1046
--180
+-210
 1
 #OUTFIL1
-Print Data 1
-
-0
-0
-*
-{SCENARIO_DIR}\OUTPUT\DESTCHOICE_DEBUG.RPT
-1
-0136
-      
-999999
-728
--184
-1046
--241
-0
-#OUTFIL2
 Record File 1
 
 0
@@ -182,43 +184,43 @@ Record File 1
       
 999999
 728
--245
+-214
 1046
--302
+-271
+0
+#OUTFIL2
+Record File 1
+
+0
+0
+*
+{SCENARIO_DIR}\Output\HBW_TDLF.dbf
+1
+0521
+      
+999999
+728
+-275
+1046
+-332
 0
 #OUTFIL3
-Print Data 1
+Record File 1
 
 0
 0
 *
-{SCENARIO_DIR}\OUTPUT\LOGS\work_tlfd.PRN
+{SCENARIO_DIR}\Output\HBW_TTLF.dbf
 1
-0536
+0621
       
 999999
 728
--306
+-336
 1046
--363
+-393
 0
 #OUTFIL4
-Print Data 1
-
-0
-0
-*
-{SCENARIO_DIR}\OUTPUT\LOGS\work_ttfd.PRN
-1
-0636
-      
-999999
-728
--367
-1046
--424
-0
-#OUTFIL5
 Matrix File 1
 
 0
@@ -230,9 +232,9 @@ Matrix File 1
       
 999999
 728
--428
+-397
 1046
--485
+-454
 0
 #PROGRAM1
 4
@@ -430,7 +432,7 @@ Matrix File 1
 1
 3
 
-C:\projects\rvtpo\CUBE\HBSH_D00.app
+C:\PROJECTS\RVTPO\CUBE\HBSH_D00.app
 HBSH_DC
 
 0
@@ -605,7 +607,7 @@ Matrix File 1
 1
 4
 
-C:\projects\rvtpo\CUBE\NHB_DC00.app
+C:\PROJECTS\RVTPO\CUBE\NHB_DC00.app
 NHB_DC
 
 0

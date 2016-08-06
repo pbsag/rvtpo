@@ -16,10 +16,10 @@ DC
 00
 
 
-Sat Aug 06 09:03:06 2016
+Sat Aug 06 09:22:15 2016
 C:\projects\rvtpo\Cube\RVARC.BMP
 C:\projects\rvtpo\CUBE\TRIPDIST00.APP
-C:\projects\rvtpo\CUBE\HBSH_D00.app
+C:\PROJECTS\RVTPO\CUBE\HBSH_D00.app
 VOYAGER
 
 
