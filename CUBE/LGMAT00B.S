@@ -1,18 +1,18 @@
 ;;<<Default Template>><<MATRIX>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\Output\LOGS\HBW_logsum.PRN" MSG='HBW - Mode Choice Logsums and Probabilities'
-FILEI MATI[3] = "{SCENARIO_DIR}\Output\PK_TSKIMPrem.mat"
-FILEI MATI[2] = "{SCENARIO_DIR}\Output\pk_TSKIMBus.mat"
-FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\pk_Hwyskim.mat"
-FILEO MATO[3] = "{SCENARIO_DIR}\output\HBW_MCPROB.MAT",
+RUN PGM=MATRIX PRNFILE="{SCENARIO_DIR}\Output\LOGS\HBO_logsum.PRN" MSG='HBO - Mode Choice Logsums and Probabilities'
+FILEI MATI[3] = "{SCENARIO_DIR}\Output\op_TSKIMPrem.mat"
+FILEI MATI[2] = "{SCENARIO_DIR}\Output\op_TSKIMBus.mat"
+FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\op_Hwyskim.mat"
+FILEO MATO[3] = "{SCENARIO_DIR}\output\HBO_MCPROB.MAT",
 MO=351-355,361-365,DEC=10*D,NAME=cw_da_prob,cw_sr_prob,cw_wlkbus_prob,cw_wlkprem_prob,cw_nmot_prob,
 nt_da_prob,nt_sr_prob,nt_wlkbus_prob,nt_wlkprem_prob,nt_nmot_prob
-FILEO MATO[2] = "{SCENARIO_DIR}\output\HBW_MCUTIL.MAT",
+FILEO MATO[2] = "{SCENARIO_DIR}\output\HBO_MCUTIL.MAT",
 MO=301-306,311-316,DEC=12*D,NAME=cw_da_util,cw_sr_util,cw_wlkbus_util,cw_wlkprem_util,cw_nmot_util,Logsum,
 nt_da_util,nt_sr_util,nt_wlkbus_util,nt_wlkprem_util,nt_nmot_util,Logsum
 
 ; Logsums averaged across access markets
-FILEO MATO[1] = "{SCENARIO_DIR}\output\HBW_MCLS.MAT",
+FILEO MATO[1] = "{SCENARIO_DIR}\output\HBO_MCLS.MAT",
   MO=621,DEC=1*D, NAME=LSUM
 
 FILEI LOOKUPI[2] = "{CATALOG_DIR}\Params\mc\MC_Coefficients.csv"
@@ -28,10 +28,10 @@ zonemsg=50
  ;ARRAY TYPE=C30 MARKET_NAME=1
     
 ; Read alternative specific Constants
-LOOKUP, NAME=CONSTANTS, LOOKUP[1]=1, RESULT=3, INTERPOLATE=N, , LIST=Y, LOOKUPI=1
+LOOKUP, NAME=CONSTANTS, LOOKUP[1]=1, RESULT=4, INTERPOLATE=N, , LIST=Y, LOOKUPI=1
     
 ; Read mode choice coefficients
-LOOKUP, NAME=COEFF, LOOKUP[1]=1, RESULT=3, INTERPOLATE=N, LIST=Y, LOOKUPI=2
+LOOKUP, NAME=COEFF, LOOKUP[1]=1, RESULT=4, INTERPOLATE=N, LIST=Y, LOOKUPI=2
 
 
 IF (i=FirstZone)

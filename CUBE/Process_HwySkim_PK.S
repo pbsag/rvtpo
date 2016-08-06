@@ -1,8 +1,8 @@
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=MATRIX MSG='Process Highway Skims'
+RUN PGM=MATRIX MSG='PK - Process Highway Skims'
 FILEO MATO[1] = "{SCENARIO_DIR}\OUTPUT\pk_Hwyskim.MAT",
  MO=11-15,DEC=5*D,NAME=TIME,DISTANCE,OTERM,DTERM,TOTAL_TIME
-FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\@pk_hwy_skim@"
+FILEI MATI[1] = "{SCENARIO_DIR}\OUTPUT\pk_hwy_skim.mat"
 
 FILLMW MW[1]=MI.1.1(5)                ; highway skims
 
