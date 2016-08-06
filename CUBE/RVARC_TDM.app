@@ -7,7 +7,7 @@ FB
 00
 Roanoke MPO Area Travel Demand Model
 
-Sat Aug 06 06:35:47 2016
+Sat Aug 06 07:43:18 2016
 C:\projects\rvtpo\Cube\RVARC.BMP
 
 C:\projects\rvtpo\Cube\RVARC_TDM.app
@@ -844,95 +844,7 @@ Zonal Data 2
 -1
 -1
 0
-#INFIL2
-Matrix File 1
-MC Logsums
-0
-0
-*
-{SCENARIO_DIR}\OUTPUT\@MCLS_MAT@_MCLS.MAT
-1
-0100
-      
-999999
-1704
--1716
-2028
--1773
--1
--1
-0
-#INFIL3
-Matrix File 2
-Highway Skims
-0
-0
-*
-{SCENARIO_DIR}\OUTPUT\op_Hwyskim.MAT
-1
-0101
-      
-999999
-1704
--1777
-2028
--1834
--1
--1
-0
-#INFIL4
-Matrix File 2
-Highway Skims
-0
-0
-*
-{SCENARIO_DIR}\OUTPUT\PK_Hwyskim.MAT
-1
-0103
-      
-999999
-1704
--1838
-2028
--1895
--1
--1
-0
-#INFIL5
-Lookup File 1
-DC Parameters
-0
-0
-*
-{CATALOG_DIR}\PARAMS\DESTCHOICE_PARAMETERS.DBF
-1
-0106
-      
-999999
-1704
--1899
-2028
--1956
--1
--1
-0
 #OUTFIL0
-Matrix File 1
-Dest <purpose>
-0
-0
-*
-{SCENARIO_DIR}\OUTPUT\Dest_@PURP@.MAT
-1
-0100
-      
-999999
-2457
--1714
-2775
--1771
-0
-#OUTFIL1
 Matrix File 1
 HBSC Trip Table
 0
