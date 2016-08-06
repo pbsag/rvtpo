@@ -1,55 +1,91 @@
 #TripsRun File
 10
 3
-C:\PROJECTS\ROANOKE\CUBE\TRIPS.S
+C:\PROJECTS\RVTPO\CUBE\TRIPS.S
 58,80,
 PA to OD,00
-C:\projects\Roanoke\Cube\Roanoke Area MPO Model.PRN
+C:\projects\rvtpo\Cube\Roanoke Area MPO Model.PRN
 2
 #PROJECTSTRUCT
-1:Roanoke Area MPO Model,00,C:\projects\Roanoke\Cube\RVARC_TDM.app
-2:Network,00,C:\projects\roanoke\Cube\NETBUILD.APP
-3:Area Type,00,C:\projects\roanoke\Cube\NETWOR00.APP
-2:Highway Paths,00,C:\projects\roanoke\Cube\PATHBUILD.APP
-2:Trip Generation,00,C:\projects\roanoke\Cube\DEMAND.APP
-2:Transit Network,00,C:\projects\ROANOKE\CUBE\TRANSIT.APP
-2:External Model,00,C:\projects\ROANOKE\CUBE\EXTERN00.APP
-2:Commercial Vehicle,00,C:\projects\ROANOKE\CUBE\COMMER00.APP
-2:MC Logsums,00,C:\projects\ROANOKE\CUBE\MCLOGSUM.APP
-2:Trip Distribution,00,C:\projects\roanoke\Cube\TRIPDI00.APP
-3:Destination Choice,00,C:\projects\ROANOKE\CUBE\TRIPDIST00.APP
-2:modechoice,00,C:\projects\ROANOKE\CUBE\MODECH00.APP
-2:PA to OD,00,C:\projects\roanoke\Cube\TRIPS.APP
-2:Highway Assignment,00,C:\projects\roanoke\Cube\ASSIGNMENT.APP
-2:Congested Skims,00,C:\projects\roanoke\Cube\HIGHWA_Congested.app
-2:TrnAssignment,00,C:\projects\ROANOKE\CUBE\TRNASS00.APP
+1:Roanoke Area MPO Model,00,C:\projects\rvtpo\Cube\RVARC_TDM.app
+2:Network,00,C:\projects\rvtpo\Cube\NETBUILD.APP
+3:Area Type,00,C:\projects\rvtpo\Cube\NETWOR00.APP
+2:Highway Paths,00,C:\projects\rvtpo\Cube\PATHBUILD.APP
+2:Trip Generation,00,C:\projects\rvtpo\Cube\DEMAND.APP
+2:Transit Network,00,C:\projects\rvtpo\CUBE\TRANSIT.APP
+2:External Model,00,C:\projects\rvtpo\CUBE\EXTERN00.APP
+2:Commercial Vehicle,00,C:\projects\rvtpo\CUBE\COMMER00.APP
+2:MC Logsums,00,C:\projects\rvtpo\CUBE\MCLOGSUM.APP
+2:Trip Distribution,00,C:\projects\rvtpo\Cube\TRIPDI00.APP
+3:Destination Choice,00,C:\projects\rvtpo\CUBE\TRIPDIST00.APP
+4:HBW_DC,00,C:\PROJECTS\RVTPO\CUBE\HBW_DC00.APP
+4:HBO_DC,00,C:\PROJECTS\RVTPO\CUBE\HBO_DC00.APP
+4:HBSH_DC,00,C:\PROJECTS\RVTPO\CUBE\HBSH_D00.app
+4:NHB_DC,00,C:\PROJECTS\RVTPO\CUBE\NHB_DC00.app
+2:modechoice,00,C:\projects\rvtpo\CUBE\MODECH00.APP
+2:PA to OD,00,C:\projects\rvtpo\Cube\TRIPS.APP
+2:Highway Assignment,00,C:\projects\rvtpo\Cube\ASSIGNMENT.APP
+2:Congested Skims,00,C:\projects\rvtpo\Cube\HIGHWA_Congested.app
+2:TrnAssignment,00,C:\projects\rvtpo\CUBE\TRNASS00.APP
 #END
 1
-C:\Users\SARVEP~1\AppData\Local\Temp\Cit560C.tmp
+C:\Users\SARVEP~1\AppData\Local\Temp\Cit9E8A.tmp
 1
 Base
-#GROUP=PA to OD, 00:5:C:\projects\roanoke\Cube\TRIPS.APP
+#GROUP=PA to OD, 00:5:C:\projects\rvtpo\Cube\TRIPS.APP
 #PROGRAM
-#PROGNAME=Loop<0:5;0
+#PROGNAME=MATRIX<0:13;2
 #EXEC=1
 #INCLUSTER=0
-Time period
-3;1,4
-0
-#END_ITERSPECIFIC
-#PROGRAM
-#PROGNAME=MATRIX<0:13;0
-#EXEC=3
-#INCLUSTER=0
-#PROGARGS=C:\projects\roanoke\Cube\TOD_Model.s
+#PROGARGS=C:\projects\rvtpo\Cube\TOD_Model.s
 
 1
+#END
+#OUTPUT
+{SCENARIO_DIR}\Output\Logs\TOD_Model_AM.PRN
+{SCENARIO_DIR}\Output\ODAUTO_AM.MAT
+#END
+#PROGRAM
+#PROGNAME=MATRIX<0:13;2
+#EXEC=2
+#INCLUSTER=0
+#PROGARGS=C:\PROJECTS\RVTPO\CUBE\TRMAT00B.S
+
+1
+#END
+#OUTPUT
+{SCENARIO_DIR}\Output\Logs\TOD_Model_MD.PRN
+{SCENARIO_DIR}\Output\ODAUTO_MD.MAT
+#END
+#PROGRAM
+#PROGNAME=MATRIX<0:13;2
+#EXEC=3
+#INCLUSTER=0
+#PROGARGS=C:\PROJECTS\RVTPO\CUBE\TRMAT00C.S
+
+1
+#END
+#OUTPUT
+C:\PROJECTS\RVTPO\CUBE\TRMAT00C.PRN
+{SCENARIO_DIR}\Output\ODAUTO_PM.MAT
+#END
+#PROGRAM
+#PROGNAME=MATRIX<0:13;2
+#EXEC=4
+#INCLUSTER=0
+#PROGARGS=C:\PROJECTS\RVTPO\CUBE\TRMAT00D.S
+
+1
+#END
+#OUTPUT
+C:\PROJECTS\RVTPO\CUBE\TRMAT00D.PRN
+{SCENARIO_DIR}\Output\ODAUTO_NT.MAT
 #END
 #PROGRAM
 #PROGNAME=MATRIX<0:13;3
 #EXEC=5
 #INCLUSTER=0
-#PROGARGS=C:\projects\ROANOKE\CUBE\TRMAT00G.S
+#PROGARGS=C:\projects\rvtpo\CUBE\TRMAT00G.S
 
 1
 #END

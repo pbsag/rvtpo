@@ -1,6 +1,62 @@
 -------------------------
 CHECKING APPLICATION GROUP 'Highway Assignment'
-C:\projects\roanoke\Cube\ASSIGNMENT.APP
+C:\projects\rvtpo\Cube\ASSIGNMENT.APP
 CHECKING EXECUTION ORDER
 CHECKING FILE EXISTENCE
 -------------------------
+APPLICATION GROUP: 'Highway Assignment' (C:\projects\rvtpo\Cube\ASSIGNMENT.APP)
+PROGRAM: HIGHWAY
+EXEC ORDER: 2
+THE 'Turn Penalties' EXISTS, BUT IS EMPTY
+{SCENARIO_DIR}\Input\TurnPenalties.pen
+(='C:\projects\rvtpo\Base\Input\TurnPenalties.pen' for Scenario 'Base')
+
+APPLICATION GROUP: 'Highway Assignment' (C:\projects\rvtpo\Cube\ASSIGNMENT.APP)
+PROGRAM: HIGHWAY
+EXEC ORDER: 1
+THE 'Turn Penalties' EXISTS, BUT IS EMPTY
+{SCENARIO_DIR}\Input\TurnPenalties.pen
+(='C:\projects\rvtpo\Base\Input\TurnPenalties.pen' for Scenario 'Base')
+
+APPLICATION GROUP: 'Highway Assignment' (C:\projects\rvtpo\Cube\ASSIGNMENT.APP)
+PROGRAM: HIGHWAY
+EXEC ORDER: 3
+THE 'Turn Penalties' EXISTS, BUT IS EMPTY
+{SCENARIO_DIR}\Input\TurnPenalties.pen
+(='C:\projects\rvtpo\Base\Input\TurnPenalties.pen' for Scenario 'Base')
+
+APPLICATION GROUP: 'Highway Assignment' (C:\projects\rvtpo\Cube\ASSIGNMENT.APP)
+PROGRAM: HIGHWAY
+EXEC ORDER: 5
+THE 'Turn Penalties' EXISTS, BUT IS EMPTY
+{SCENARIO_DIR}\Input\TurnPenalties.pen
+(='C:\projects\rvtpo\Base\Input\TurnPenalties.pen' for Scenario 'Base')
+
+APPLICATION GROUP: 'Highway Assignment' (C:\projects\rvtpo\Cube\ASSIGNMENT.APP)
+PROGRAM: HIGHWAY
+EXEC ORDER: 7
+THE 'Turn Penalties' EXISTS, BUT IS EMPTY
+{SCENARIO_DIR}\Input\TurnPenalties.pen
+(='C:\projects\rvtpo\Base\Input\TurnPenalties.pen' for Scenario 'Base')
+
+APPLICATION GROUP: 'Highway Assignment' (C:\projects\rvtpo\Cube\ASSIGNMENT.APP)
+PROGRAM: HIGHWAY
+EXEC ORDER: 4
+THE 'Turn Penalties' EXISTS, BUT IS EMPTY
+{SCENARIO_DIR}\Input\TurnPenalties.pen
+(='C:\projects\rvtpo\Base\Input\TurnPenalties.pen' for Scenario 'Base')
+
+APPLICATION GROUP: 'Highway Assignment' (C:\projects\rvtpo\Cube\ASSIGNMENT.APP)
+PROGRAM: HIGHWAY
+EXEC ORDER: 6
+THE 'Turn Penalties' EXISTS, BUT IS EMPTY
+{SCENARIO_DIR}\Input\TurnPenalties.pen
+(='C:\projects\rvtpo\Base\Input\TurnPenalties.pen' for Scenario 'Base')
+
+APPLICATION GROUP: 'Highway Assignment' (C:\projects\rvtpo\Cube\ASSIGNMENT.APP)
+PROGRAM: HIGHWAY
+EXEC ORDER: 8
+THE 'Turn Penalties' EXISTS, BUT IS EMPTY
+{SCENARIO_DIR}\Input\TurnPenalties.pen
+(='C:\projects\rvtpo\Base\Input\TurnPenalties.pen' for Scenario 'Base')
+
