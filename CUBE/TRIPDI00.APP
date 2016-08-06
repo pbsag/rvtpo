@@ -1,6 +1,14 @@
 &PROJFIL
 EXP0 221Zonal Data 1   {SCENARIO_DIR}\OUTPUT\HH_PROD.DBF                           
 EXP0 231Zonal Data 2   {SCENARIO_DIR}\OUTPUT\se_classified_{year}{Alternative}.dbf 
+EXP1 0 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\HBW_MCLS.MAT                          
+EXP1 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\HBO_MCLS.MAT                          
+EXP1 2 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\HBSH_MCLS.MAT                         
+EXP1 3 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\NHB_MCLS.MAT                          
+EXP1 0 0Matrix File 1  {SCENARIO_DIR}\OUTPUT\Dest_HBW.MAT                          
+EXP1 1 0Matrix File 1  {SCENARIO_DIR}\OUTPUT\Dest_HBO.MAT                          
+EXP1 2 0Matrix File 1  {SCENARIO_DIR}\OUTPUT\Dest_HBSH.MAT                         
+EXP1 3 0Matrix File 1  {SCENARIO_DIR}\OUTPUT\Dest_NHB.MAT                          
 EXP3 1 0Matrix File 1  {SCENARIO_DIR}\Output\Dest_HBSC.MAT                         
 11
 0
@@ -10,7 +18,7 @@ TD
 00
 
 Runs Trip Distribution
-Sat Aug 06 09:14:01 2016
+Sat Aug 06 09:49:45 2016
 
 C:\projects\rvtpo\Cube\RVARC_TDM.app
 C:\projects\rvtpo\Cube\TRIPDI00.APP
@@ -1752,8 +1760,8 @@ MC Logsums
 668
 -1271
 -1
--1
-0
+-9
+1
 #INFIL1
 Matrix File 1
 MC Logsums
@@ -1770,8 +1778,8 @@ MC Logsums
 668
 -1332
 -1
--1
-0
+-9
+1
 #INFIL2
 Matrix File 1
 MC Logsums
@@ -1788,8 +1796,8 @@ MC Logsums
 668
 -1393
 -1
--1
-0
+-9
+1
 #INFIL3
 Matrix File 1
 MC Logsums
@@ -1806,11 +1814,11 @@ MC Logsums
 668
 -1454
 -1
--1
-0
+-9
+1
 #OUTFIL0
 Matrix File 1
-
+HBW DC trips
 0
 0
 *
@@ -1823,10 +1831,10 @@ Matrix File 1
 -1214
 1385
 -1271
-0
+1
 #OUTFIL1
 Matrix File 1
-
+HBO DC trips
 0
 0
 *
@@ -1839,10 +1847,10 @@ Matrix File 1
 -1275
 1385
 -1332
-0
+1
 #OUTFIL2
 Matrix File 1
-
+HBSH DC trips
 0
 0
 *
@@ -1855,10 +1863,10 @@ Matrix File 1
 -1336
 1385
 -1393
-0
+1
 #OUTFIL3
 Matrix File 1
-
+NHB DC trips
 0
 0
 *
@@ -1871,7 +1879,7 @@ Matrix File 1
 -1397
 1385
 -1454
-0
+1
 #PROGRAM2
 3
 0

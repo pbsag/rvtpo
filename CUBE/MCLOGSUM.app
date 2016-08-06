@@ -1,7 +1,17 @@
 &PROJFIL
+EXP0 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\pk_Hwyskim.mat                        
+EXP0 2 1Matrix File 2  {SCENARIO_DIR}\Output\pk_TSKIMBus.mat                       
+EXP0 3 1Matrix File 3  {SCENARIO_DIR}\Output\PK_TSKIMPrem.mat                      
 EXP0 221Zonal Data 1   {SCENARIO_DIR}\Input\TrnWalkPercent.dbf                     
 EXP0 421Lookup File 1  {CATALOG_DIR}\Params\mc\MC_Constants.csv                    
 EXP0 431Lookup File 2  {CATALOG_DIR}\Params\mc\MC_Coefficients.csv                 
+EXP0 1 0Matrix File 1  {SCENARIO_DIR}\output\HBW_MCLS.MAT                          
+EXP3 1 1Matrix File 1  {SCENARIO_DIR}\OUTPUT\op_Hwyskim.mat                        
+EXP3 2 1Matrix File 2  {SCENARIO_DIR}\Output\op_TSKIMBus.mat                       
+EXP3 3 1Matrix File 3  {SCENARIO_DIR}\Output\op_TSKIMPrem.mat                      
+EXP3 1 0Matrix File 1  {SCENARIO_DIR}\output\HBO_MCLS.MAT                          
+EXP4 1 0Matrix File 1  {SCENARIO_DIR}\output\NHB_MCLS.MAT                          
+EXP5 1 0Matrix File 1  {SCENARIO_DIR}\output\HBSC_MCLS.MAT                         
 11
 0
 0
@@ -10,7 +20,7 @@ LG
 00
 
 
-Sat Aug 06 06:00:01 2016
+Sat Aug 06 09:47:13 2016
 
 C:\projects\rvtpo\Cube\RVARC_TDM.app
 C:\projects\rvtpo\CUBE\MCLOGSUM.APP
@@ -74,8 +84,8 @@ MATI1
 708
 -819
 -1
--1
-0
+-9
+1
 #INFIL2
 Matrix File 2
 TSKIM1
@@ -92,8 +102,8 @@ MATI2
 708
 -880
 -1
--1
-0
+-9
+1
 #INFIL3
 Matrix File 3
 TSKIM2
@@ -110,8 +120,8 @@ MATI3
 708
 -941
 -1
--1
-0
+-9
+1
 #INFIL4
 Matrix File 4
 
@@ -1174,7 +1184,7 @@ OPRN
 0
 #OUTFIL1
 Matrix File 1
-Logsum Mtx
+HBW Logsum
 0
 0
 MAT
@@ -1187,7 +1197,7 @@ MATO1
 -852
 1259
 -909
-0
+1
 #OUTFIL2
 Matrix File 2
 Utilities Mtx
@@ -5693,8 +5703,8 @@ MATI1
 728
 -1499
 -1
--1
-0
+-9
+1
 #INFIL2
 Matrix File 2
 TSKIM1
@@ -5711,8 +5721,8 @@ MATI2
 728
 -1560
 -1
--1
-0
+-9
+1
 #INFIL3
 Matrix File 3
 TSKIM2
@@ -5729,8 +5739,8 @@ MATI3
 728
 -1621
 -1
--1
-0
+-9
+1
 #INFIL4
 Matrix File 4
 
@@ -6793,7 +6803,7 @@ OPRN
 0
 #OUTFIL1
 Matrix File 1
-Logsum Mtx
+HBO Logsum
 0
 0
 MAT
@@ -6806,7 +6816,7 @@ MATO1
 -1532
 1279
 -1589
-0
+1
 #OUTFIL2
 Matrix File 2
 Utilities Mtx
@@ -8666,7 +8676,7 @@ OPRN
 0
 #OUTFIL1
 Matrix File 1
-Logsum Mtx
+NHB Logsum
 0
 0
 MAT
@@ -8679,7 +8689,7 @@ MATO1
 -932
 2579
 -989
-0
+1
 #OUTFIL2
 Matrix File 2
 Utilities Mtx
@@ -10539,7 +10549,7 @@ OPRN
 0
 #OUTFIL1
 Matrix File 1
-Logsum Mtx
+HBSC Logsum
 0
 0
 MAT
@@ -10552,7 +10562,7 @@ MATO1
 -1572
 2619
 -1629
-0
+1
 #OUTFIL2
 Matrix File 2
 Utilities Mtx

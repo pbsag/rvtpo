@@ -15,7 +15,7 @@ TD
 00
 
 
-Sat Aug 06 09:40:09 2016
+Sat Aug 06 09:49:28 2016
 
 C:\projects\rvtpo\Cube\TRIPDI00.APP
 C:\projects\rvtpo\CUBE\TRIPDIST00.APP
@@ -158,7 +158,7 @@ DC Parameters
 0
 #OUTFIL0
 Matrix File 1
-
+HBW DC trips
 0
 0
 *
@@ -349,7 +349,7 @@ DC Parameters
 0
 #OUTFIL0
 Matrix File 1
-
+HBO DC trips
 0
 0
 *
@@ -540,7 +540,7 @@ DC Parameters
 0
 #OUTFIL0
 Matrix File 1
-
+HBSH DC trips
 0
 0
 *
@@ -715,7 +715,7 @@ DC Parameters
 0
 #OUTFIL0
 Matrix File 1
-
+NHB DC trips
 0
 0
 *
