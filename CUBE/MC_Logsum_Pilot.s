@@ -26,7 +26,7 @@ premSkim = 'op_TSKIMPrem.MAT'
 
 ELSEIF (PURPOSE=4) ; HBSC Purpose
 PURP='HBSC'
-PURPNO=5
+PURPNO=6
 PRK='LONGPARK'
 hwySkim = 'op_Hwyskim.MAT'
 busSkim = 'op_TSKIMBus.MAT'
