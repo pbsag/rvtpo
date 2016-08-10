@@ -1,6 +1,7 @@
 ;;<<Default Template>><<NETWORK>><<Default>>;;
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
 RUN PGM=NETWORK MSG='Attach capacity and FFS to network'
+FILEI LOOKUPI[1] = "{CATALOG_DIR}\Params\Hwy_SPDCAP.dbf"
 FILEO NETO = "{SCENARIO_DIR}\Output\RVTPOBase{Year}{Alternative}.NET"
 FILEI LINKI[2] = "{SCENARIO_DIR}\Output\link_capacities{Year}{Alternative}.DBF"
 FILEI LINKI[1] = "{SCENARIO_DIR}\Output\ATYPE NETWORK{Year}{Alternative}.NET"
@@ -34,49 +35,43 @@ CAPE = capacity per hour (from above two).
 HCMR_CAP = LI.2.CAPE
 
 
-; Override hcmr capacity with VDOT link specific capacity
-IF (LI.1.VDOT_CAP > 0)
-    CAPE = LI.1.VDOT_CAP
+;VDOT note:use lookup table
+LOOKUP LOOKUPI=1,
+       NAME=Hwy_SPDCAP,
+         LOOKUP[1]=CLASS, RESULT=SPEED,
+         LOOKUP[2]=CLASS, RESULT=CAPACITY,
+       FAIL[3]=0
+
+IF (FFSPEED_R = 0) 
+    FFSPEED = Hwy_SPDCAP(1,SPDCLASS)
+ELSE
+ FFSPEED = FFSPEED_R
 ENDIF
+
+IF (FFSPEED < POST_SPD)
+    FFSPEED = POST_SPD
+ENDIF
+
+ ; Override hcmr capacity with VDOT link specific capacity
+IF (LI.1.VDOT_CAP >0 )
+    CAPE = LI.1.VDOT_CAP
+ELSE
+    CAPE=Hwy_SPDCAP(2,SPDCLASS)*LANES
+ENDIF
+ 
 
 
 ; Use this phase to make computations and selections of any data on the LINKI files.
-CAPE_AM = CAPE * 2.79 ; 2.5  ; AM Capacity
-CAPE_MD = CAPE * 4.40 ; 5.5  ; MD Capacity
-CAPE_PM = CAPE * 3.18 ; 2.5  ; PM Capacity
+CAPE_AM = CAPE * 3.6 ; 2.5  ; AM Capacity
+CAPE_MD = CAPE * 4.8; 4.40 ; 5.5  ; MD Capacity ;VDOT note: 4.4 is too low for MD  
+CAPE_PM = CAPE * 3.9; 3.18 ; 2.5  ; PM Capacity  ;VDOT note: this one (3.18>3 hrs) does not make sense 
 CAPE_NT = CAPE * 5.63 ; 4.5  ; NT Capacity
 POST_SPEED = LI.1.POST_SPD  
 
-/*
-Recode FFS based on +/- 5 MPH rule (ignore HCM-R FFS)
-1	Interstate/Principal Freeway
-2	Minor Freeway
-3	Principal Arterial
-4	Major Arterial
-5	Minor Arterial
-6	Major Collector
-7	Minor Collector
-8	Local
-9	High-speed Ramp
-10	Low-speed Ramp
-11	Centroid Connector
-12	External Station Connector
 
-Higher level highways	Where Facility Type = "Freeway" or ((Facility Type = "Multi-lane Highway" or Facility Type = "Two-lane Highway") and Divided = "Divided")	Initial Travel Time = Length/(Posted Speed + 5.0)*60
 
-Lower level highways and arterials	((Where Facility Type = "Multi-lane Highway" or Facility Type = "Two-lane Highway") and Divided = "Undivided" or Divided = “CLTL”) or Facility Type contains "Urban Arterial"	Initial Travel Time = Length/(Posted Speed - 5.0)*60
-
-Local Roads, collectors, ramps and other links	Where Facility Type= "Centroid Connector" or Facility Type=  "Collector" or Facility Type= "Diamond Ramp"  or Facility Type= "Loop Ramp"  or Facility Type= "Local Road"   or Facility Type=  "Freeway to Freeway Ramp"	Initial Travel Time = Length/Posted Speed*60
-
-*/
-
-; Arterials
-IF(LI.1.FACTYPE > 2 & LI.1.FACTYPE < 5 & LI.1.POST_SPD > 25 ) 
-     FFSPEED = LI.1.POST_SPD - 5
-ENDIF
-
-; Local and collector
-IF(LI.1.FACTYPE > 6 & LI.1.FACTYPE < 9 & LI.1.POST_SPD <> 0) 
+;Local and collector ; VDOT note: post_SPD for minor arterials and collector variy a lot, use POST_SPD as reference
+IF(LI.1.FACTYPE > 4 & LI.1.FACTYPE < 9 & LI.1.POST_SPD <> 0) 
      FFSPEED = LI.1.POST_SPD + 3
 ENDIF
 
