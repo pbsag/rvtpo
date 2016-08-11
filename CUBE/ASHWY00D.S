@@ -1,5 +1,5 @@
 ; Do not change filenames or add or remove FILEI/FILEO statements using an editor. Use Cube/Application Manager.
-RUN PGM=HIGHWAY PRNFILE="C:\PROJECTS\RVTPO\CUBE\ASHWY00D.PRN" MSG='MD: Load Final Trips onto Network'
+RUN PGM=HIGHWAY PRNFILE="C:\Model\rvtpo-0.1.7\CUBE\ASHWY00D.PRN" MSG='MD: Load Final Trips onto Network'
 FILEI NETI = "{SCENARIO_DIR}\Output\PRELOADED_MD.NET"
 FILEI TURNPENI = "{SCENARIO_DIR}\Input\TurnPenalties.pen"
 FILEO MATO[1] = "{SCENARIO_DIR}\Output\SL_Loaded_MD.MAT",
@@ -72,15 +72,16 @@ PHASE=ADJUST
 
 function {
     V=VOL[1]+VOL[2]+VOL[3]+VOL[4]+  LW.EEVOL ; Add preloaded EE Volumes here
-   ; V=VOL[1]+VOL[2]+VOL[4]
-     ; TC[1] = Min(T0 * (1 + 0.83*(V/C)^5.5), T0*100)    ; Freeway     
-     ; TC[2] = Min(T0 * (1 + 0.83*(V/C)^3.7), T0*100)    ; Major Arterial  
-    TC[1] = Min(T0 * (1 + 0.65*(V/C)^4.5), T0*100)    ; Freeway        
-    TC[2] = Min(T0 * (1 + 0.65*(V/C)^4.0), T0*100)    ; Major Arterial         
-    TC[3] = Min(T0 * (1 + 0.83*(V/C)^2.8), T0*100)    ; Minor Arterial    
-    TC[4] = Min(T0 * (1 + 0.2*(V/C)^4), T0*100)       ; Collector
-    TC[5] = Min(T0 * (1 + 0.6*(V/C)^5.5), T0*100)     ; Local
-    TC[6] = T0                                        ; Connectors                       
+                   
+    
+   ;VDOT adjust
+    TC[1] = Min(T0 * (1 + 0.45*(V/C)^8), T0*100)    ; Freeway       
+    TC[2] = Min(T0 * (1 + 0.65*(V/C)^3.5), T0*100)    ; Major Arterial         
+    TC[3] = Min(T0 * (1 + 0.8*(V/C)^4.0), T0*100)    ; Minor Arterial    
+    TC[4] = Min(T0 * (1 + 0.4*(V/C)^2.0), T0*100)       ; Collector
+    TC[5] = Min(T0 * (1 + 0.6*(V/C)^2.5), T0*100)     ; Local
+    TC[6] = T0                                        ; Connectors
+   
     }
 
   LW.COSTa=TIME + 0.25*LI.DISTANCE
